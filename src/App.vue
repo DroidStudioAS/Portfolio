@@ -92,9 +92,19 @@ import HelloWorld from './components/HelloWorld.vue'
   height: 20vh;
   justify-content: start;
   margin-left: 3%;
-  gap: 20%;
+  gap: 15%;
   align-items: center;
   color: black;
+}
+.nav_item{
+  background-image: url("/background_nav_item.png");
+  width: 100px;
+  height: 60px;
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  font-size: large;
+  font-weight: bold;
 }
 .menu_icon{
   position: absolute;
