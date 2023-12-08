@@ -208,7 +208,7 @@ template{
 }
 .education_container{
   position: absolute;
-  top: 72vh ;
+  top: 74vh ;
   width: 90vw;
 
   display: flex;
@@ -226,6 +226,7 @@ template{
   position: absolute;
   top: 10vh;
   height: 60vh;
+
 }
 .table_row{
   display: flex;
@@ -338,7 +339,7 @@ align-items: center;
   width: 50vw;
   position: absolute;
   
-  bottom: 50vh;
+  bottom: 60vh;
   left: 23vw;
   z-index: 2;
   display: flex;
@@ -352,7 +353,7 @@ align-items: center;
   flex-flow: row nowrap;
   justify-content: space-around;
   position: absolute;
-  bottom: -15vh;
+  bottom: -25vh;
   width: 40vw;
 }
 .menu_item{
