@@ -1,4 +1,18 @@
 <script setup>
+import { useRouter } from "vue-router";
+import { useStore } from "../stores/counter";
+
+const router=useRouter();
+const store = useStore();
+
+function pushTo(name){
+  store.setActivePage(name)
+  console.log('Routing to:', name);
+  console.log('Router:', router); // Check if router is defined
+  router.push({ name: name });
+  console.log("push activated");
+}
+
 </script>
 <template>
   <div class="main_container">
@@ -111,19 +125,26 @@
       </div>
     </div>
     <div class="second_page_container">
-    <div class="image_container">
-      <img class="comp_image" src="/back_computer.png">
-    </div>
-    <div class="content_container">
+      <div class="content_container">
       <h1>
-      
+        Welcome! I'm a 24-year-old Software Developer specializing in top-tier mobile and web applications. 
+      </h1>
+      <h1>
+        Curious To Explore Further? 
+      </h1>
+      <h1>
+        Explore my skills or projects below and see for yourself.
       </h1>
       <div class="button_container">
-        <div class="menuitem"></div>
-        <div class="menuitem"></div>
+        <div @click="pushTo('skills')" class="menu_item">Skills</div>
+        <div @click="pushTo('projects')" class="menu_item">Projects</div>
       </div>
 
     </div>
+    <div class="image_container">
+      <img class="comp_image" src="/back_computer.png">
+    </div>
+    
 
     
      </div>
@@ -172,6 +193,7 @@ template{
  padding-bottom: -10%;
 
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 
@@ -311,6 +333,43 @@ align-items: center;
 .comp_image{
   width: 60vw;
   height: 100vh;
+}
+.content_container{
+  width: 50vw;
+  position: absolute;
+  
+  bottom: 50vh;
+  left: 23vw;
+  z-index: 2;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.button_container{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  position: absolute;
+  bottom: -15vh;
+  width: 40vw;
+}
+.menu_item{
+  height: 10vh;
+  width: 13vw;
+
+  font-size: x-large;
+  color: #89B4BE;
+
+  background: #000;
+  border-radius:30px 20px 30px 20px;
+  
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 /****************End Of Second Page Item Styles***************/
 

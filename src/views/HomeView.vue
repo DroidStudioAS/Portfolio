@@ -181,13 +181,15 @@ gap: 5%;
   .image_container{
     z-index: 0;
     height: 55vh;
-    width: 80vw;
+    width: 60vw;
     left: 5vw;
     
   }
   .home_image{
     height: 55vh;
-    width:  80vw;
+    width:  60vw;
+    position: absolute;
+    right: 0vw;
   }
   .header_container{
     z-index: 1;
@@ -347,14 +349,35 @@ gap: 5%;
     justify-content: center;
     gap: 2%;
     }
+    .home_image{
+    height: 80vh;
+    width:  60vw;
+    position: absolute;
+    right: 0vw;
+  }
+  .image_container{
+    height: 80vh;
+    width: 80vw;
+  }
 }
 
 /* Extra Large Devices (Large Desktops and TVs) */
 @media (min-width: 1200px) {
+  
   /* CSS for extra large devices */
   .menu_but{
     position: relative;
     left: 5%;
+  }
+  .home_image{
+    height: 80vh;
+    width:  60vw;
+    position: absolute;
+    right: 0vw;
+  }
+  .image_container{
+    height: 80vh;
+    width: 80vw;
   }
 }
 /**************Media Querys End*****************/

@@ -1,7 +1,7 @@
 <template>
   
   <transition name="menu-slide">
-<div class="navigation_container" :style="{width:menuWidth}">
+<div class="navigation_container" :style="{width:menuWidth ,height:store.getMh()}">
   <div :class="{ 'menu_but_container': true, 'expanded': showMenu }" @click="toggleMenu()">
   <div ref="menu_but" 
   class="menu_but"
@@ -21,12 +21,14 @@
   <RouterView/>
 </template>
 <script setup>
-import { ref } from 'vue';
+import { onBeforeMount, ref } from 'vue';
 import {  useRouter } from 'vue-router'
 import {gsap} from"gsap";
 import { onMounted } from 'vue';
+import {useStore} from './stores/counter.js'
 
 const router = useRouter();
+const store = useStore();
 
 
 let first_name=ref("Aleksandar ")
@@ -36,6 +38,7 @@ let titleend=ref("Developer")
 let menu = ref("menu")
 let showMenu = ref(false);
 let menuWidth = ref('10vw');
+let menuHeight = store.getMh();
 let width = window.innerWidth;
 let menu_but = ref(null)
 
@@ -58,12 +61,23 @@ function changeColor(){
 
 
 function pushTo(name){
+ store.setActivePage(name);
+  menuHeight=store.getMh();
+ console.log('active page', store.getActivePage());
   console.log('Routing to:', name);
   console.log('Router:', router); // Check if router is defined
+
+
+  console.log('set menu height to: ' + store.value)
   router.push({ name: name });
   console.log("push activated");
+  toggleMenu();
 }
+onBeforeMount(()=>{
+  menuHeight=store.getMh();
+})
 onMounted(()=>{
+  menuHeight=store.getMh();
   if(width>767 && width<991){
     menuWidth.value='15vw'
   }
@@ -72,7 +86,8 @@ onMounted(()=>{
   }
   if (width<425){
     menuWidth.value='20vw'
-  }
+  } 
+  
 })
 </script>
 <style scoped>
@@ -102,7 +117,7 @@ onMounted(()=>{
     justify-content: center;
     align-items: center;
    
-    margin: 10% 5% 10% 0%;
+    margin: 10% 5% 10% 5%;
 
     border-radius: 30px 30px 30px 30px;
 
