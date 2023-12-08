@@ -86,6 +86,7 @@ onMounted(()=>{
   </div>
   <transition name="slide">
     <div class="item_container" v-if="showMenu">
+      <div class="menu_item">Home</div>
     <div @click="pushTo('about')" class="menu_item">About Me</div>
     <div class="menu_item">Skills</div>
     <div class="menu_item">Projects</div>
@@ -220,7 +221,7 @@ gap: 5%;
   flex-flow: column nowrap;
   justify-content: space-evenly;
   align-items: center;
-  gap: 10vh;
+  gap: 4vh;
   width: 20vw;
   height: 100vh;
  
@@ -262,7 +263,7 @@ gap: 5%;
 
 /**************Media Querys Start*****************/
 
-@media (max-width: 450px) {
+@media (max-width: 450px){
   .main_container{
   width: 80vw;
 }
@@ -286,13 +287,13 @@ gap: 5%;
   }
   .image_container{
     z-index: 0;
-    height: 65vh;
+    height: 55vh;
     width: 80vw;
     left: 5vw;
     
   }
   .home_image{
-    height: 65vh;
+    height: 55vh;
     width:  80vw;
   }
   .header_container{
@@ -306,7 +307,7 @@ gap: 5%;
     align-items: center;
   }
   .name_container{
-    width: 50vw;
+    width: 80vw;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
