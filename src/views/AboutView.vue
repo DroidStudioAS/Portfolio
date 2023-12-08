@@ -1,3 +1,5 @@
+<script setup>
+</script>
 <template>
   <div class="main_container">
     <div class="first_page_container">
@@ -110,6 +112,7 @@
     </div>
     <div class="second_page_container">
     <div class="image_container">
+      <img class="comp_image" src="/back_computer.png">
     </div>
     <div class="content_container">
       <h1>
@@ -137,7 +140,7 @@ template{
   overflow-y: auto;
 }
 .main_container{
-  height: 160vh;
+  height: 205vh;
   width: 100vw;
   background: #89B4BE;
 
@@ -148,7 +151,7 @@ template{
 .first_page_container{
   position: absolute;
  
-  bottom: 60vh;
+  bottom: 100vh;
 
   height: 100vh;
   width: 90vw;
@@ -160,11 +163,19 @@ template{
 }
 .second_page_container{
   position: absolute;
-  top: 100vh;
+  top: 104vh;
   bottom: 0vh;
+ background: #89B4BE;
+  height: 100vh;
+  width: 90vw;
+  padding-top: 5%;
+ padding-bottom: -10%;
 
-  height: 60vh;
-  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
 }
 .page_header{
   position: absolute;
@@ -268,23 +279,41 @@ align-items: center;
   align-items: center;
 }
 .school_name{
-  font-size: 2cap;
+  font-size: 2.5cap;
   font-weight: bolder;
 }
 .school_department{
-  font-size: 1.5cap;
+  font-size: 2cap;
   font-weight: bolder;
 }
 .school_title{
-  font-size: 1.5cap;
+  font-size: 2cap;
   font-style: oblique;
   font-weight: 400;
 }
 .school_period{
+  font-size: 2cap;
   font-weight: bold;
   text-decoration: underline;
 }
 /****************End of Education Styles****************/
+/****************Begining Of Second Page Item Styles***************/
+.image_container{
+  width: 60vw;
+  height: 100vh;
+  left: 18vw ;
+  position: absolute;
+  margin-top: -5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comp_image{
+  width: 60vw;
+  height: 100vh;
+}
+/****************End Of Second Page Item Styles***************/
+
 
 
 
