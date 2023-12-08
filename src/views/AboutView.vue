@@ -339,7 +339,7 @@ align-items: center;
   width: 50vw;
   position: absolute;
   
-  bottom: 60vh;
+  bottom: 50vh;
   left: 23vw;
   z-index: 2;
   display: flex;
@@ -353,7 +353,7 @@ align-items: center;
   flex-flow: row nowrap;
   justify-content: space-around;
   position: absolute;
-  bottom: -25vh;
+  bottom: -20vh;
   width: 40vw;
 }
 .menu_item{

@@ -1,12 +1,29 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 import project from '../models/project';
-const projects = [new project("FitTracker",false),new project('Running Tracker',true),new project('Running Tracker',false),new project('Running Tracker',true),new project('Running Tracker',false)];
+
+let headerColor = ref("#fff");
+const projects = [
+    new project("Fit Tracker",false),
+    new project('Running Tracker',true),
+    new project('Infinite Swipe',false),
+    new project('Flying Donut',true),
+    new project('Tic Tac Toe',false),
+    new project('Running Tracker',true),
+    new project('Running Tracker',false),
+    new project('Running Tracker',true),
+    new project('Running Tracker',false),
+    new project('Running Tracker',true)
+];
+
+onMounted(()=>{
+    headerColor.value="#fff"
+})
 
 
 </script>
 <template>
-    <h1 class="page_header">
+    <h1 class="page_header" :style="{color:headerColor}">
         Projects
     </h1>
     <div class="main_container">
@@ -26,9 +43,7 @@ const projects = [new project("FitTracker",false),new project('Running Tracker',
 
 </template>
 <style scoped>
-*{
-    overflow: hidden;
-}
+
 .main_container{
     height: 80vh;
     width: 90vw;
@@ -39,6 +54,7 @@ const projects = [new project("FitTracker",false),new project('Running Tracker',
 
     position: absolute;
     top: 20vh;
+    overflow-y: auto;
 }
 .page_header{
     position: absolute;
@@ -57,10 +73,15 @@ const projects = [new project("FitTracker",false),new project('Running Tracker',
     color: black;
     z-index: 4;
     background: #89B4BE;
+
+    transition: color 1s ease-in-out;
 }
 .project_label{
     position: relative;
-    bottom: 12vh;
-    left: 5vw;
+    top: -11vh;
+    left: 4vw;
+
+    font-weight: 500;
+
 }
 </style>
