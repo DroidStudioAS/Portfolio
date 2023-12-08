@@ -3,46 +3,110 @@
         <div class="skills_container">
             <h1 class="skills_header">Skills</h1>
             <div class="skills_buttons">
-            <div class="skills_button">FrontEnd Web Development</div>
-            <div class="skills_button">BackEnd Web Development</div>
-            <div class="skills_button">Mobile App Development</div>
+            <div @click="refreshList(1)" class="skills_button">FrontEnd Web Development</div>
+            <div @click="refreshList(2)" class="skills_button">BackEnd Web Development</div>
+            <div @click="refreshList(3)" class="skills_button">Mobile App Development</div>
         </div>
         </div>
         <div class="skills_list_container">
-
+            <div v-for="(skill, index) in skills" :key="index"
+            class="skill">
+            {{ skill }}
+            </div>
         </div>
     </div>
 
     <div class="icon_container">
-
+        <img v-for="(icon, index) in icons" :key="index" class="icon" :src="icon">
     </div>
 </template>
 <script setup>
+import { ref } from "vue";
+import { useStore } from "../stores/counter";
+
+const store = useStore();
+let skills = ref([]);
+let icons = ref(
+    ['/icon_js.png',
+    '/icon_html.png',
+    '/icon_java.png',
+    '/icon_php.png',
+    '/icon_css.png'
+    ]
+    )
+function updateSkills() {
+  skills.value = store.getSkillsInFocus();
+}
+
+function refreshList(int){
+        switch(int){
+          case 1:
+            store.setSkillsInFocus(1)
+            updateSkills()
+           break;
+          case 2:
+             store.setSkillsInFocus(2)
+             updateSkills()
+            break;
+          case 3:
+             store.setSkillsInFocus(3)
+             updateSkills()
+           break
+        }
+    
+}
 
 </script>
 <style scoped>
+/**************** Begining of Styles Crucial For Layout*****************/
 .main_container{
     background: #89B4BE;
     position: absolute;
     top: 0vh;
-    height: 80vh;
-    width: 90vw;
+    height: 120vh;
+    width: 100vw;
 
     display: flex;
     flex-flow: row wrap;
-}
-.icon_container{
-    height: 20vh;
-    width: 90vw;
-    position: absolute;
-    top: 80vh;
-    left: 0vw;
-    background: #89B4BE;
+    justify-content: center;
+    align-items: center;
 }
 .skills_container{
     position: absolute;
+    top: 0vh;
     left:10vw;
+    width: 30vw;
 }
+.skills_list_container{
+    display: flex;
+    flex-flow: column wrap;
+
+    height: 80vh;
+    width: 100vw;
+
+    position: absolute;
+    top: 25vh;
+    left: 55vw;
+    bottom: 0vh;
+
+
+}
+.icon_container{
+    position: absolute;
+    width: 90vw;
+    top: 90vh;
+    left: 0vw;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 3vw;
+  
+}
+
+/**************** End of Styles Crucial For Layout*****************/
+/*************Begining OF Skills container item styles*************/
 .skills_buttons{
     display: flex;
     flex-flow: column nowrap;
@@ -51,6 +115,11 @@
     text-align: center;
     gap: 5vh;
     font-size: 3cap;
+}
+.skills_header{
+    font-size: 10cap;
+    font-weight: 700;
+    margin-bottom: 5vh;
 }
 .skills_button{
     background: #777BB3;
@@ -62,9 +131,27 @@
     align-items: center;
     padding: 50px 0px 50px 0px;
 }
-.skills_header{
-    font-size: 10cap;
-    font-weight: 700;
-    margin-bottom: 5vh;
+/*************End OF Skills container item styles*************/
+/*************End OF Skills List Container item styles*************/
+.skill{
+    width: 20vw;
+    height: 10vh;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: start;
+
+    font-size:160% ;
 }
+.icon{
+    height: fit-content;
+    width: fit-content;
+}
+
+
+
+
+
+
 </style>
