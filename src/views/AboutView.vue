@@ -76,19 +76,40 @@
       </div>
       <div class="education_container">
         <div class="education_field">
-
+          <div class="school_name">
+              ITAcademy
+          </div>
+          <div class="school_department">
+              Mobile Development Department
+          </div>
+          <div class="school_title">
+              Native Android Development
+          </div>
+          <div class="school_period">
+              2022-2023
+          </div>
         </div>
         <div class="icon_container">
-
+          <img src="/icon_education.png">
         </div>
         <div class="education_field">
-
+          <div class="school_name">
+              University Of Belgrade
+          </div>
+          <div class="school_department">
+              Faculty Of Political Sciences
+          </div>
+          <div class="school_title">
+              Social Work And Social Politics
+          </div>
+          <div class="school_period">
+              2018-2022
+          </div>
         </div>
       </div>
     </div>
     <div class="second_page_container">
     <div class="image_container">
-      <img>
     </div>
     <div class="content_container">
       <h1>
@@ -152,6 +173,15 @@ template{
   height: 10vh;
   left: 40vw;
 }
+.education_container{
+  position: absolute;
+  top: 72vh ;
+  width: 90vw;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
 /****************End Of Styles important for core page layout***************/
 /****************Language Table Styles**************/
 .table_container{
@@ -162,6 +192,7 @@ template{
 
   position: absolute;
   top: 10vh;
+  height: 60vh;
 }
 .table_row{
   display: flex;
@@ -228,6 +259,33 @@ align-items: center;
 
 }
 /****************End Of Language Table Styles**************/
+
+/****************Begining of Education Styles -> education_container is in the core styles****************/
+.education_field{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.school_name{
+  font-size: 2cap;
+  font-weight: bolder;
+}
+.school_department{
+  font-size: 1.5cap;
+  font-weight: bolder;
+}
+.school_title{
+  font-size: 1.5cap;
+  font-style: oblique;
+  font-weight: 400;
+}
+.school_period{
+  font-weight: bold;
+  text-decoration: underline;
+}
+/****************End of Education Styles****************/
+
 
 
 
