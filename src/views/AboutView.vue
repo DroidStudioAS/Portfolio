@@ -16,8 +16,35 @@ function pushTo(name){
 </script>
 <template>
   <div class="main_container">
+    <h1 class="page_header">About Me</h1>
+    <div class="what_i_do_container">
+      <h2 class="wid_header">What I Do</h2>
+      <div class="service_container">
+          <div class="service">
+            <div class="service_image_container">
+              <img src="/icon_web_dev_exp.png">
+            </div>
+            <h3 class="service_name">
+                Web Development
+            </h3>
+            <p class="service_description">
+              Transform your vision into an exceptional website, designed and developed from <br> start to finish
+            </p>
+          </div>
+          <div class="service">
+            <div class="service_image_container">
+              <img src="/icon_mobile_dev.png">
+            </div>
+            <h3 class="service_name">
+                Mobile Development
+            </h3>
+            <p class="service_description">
+              Craft and code your unique mobile app from the very beginning,<br> turning your vision into a reality.            </p>
+          </div>
+      </div>
+    </div>
     <div class="first_page_container">
-      <h1 class="page_header">About Me</h1>
+     
       <div class="table_container">
         <div class="table_row">
             <div class="table_title">
@@ -161,7 +188,7 @@ template{
   overflow-y: auto;
 }
 .main_container{
-  height: 205vh;
+  height: 280vh;
   width: 100vw;
   background: #89B4BE;
 
@@ -169,6 +196,60 @@ template{
   left: 0vw;
   top: 0vh;
 }
+.what_i_do_container{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  position: absolute;
+  top:10vh;
+  height:80vh;
+  width: 90vw;
+
+}
+.wid_header{
+  width: 20vw;
+  height: 10vh;
+  font-size: 5cap;
+  font-weight: 700;
+
+  position: absolute;
+  left: 36vw; 
+}
+.service{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+}
+.service_container{
+display: flex;
+flex-flow: row wrap;
+justify-content: center;
+align-items: center;
+text-align: center;
+width: 90vw;
+height: 70vh;
+position: absolute;
+top: 8vh;
+
+gap: 10vw;
+}
+.service_image_container{
+  height: 50vh;
+}
+.service_image_container img {
+  height: 50vh;
+}
+.service_name{
+  font-size: 4cap;
+  font-weight: 700;
+}
+.service_description{
+ font-weight: 500; 
+}
+
 .first_page_container{
   position: absolute;
  
@@ -184,7 +265,7 @@ template{
 }
 .second_page_container{
   position: absolute;
-  top: 104vh;
+  top: 180vh;
   bottom: 0vh;
  background: #89B4BE;
   height: 100vh;
@@ -201,7 +282,7 @@ template{
 }
 .page_header{
   position: absolute;
-  top: 1vh;
+  top: 0vh;
   width: 20vw;
   height: 10vh;
   left: 40vw;
