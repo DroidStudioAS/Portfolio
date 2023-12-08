@@ -1,4 +1,5 @@
 <template>
+  
   <transition name="menu-slide">
 <div class="navigation_container" :style="{width:menuWidth}">
   <div :class="{ 'menu_but_container': true, 'expanded': showMenu }" @click="toggleMenu()">
@@ -8,11 +9,11 @@
   </div>
   <transition name="slide">
     <div class="item_container" v-if="showMenu">
-      <div class="menu_item">Home</div>
+    <div @click="pushTo('home')" class="menu_item">Home</div>
     <div @click="pushTo('about')" class="menu_item">About Me</div>
-    <div class="menu_item">Skills</div>
-    <div class="menu_item">Projects</div>
-    <div class="menu_item">Contact</div>
+    <div @click="pushTo('skills')" class="menu_item">Skills</div>
+    <div @click="pushTo('projects')" class="menu_item">Projects</div>
+    <div @click="pushTo('contact')" class="menu_item">Contact</div>
     </div>
   </transition>
 </div>
@@ -63,7 +64,7 @@ function pushTo(name){
   console.log("push activated");
 }
 onMounted(()=>{
-  if(width>767 && width<991 ){
+  if(width>767 && width<991){
     menuWidth.value='15vw'
   }
   if(width > 425 && width<767){
@@ -72,8 +73,6 @@ onMounted(()=>{
   if (width<425){
     menuWidth.value='20vw'
   }
-  
-
 })
 </script>
 <style scoped>

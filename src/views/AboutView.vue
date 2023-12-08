@@ -1,19 +1,234 @@
 <template>
-  <div class="test">
-    Helloo from About
+  <div class="main_container">
+    <div class="first_page_container">
+      <h1 class="page_header">About Me</h1>
+      <div class="table_container">
+        <div class="table_row">
+            <div class="table_title">
+              Languages
+            </div>
+            <div class="table_subtitle">
+              Speaking
+            </div>
+            <div class="table_subtitle">
+              Reading
+            </div>
+            <div class="table_subtitle">
+              Writing
+            </div>
+        </div>
+        <div class="table_row">
+            <div class="table_row_language">
+              Serbian
+            </div>
+            <div class="table_row_entry">
+              Fluent
+            </div>
+            <div class="table_row_entry">
+              Fluent
+            </div>
+            <div class="table_row_entry">
+              Fluent
+            </div>
+         </div>
+        <div class="table_row">
+          <div class="table_row_language">
+              English
+            </div>
+            <div class="table_row_entry">
+              Fluent
+            </div>
+            <div class="table_row_entry">
+              Fluent
+            </div>
+            <div class="table_row_entry">
+              Fluent
+            </div>
+        </div>
+        <div class="table_row">
+          <div class="table_row_language">
+              Greek
+            </div>
+            <div class="table_row_entry">
+              Fluent
+            </div>
+            <div class="table_row_entry">
+              Advanced
+            </div>
+            <div class="table_row_entry">
+              Advanced
+            </div>
+        </div>
+        <div class="table_row">
+          <div class="table_row_language">
+              German
+            </div>
+            <div class="table_row_entry">
+              Basic
+            </div>
+            <div class="table_row_entry">
+              Advanced
+            </div>
+            <div class="table_row_entry">
+              Advanced
+            </div>
+        </div>
+      </div>
+      <div class="education_container">
+        <div class="education_field">
+
+        </div>
+        <div class="icon_container">
+
+        </div>
+        <div class="education_field">
+
+        </div>
+      </div>
+    </div>
+    <div class="second_page_container">
+    <div class="image_container">
+      <img>
+    </div>
+    <div class="content_container">
+      <h1>
+      
+      </h1>
+      <div class="button_container">
+        <div class="menuitem"></div>
+        <div class="menuitem"></div>
+      </div>
+
+    </div>
+
+    
+     </div>
   </div>
+ 
 </template>
 
 <style>
-.test{
-  background-color: pink;
-  z-index: 3;
+/****************Styles important for core page layout***************/
+*{
+  color: black;
 }
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+template{
+  overflow-y: auto;
 }
+.main_container{
+  height: 160vh;
+  width: 100vw;
+  background: #89B4BE;
+
+  position: absolute;
+  left: 0vw;
+  top: 0vh;
+}
+.first_page_container{
+  position: absolute;
+ 
+  bottom: 60vh;
+
+  height: 100vh;
+  width: 90vw;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+ 
+}
+.second_page_container{
+  position: absolute;
+  top: 100vh;
+  bottom: 0vh;
+
+  height: 60vh;
+  width: 100vw;
+}
+.page_header{
+  position: absolute;
+  top: 1vh;
+  width: 20vw;
+  height: 10vh;
+  left: 40vw;
+}
+/****************End Of Styles important for core page layout***************/
+/****************Language Table Styles**************/
+.table_container{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  gap: 1vh;
+
+  position: absolute;
+  top: 10vh;
+}
+.table_row{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 5vw;
+}
+/********Entries**********/
+.table_title{
+width: 12vw;
+font-size: 3.5cap;
+
+font-weight: 600;
+text-decoration: underline;
+text-decoration-color: #3E93A6; ;
+}
+.table_subtitle{
+width: 10vw;
+font-size: 2.5cap;
+font-weight: bolder;
+background: #3E93A6;
+border-radius:30px 20px 30px 20px;
+box-shadow: 10px 10px 15px 2px #000;
+
+font-style: italic;
+
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.table_row_entry{
+  width:10vw;
+  font-size: 2cap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  font-weight: bold;
+
+  background: #000;
+  border-radius:30px 20px 30px 20px;
+  box-shadow: 6px 6px 10px 2px #000;
+
+  
+  color: #3E93A6;
+
+
+}
+.table_row_language{
+  font-size: 3cap;
+  margin: 2% 0% 2% 0%;
+  font-weight:bold;
+  width: 12vw;
+  
+  background: #3E93A6;
+  border-radius:30px 20px 30px 20px;
+  box-shadow: 15px 20px 15px 2px #000;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+/****************End Of Language Table Styles**************/
+
+
+
 </style>
