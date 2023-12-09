@@ -22,14 +22,15 @@ function pushTo(name){
       <div class="service_container">
           <div class="service">
             <div class="service_image_container">
-              <img src="/icon_web_dev_exp.png">
+              <img src="/icon_web_dev.png">
             </div>
             <h3 class="service_name">
                 Web Development
             </h3>
             <p class="service_description">
-              Transform your vision into an exceptional website, designed and developed from <br> start to finish
-            </p>
+              "Bring your vision to life with a stunning website, meticulously crafted <br>
+               and brought to fruition from inception to completion. Immerse your ideas <br>
+               in a digital masterpiece."            </p>
           </div>
           <div class="service">
             <div class="service_image_container">
@@ -39,7 +40,9 @@ function pushTo(name){
                 Mobile Development
             </h3>
             <p class="service_description">
-              Craft and code your unique mobile app from the very beginning,<br> turning your vision into a reality.            </p>
+              "Embark on a journey to craft and code your distinct mobile app right <br>
+               from the start, transforming your vision into a vibrant reality. Let's <br>
+                shape your ideas into a functional masterpiece            </p>
           </div>
       </div>
     </div>
@@ -188,8 +191,8 @@ template{
   overflow-y: auto;
 }
 .main_container{
-  height: 280vh;
-  width: 100vw;
+  height: 300vh;
+  width: 90vw;
   background: #89B4BE;
 
   position: absolute;
@@ -232,7 +235,7 @@ text-align: center;
 width: 90vw;
 height: 70vh;
 position: absolute;
-top: 8vh;
+top: 10vh;
 
 gap: 10vw;
 }
@@ -265,7 +268,7 @@ gap: 10vw;
 }
 .second_page_container{
   position: absolute;
-  top: 180vh;
+  top: 200vh;
   bottom: 0vh;
  background: #89B4BE;
   height: 100vh;
@@ -420,7 +423,7 @@ align-items: center;
   width: 50vw;
   position: absolute;
   
-  bottom: 50vh;
+  bottom: 60vh;
   left: 23vw;
   z-index: 2;
   display: flex;
@@ -434,7 +437,7 @@ align-items: center;
   flex-flow: row nowrap;
   justify-content: space-around;
   position: absolute;
-  bottom: -20vh;
+  bottom: -30vh;
   width: 40vw;
 }
 .menu_item{
