@@ -2,7 +2,7 @@
 import { onMounted, ref } from 'vue';
 import project from '../models/project';
 
-let headerColor = ref("#fff");
+let headerColor = ref("#000");
 const projects = [
     new project("Fit Tracker",false),
     new project('Running Tracker',true),
@@ -17,7 +17,7 @@ const projects = [
 ];
 
 onMounted(()=>{
-    headerColor.value="#fff"
+    headerColor.value="#000"
 })
 
 
@@ -53,7 +53,7 @@ onMounted(()=>{
     gap: 1vw;
 
     position: absolute;
-    top: 20vh;
+    top: 25vh;
     overflow-y: auto;
 }
 .page_header{
@@ -62,8 +62,9 @@ onMounted(()=>{
     left: 0%;
 
     width: 90vw;
-    height: 20vh;
-    font-size: 5cap;
+    height: 25vh;
+    font-size: 10cap;
+    font-weight: 700;
     
     display: flex;
     flex-flow: row nowrap;
@@ -75,13 +76,20 @@ onMounted(()=>{
     background: #89B4BE;
 
     transition: color 1s ease-in-out;
+    color: black;
 }
 .project_label{
     position: relative;
-    top: -11vh;
-    left: 4vw;
+    top: -30%;
+    
 
     font-weight: 500;
+    font-size: 2cap;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    color: white;
 
 }
 </style>

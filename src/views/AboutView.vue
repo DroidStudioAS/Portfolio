@@ -219,7 +219,7 @@ template{
   align-items: center;
 
   font-size: 5cap;
-  font-weight: 700;
+  font-weight: 400;
 
  
 }
@@ -228,6 +228,7 @@ template{
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  
 
 }
 .service_container{
@@ -241,7 +242,7 @@ height: 70vh;
 position: absolute;
 top: 10vh;
 
-gap: 10vw;
+gap: 3vw;
 }
 .service_image_container{
   height: 50vh;
@@ -251,9 +252,11 @@ gap: 10vw;
 }
 .service_name{
   font-size: 4cap;
-  font-weight: 700;
+  font-weight: 600;
 }
 .service_description{
+  font-size: 1.5cap;
+  font-style: italic;
  font-weight: 500; 
 }
 
@@ -425,6 +428,8 @@ align-items: center;
   display: flex;
   justify-content: center;
   align-items: center;
+
+
 }
 .comp_image{
   width: 60vw;
@@ -434,21 +439,22 @@ align-items: center;
   width: 50vw;
   position: absolute;
   
-  bottom: 60vh;
+  bottom: 50vh;
   left: 23vw;
   z-index: 2;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   text-align: center;
-  justify-content: center;
+  justify-content: end;
 }
 .button_container{
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
+  align-items: end;
   position: absolute;
-  bottom: -30vh;
+  bottom: -20vh;
   width: 40vw;
 }
 .menu_item{
@@ -468,6 +474,33 @@ align-items: center;
   text-align: center;
 }
 /****************End Of Second Page Item Styles***************/
+
+/**************Media Querys Start*****************/
+
+@media (max-width: 450px){
+
+}
+
+/* Small Devices (Phones and Small Tablets) */
+@media (min-width:450px) and  (max-width: 767px) {
+
+}
+
+/* Medium Devices (Tablets) OK */
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/* Large Devices (Desktops and Laptops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* Extra Large Devices (Large Desktops and TVs) */
+@media (min-width: 1200px) {
+  /* CSS for extra large devices */
+  
+
+}
+/**************Media Querys End*****************/
 
 
 

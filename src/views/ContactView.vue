@@ -3,7 +3,7 @@
 </script>
 <template>
 <div class="page_container">
-    <h1>
+    <h1 class="page_header">
         Contact
     </h1>
 
@@ -58,7 +58,7 @@
 .main_container{
     height: 80vh;
     position: absolute;
-    top: 10vh;
+    top: 20vh;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -86,7 +86,7 @@
     position: absolute;
     bottom: 0vh;
     width: 90vw;
-    height: 20vh;
+    height: 15vh;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
@@ -126,6 +126,8 @@
 
     display: flex;
   text-align: center;
+
+  font-size: large;
 }
 .subject_container input{
     height: 6vh;
@@ -133,6 +135,8 @@
     border-radius: 0px 0px 15px 15px;
 
    text-align: center;
+   font-size: large;
+
 }
 .name{
     height: 6vh;
@@ -140,6 +144,8 @@
     border-radius: 0px 0px 15px 0px;
 
     text-align: center;
+    font-size: large;
+
 }
 .email{
     height: 6vh;
@@ -147,6 +153,8 @@
     border-radius: 0px 0px 0px 15px;
 
     text-align: center;
+    font-size: large;
+
 }
 .socials_container img{
     margin-top: 2%;
