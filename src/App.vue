@@ -96,10 +96,10 @@ onMounted(()=>{
   z-index: 100;
     background-color: #4E7896;
 
-    position: absolute;
+    position: fixed;
     top: 0%;
     right: 0%;
-    bottom: 0%;
+    
 
     height: 100vh;
     width: 10vw;
