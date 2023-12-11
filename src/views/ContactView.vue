@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="subject_container">
-        <input placeholder="Subject" type="text">
+        <input class="subject" placeholder="Subject" type="text">
     </div>
 
 </form>
@@ -77,10 +77,8 @@
 .subject_container{
     position: absolute;
     top: 56vh;
+    width: 20vw;
     height: 5vh;
-
-
-
 }
 .socials_container{
     position: absolute;
@@ -98,6 +96,7 @@
 
 
 /***********Styles crucial for page layout End***********/
+
 .icon_container{
     width: 12vw;
     height: 20vh;
@@ -113,6 +112,10 @@
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+}
+.icon_container img{
+    width: 10vw;
+    height: 15vh;
 }
 .message_field{
     padding-top: 11vh;
@@ -160,5 +163,52 @@
     margin-top: 2%;
     height:10vh;
     width: 5vw;
+}
+@media (min-width:767px) and (max-width:991px){
+    .main_container{
+        width: 85vw;
+    }
+    .page_header{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 85vw;
+        left: 0;
+    }
+ 
+
+}
+@media (max-width:766px){
+
+    .main_container{
+        width: 80vw;
+    }
+    .page_header{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 80vw;
+        left: 0;
+    }
+    .socials_container{
+        width: 80vw;
+    }
+    .socials_container img{
+    margin-top: 2%;
+    height:10vh;
+    width: 15vw;
+}
+.email{
+    font-size: 1.2cap;
+}
+.name{
+    font-size: 1.2cap;
+}
+.subject_container input{
+    font-size: 1.1cap;
+}
+
 }
 </style>
