@@ -205,19 +205,23 @@ template{
   align-content: center;
 
   position: absolute;
-  top:10vh;
+  top:20vh;
   height:80vh;
   width: 90vw;
 
 }
 .wid_header{
-  width: 20vw;
+  width: 90vw;
   height: 10vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   font-size: 5cap;
   font-weight: 700;
 
-  position: absolute;
-  left: 36vw; 
+ 
 }
 .service{
   display: flex;
@@ -285,10 +289,17 @@ gap: 10vw;
 }
 .page_header{
   position: absolute;
-  top: 0vh;
-  width: 20vw;
+  top: 3vh;
+  width: 90vw;
   height: 10vh;
-  left: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+
+  font-size: 9cap ;
+  font-weight: 700;
 }
 .education_container{
   position: absolute;
