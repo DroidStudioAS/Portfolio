@@ -233,7 +233,7 @@ template{
 }
 .service_container{
 display: flex;
-flex-flow: row wrap;
+flex-flow: row nowrap;
 justify-content: center;
 align-items: center;
 text-align: center;
@@ -333,6 +333,7 @@ gap: 3vw;
   gap: 5vw;
 }
 /********Entries**********/
+
 .table_title{
 width: 12vw;
 font-size: 3.5cap;
@@ -487,11 +488,7 @@ align-items: center;
 }
 
 /* Medium Devices (Tablets) OK */
-@media (min-width: 768px) and (max-width: 991px) {
-}
-
-/* Large Devices (Desktops and Laptops) */
-@media (min-width: 992px) and (max-width: 1166px) {
+@media (min-width: 768px) and (max-width: 992px) {
   .what_i_do_container{
    height: 160vh;
   }
@@ -499,8 +496,79 @@ align-items: center;
     top: 170vh;
   }
   .second_page_container{
+    top: 290vh;
+  }
+  .service_container{
+    flex-flow: row wrap;
+  }
+  .content_container{
+    font-size: 1.2cap;
+  }
+  .education_container{
+    text-align: center;
+  }
+  /**********Table***********/
+
+.table_title{
+width: 20vw;
+font-size: 4cap;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.table_subtitle{
+width: 15vw;
+font-size: 2cap;
+}
+.table_row_entry{
+font-size: 1.5cap;
+width: 15vw;
+}
+.table_row_language{
+  width: 20vw;
+ font-size: 2cap;
+}
+}
+
+/* Large Devices (Desktops and Laptops) */
+@media (min-width: 992px) and (max-width: 1166px) {
+  .what_i_do_container{
+   height: 160vh;
+  }
+  .service_container{
+    flex-flow: row wrap;
+  }
+  .first_page_container{
+    top: 170vh;
+  }
+  .second_page_container{
     top: 270vh;
   }
+   /**********Table***********/
+
+.table_title{
+width: 20vw;
+font-size: 5cap;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.table_subtitle{
+width: 15vw;
+font-size: 2cap;
+}
+.table_row_entry{
+font-size: 1.5cap;
+width: 15vw;
+}
+.table_row_language{
+  width: 20vw;
+ font-size: 2cap;
+}
 }
 
 /* Extra Large Devices (Large Desktops and TVs) */
