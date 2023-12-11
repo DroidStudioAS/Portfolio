@@ -491,7 +491,16 @@ align-items: center;
 }
 
 /* Large Devices (Desktops and Laptops) */
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1166px) {
+  .what_i_do_container{
+   height: 160vh;
+  }
+  .first_page_container{
+    top: 170vh;
+  }
+  .second_page_container{
+    top: 270vh;
+  }
 }
 
 /* Extra Large Devices (Large Desktops and TVs) */
