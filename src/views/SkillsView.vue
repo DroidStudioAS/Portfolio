@@ -73,7 +73,7 @@ function refreshList(int){
     background: #89B4BE;
     position: absolute;
     top: 0vh;
-    height: 200vh;
+    height: 220vh;
     width: 90vw;
 
     display: flex;
@@ -161,6 +161,88 @@ function refreshList(int){
     height: fit-content;
     width: fit-content;
 }
+
+/*********Media Queries Start*******/
+/**************Media Queries Start*****************/
+/*
+15 vw(width>767 && width<991)
+20 vw (width<767)
+else 10vw */
+@media (max-width: 450px){
+    .main_container{
+    height: 395vh;
+ }
+ .icon_container{
+    width: 80vw;
+ }
+ .icon{
+    width:min-content ;
+ }
+ .skills_header{
+    font-size: 6cap;
+ }
+ .skills_button{
+    font-size: 0.8cap;
+ }
+ .skills_list_container{
+    top: 20vh;
+ }
+ .skill{
+    font-size:1.5cap ;
+ }
+ 
+ 
+}
+
+/* Small Devices (Phones and Small Tablets) */
+@media (min-width:450px) and  (max-width: 767px) {
+    .main_container{
+    height: 322vh;
+ }
+ .icon_container{
+    width: 80vw;
+ }
+
+ .skills_header{
+    font-size: 6cap;
+ }
+ .skills_button{
+    font-size: 1.1cap;
+ }
+
+ .skills_list_container{
+    top: 20vh;
+ }
+}
+
+
+/* Medium Devices (Tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .main_container{
+    height: 260vh;
+ }
+ .icon_container{
+    width: 85vw;
+ }
+ 
+}
+
+/* Large Devices (Desktops and Laptops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+ .main_container{
+    height: 260vh;
+ }
+}
+
+/* Extra Large Devices (Large Desktops and TVs) */
+@media (min-width: 1200px) {
+  /* Styles for devices wider than 1200px */
+  /* ... */
+}
+
+
+
+
 
 
 
