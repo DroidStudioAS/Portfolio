@@ -48,7 +48,7 @@ onMounted(()=>{
 <style scoped>
 
 .main_container{
-    height: 100vh;
+    height: 120vh;
     width: 90vw;
     display: flex;
     flex-flow: row wrap;
@@ -57,7 +57,6 @@ onMounted(()=>{
 
     position: absolute;
     top: 0vh;
-    overflow-y: auto;
 }
 .project_container{
     position: relative;
@@ -104,13 +103,15 @@ onMounted(()=>{
     align-items: center;
 
     font-weight: 500;
-    width: 15vw;
-    font-size: 1.5cap;
+    width: 30vw;
+    font-size: 3cap;
     color: white;
     width: 10vw;
     position: absolute;
-    bottom: 10vh;
-    left: 5vw;
+    bottom: 50%;
+    top: 50%;
+    
+    
 
    
 }
@@ -128,14 +129,19 @@ else 10vw */
         font-size: 5cap;
     }
     .project_label{
-        font-size: 0.8cap;
+        font-size: 1cap;
     }
+ 
 }
 @media (min-width:767px) and (max-width:991px){
     .main_container{
         width: 85vw;
         font-size: 1cap;
     }
+    .project_label{
+        font-size: 1cap;
+    }
+
    
 }
 
