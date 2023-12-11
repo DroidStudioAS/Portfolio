@@ -478,17 +478,206 @@ align-items: center;
 
 /**************Media Querys Start*****************/
 
-@media (max-width: 450px){
+@media (max-width: 453px){
+  .main_container{
+    width: 80vw;
+    height: 350vh;
+  }
+  .what_i_do_container{
+   height: 160vh;
+  }
+  .first_page_container{
+    
+    top: 200vh;
+  }
+  .second_page_container{
+    top: 330vh;
+    width: 80vw;
+  }
+  .service_container{
+    flex-flow: row wrap;
+  }
+  .table_container{
+    top: 9vh;
+    left: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .education_container{
+    flex-flow: column nowrap;
+    gap: 2vh;
+  }
+  .school_name{
+    font-size: 2cap;
+  }
+  .school_title{
+    font-size: 1.5cap;
+  }
+  .school_department{
+    font-size: 1.2cap;
+  }
+  .content_container{
+    font-size: 0.9cap;
+    bottom: 40vh;
+  }
+  .education_container{
+    text-align: center;
+    top: 60vh;
+  }
 
+  .page_header{
+    font-size: 4cap;
+  }
+  .wid_header{
+    font-size: 3cap;
+  }
+.service_image_container{
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+}
+.service_container img{
+  width: 60vw;
+}
+.service_name{
+  width: 60vw;
+  font-size: 3cap;
+}
+.service_description{
+  width: 60vw;
+}
+
+
+  /**********Table***********/
+.table_title{
+width: 15vw;
+font-size: 1.5cap;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.table_subtitle{
+width: 15vw;
+font-size: 1cap;
+}
+.table_row_entry{
+font-size: 1cap;
+width: 15vw;
+}
+.table_row_language{
+  width: 15vw;
+ font-size: 1cap;
+
+ display: flex;
+}
+.button_container{
+  width: 60vw;
+  bottom: -10vh;
+  justify-content: space-around;
+}
+.menu_item{
+  width: 20vw;
+}
 }
 
 /* Small Devices (Phones and Small Tablets) */
-@media (min-width:450px) and  (max-width: 767px) {
+@media (min-width:454px) and  (max-width: 767px) {
+  .main_container{
+    width: 80vw;
+    height: 350vh;
+  }
+  .what_i_do_container{
+   height: 160vh;
+  }
+  .first_page_container{
+    
+    top: 200vh;
+  }
+  .second_page_container{
+    top: 335vh;
+    width: 80vw;
+  }
+  .service_container{
+    flex-flow: row wrap;
+  }
+  .table_container{
+    top: 5vh;
+    left: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .education_container{
+    flex-flow: column nowrap;
+    gap: 2vh;
+  }
+  .school_department{
+    font-size: 1.5cap;
+  }
+  .content_container{
+    font-size: 1cap;
+  }
+  .education_container{
+    text-align: center;
+    top: 60vh;
+  }
 
+  .page_header{
+    font-size: 5cap;
+  }
+.service_image_container{
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+}
+.service_container img{
+  width: 60vw;
+}
+.service_name{
+  width: 60vw;
+}
+.service_description{
+  width: 60vw;
+}
+
+
+  /**********Table***********/
+.table_title{
+width: 15vw;
+font-size: 2cap;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.table_subtitle{
+width: 15vw;
+font-size: 1.5cap;
+}
+.table_row_entry{
+font-size: 1cap;
+width: 15vw;
+}
+.table_row_language{
+  width: 15vw;
+ font-size: 1.5cap;
+
+ display: flex;
+
+
+
+}
 }
 
 /* Medium Devices (Tablets) OK */
 @media (min-width: 768px) and (max-width: 992px) {
+  .main_container{
+    height: 315vh;
+  }
   .what_i_do_container{
    height: 160vh;
   }
@@ -496,7 +685,7 @@ align-items: center;
     top: 170vh;
   }
   .second_page_container{
-    top: 290vh;
+    top: 312vh;
   }
   .service_container{
     flex-flow: row wrap;
@@ -506,9 +695,10 @@ align-items: center;
   }
   .education_container{
     text-align: center;
+    flex-flow: column nowrap;
   }
+ 
   /**********Table***********/
-
 .table_title{
 width: 20vw;
 font-size: 4cap;
