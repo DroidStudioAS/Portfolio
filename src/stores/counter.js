@@ -5,7 +5,7 @@ export const useStore = defineStore('store', {
   state: () => ({
     active_page: '',
     menu_height: '100vh',
-    backend_skills: ["node.JS", "Spring Boot", "PHP", "Java", "MySQL", "Postman"].sort(),
+    backend_skills: ["Node.JS", "Spring Boot", "PHP", "Java", "MySQL", "Postman"].sort(),
     frontend_skills: ["HTML5", "CSS", "JavaScript", "Vue.JS", "WordPress", "GSAP"].sort(),
     mobile_skills: ["Android Studio", "Java", "SQLite", "MySQL", "XML"].sort(),
     skills_in_focus: []
@@ -16,7 +16,7 @@ export const useStore = defineStore('store', {
       if (name === 'about') {
         this.setMh('300vh');
       } else if (name === 'skills') {
-        this.setMh('120vh');
+        this.setMh('185vh');
       } else {
         this.setMh('100vh');
       }

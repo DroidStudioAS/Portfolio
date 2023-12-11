@@ -31,7 +31,16 @@ let icons = ref(
     '/icon_html.png',
     '/icon_java.png',
     '/icon_php.png',
-    '/icon_css.png'
+    '/icon_css.png',
+    '/icon_skill_android.png/',
+    '/icon_skill_gsap.png/',
+    '/icon_skill_mtsql.png/',
+    '/icon_skill_njs.png/',
+    '/icon_skill_postman.png/',
+    '/icon_skill_sb.png/',
+    '/icon_skill_sqlite.png/',
+    '/icon_skill_wp.png/',
+    'icon_skill_vue.png'
     ]
     )
 function updateSkills() {
@@ -59,12 +68,13 @@ function refreshList(int){
 </script>
 <style scoped>
 /**************** Begining of Styles Crucial For Layout*****************/
+
 .main_container{
     background: #89B4BE;
     position: absolute;
     top: 0vh;
-    height: 120vh;
-    width: 100vw;
+    height: 185vh;
+    width: 90vw;
 
     display: flex;
     flex-flow: row wrap;
@@ -82,7 +92,7 @@ function refreshList(int){
     flex-flow: column wrap;
 
     height: 80vh;
-    width: 100vw;
+    width: 30vw;
 
     position: absolute;
     top: 25vh;
@@ -93,7 +103,8 @@ function refreshList(int){
 }
 .icon_container{
     position: absolute;
-    width: 90vw;
+    height: 90vh;
+    width: 88vw;
     top: 90vh;
     left: 0vw;
 
@@ -102,6 +113,8 @@ function refreshList(int){
     justify-content: space-around;
     align-items: center;
     gap: 3vw;
+    
+
   
 }
 

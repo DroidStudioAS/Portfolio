@@ -24,13 +24,18 @@
     <div class="subject_container">
         <input placeholder="Subject" type="text">
     </div>
-    
-
   </div>
+  <div class="socials_container">
+    <img src="/icon_social_linkedin.png"/>
+    <img src="/icon_social_mail.png"/>
+  </div>
+
 </div>
 </template>
 <style scoped>
 /***********Styles crucial for page layout Start***********/
+
+
 .page_container{
     position: absolute;
     top: 0vh;
@@ -42,13 +47,14 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+
+    
 }
 
 .main_container{
     height: 80vh;
     position: absolute;
-    top: 20vh;
-
+    top: 10vh;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -65,23 +71,20 @@
     top: 56vh;
     height: 5vh;
 }
+.socials_container{
+    position: absolute;
+    bottom: 0vh;
+    width: 90vw;
+    height: 20vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-content: center;
 
-.subject_container input{
-    height: 6vh;
-    width: 20vw;
-    border-radius: 0px 0px 15px 15px;
+  
 }
-.name{
-    height: 6vh;
-    width: 20vw;
-    border-radius: 0px 0px 15px 0px;
-}
-.email{
-    height: 6vh;
-    width: 20vw;
-    border-radius: 0px 0px 0px 15px;
 
-}
+
 
 /***********Styles crucial for page layout End***********/
 .icon_container{
@@ -91,6 +94,9 @@
     background: #fff;
 
     border-radius: 50%;
+    border: 15px 15px 0px 0px;
+    border-style: solid;
+    border-color: #000;
 
     display: flex;
     flex-flow: column nowrap;
@@ -106,5 +112,24 @@
 
     border-radius:30px 30px 0px 0px;
 }
-
+.subject_container input{
+    height: 6vh;
+    width: 20vw;
+    border-radius: 0px 0px 15px 15px;
+}
+.name{
+    height: 6vh;
+    width: 20vw;
+    border-radius: 0px 0px 15px 0px;
+}
+.email{
+    height: 6vh;
+    width: 20vw;
+    border-radius: 0px 0px 0px 15px;
+}
+.socials_container img{
+    margin-top: 2%;
+    height:10vh;
+    width: 5vw;
+}
 </style>
