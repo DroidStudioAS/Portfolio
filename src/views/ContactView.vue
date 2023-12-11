@@ -13,7 +13,7 @@
         <img src="/icon_mail.png">
     </div>
     <div class="message_field">
-        <input placeholder="Feel Free To Message Us About Any Questions You Have" class="message_field" type="text_field">
+        <textarea placeholder="Feel Free To Message Us About Any Questions You Have" class="message_field" type="text_field"/>
     </div>
     <div class="contact_container">
         <div class="e_mail_container">
@@ -62,10 +62,14 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+
+    word-wrap: break-word;
 }
 .contact_container{
     display: flex;
     flex-flow: row nowrap;
+
+   
     position: absolute;
     top: 50vh;
 }
@@ -74,6 +78,9 @@
     position: absolute;
     top: 56vh;
     height: 5vh;
+
+
+
 }
 .socials_container{
     position: absolute;
@@ -108,6 +115,7 @@
     justify-content: center;
 }
 .message_field{
+    padding-top: 11vh;
     position: absolute;
     top: 5vh;
 
@@ -115,21 +123,30 @@
     height: 40vh;
 
     border-radius:30px 30px 0px 0px;
+
+    display: flex;
+  text-align: center;
 }
 .subject_container input{
     height: 6vh;
     width: 20vw;
     border-radius: 0px 0px 15px 15px;
+
+   text-align: center;
 }
 .name{
     height: 6vh;
     width: 20vw;
     border-radius: 0px 0px 15px 0px;
+
+    text-align: center;
 }
 .email{
     height: 6vh;
     width: 20vw;
     border-radius: 0px 0px 0px 15px;
+
+    text-align: center;
 }
 .socials_container img{
     margin-top: 2%;
