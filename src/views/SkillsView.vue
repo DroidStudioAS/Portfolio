@@ -73,7 +73,7 @@ function refreshList(int){
     background: #89B4BE;
     position: absolute;
     top: 0vh;
-    height: 185vh;
+    height: 200vh;
     width: 90vw;
 
     display: flex;
@@ -105,7 +105,7 @@ function refreshList(int){
     position: absolute;
     height: 90vh;
     width: 88vw;
-    top: 90vh;
+    top: 100vh;
     left: 0vw;
 
     display: flex;

@@ -6,7 +6,9 @@
     <h1>
         Contact
     </h1>
-  <div class="main_container">
+
+  <form class="main_container">
+    
     <div class="icon_container">
         <img src="/icon_mail.png">
     </div>
@@ -24,7 +26,9 @@
     <div class="subject_container">
         <input placeholder="Subject" type="text">
     </div>
-  </div>
+
+</form>
+
   <div class="socials_container">
     <img src="/icon_social_linkedin.png"/>
     <img src="/icon_social_mail.png"/>

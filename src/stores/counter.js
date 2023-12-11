@@ -16,7 +16,7 @@ export const useStore = defineStore('store', {
       if (name === 'about') {
         this.setMh('300vh');
       } else if (name === 'skills') {
-        this.setMh('185vh');
+        this.setMh('200vh');
       } else {
         this.setMh('100vh');
       }
