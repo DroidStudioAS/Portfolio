@@ -4,7 +4,7 @@ import project from '../models/project';
 
 let headerColor = ref("#000");
 const projects = [
-    new project("Fit Tracker",false),
+    new project('Fit Tracker',false),
     new project('Running Tracker',true),
     new project('Infinite Swipe',false),
     new project('Flying Donut',true),
@@ -23,21 +23,24 @@ onMounted(()=>{
 
 </script>
 <template>
-    <h1 class="page_header" :style="{color:headerColor}">
+ 
+    <div class="main_container">
+        <h1 class="page_header" :style="{color:headerColor}">
         Projects
     </h1>
-    <div class="main_container">
-        <div v-for="project in projects" :key="project.name" >
-        <div v-if="project.even===true">
+        <div v-for="project in projects" :key="project.name" 
+        class="project_container">
+        <div v-if="project.even===true"
+        class="project">
             <img src="/icon_folder_even.png">
         </div>
-        <div v-else>
+        <div v-else class="project">
             <img src="/icon_folder_uneven.png">
         </div>
         <div class="project_label">
         {{ project.name }}
         </div>
-
+    
     </div>
 </div>
 
@@ -45,7 +48,7 @@ onMounted(()=>{
 <style scoped>
 
 .main_container{
-    height: 80vh;
+    height: 100vh;
     width: 90vw;
     display: flex;
     flex-flow: row wrap;
@@ -53,9 +56,25 @@ onMounted(()=>{
     gap: 1vw;
 
     position: absolute;
-    top: 25vh;
+    top: 0vh;
     overflow-y: auto;
 }
+.project_container{
+    position: relative;
+    top: 25vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center; 
+    align-items: center;
+
+    
+}
+.project{
+    width: 20vw;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
 .page_header{
     position: absolute;
     top: 0%;
@@ -78,18 +97,46 @@ onMounted(()=>{
     transition: color 1s ease-in-out;
     color: black;
 }
-.project_label{
-    position: relative;
-    top: -30%;
-    
 
-    font-weight: 500;
-    font-size: 2cap;
+.project_label{
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
 
+    font-weight: 500;
+    width: 15vw;
+    font-size: 1.5cap;
     color: white;
+    width: 10vw;
+    position: absolute;
+    bottom: 10vh;
+    left: 5vw;
 
+   
 }
+
+    /*
+15 vw(width>767 && width<991)
+20 vw (width<767)
+else 10vw */
+
+@media (max-width:767px){
+    .main_container{
+       width: 80vw;
+    }
+    .page_header{
+        font-size: 5cap;
+    }
+    .project_label{
+        font-size: 0.8cap;
+    }
+}
+@media (min-width:767px) and (max-width:991px){
+    .main_container{
+        width: 85vw;
+        font-size: 1cap;
+    }
+   
+}
+
 </style>
