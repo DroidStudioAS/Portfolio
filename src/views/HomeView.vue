@@ -160,36 +160,22 @@ gap: 5%;
   .main_container{
   width: 80vw;
 }
-.navigation_container{
-  width: 20vw;
-}
-
-   .item_container{
-    width: 30vw;
-   }
-   .menu_item{
-    width: 20vw;
-
-   }
-  .menu_but{
-    width: 20vw;
-  }
-  
-  .menu_but_container{
-    width: 20vw;
-  }
   .image_container{
     z-index: 0;
     height: 55vh;
-    width: 60vw;
-    left: 5vw;
+    width: 80vw;
+    
+    left: 9vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
   }
   .home_image{
     height: 55vh;
-    width:  60vw;
-    position: absolute;
-    right: 0vw;
+    width:  80vw;
+   
   }
   .header_container{
     z-index: 1;
@@ -206,6 +192,7 @@ gap: 5%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    align-items: center;
     gap: 2%;
     }
   .title_end{

@@ -27,20 +27,20 @@ import { useStore } from "../stores/counter";
 const store = useStore();
 let skills = ref([]);
 let icons = ref(
-    ['/icon_js.png',
-    '/icon_html.png',
-    '/icon_java.png',
-    '/icon_php.png',
-    '/icon_css.png',
-    '/icon_skill_android.png/',
-    '/icon_skill_gsap.png/',
-    '/icon_skill_mtsql.png/',
-    '/icon_skill_njs.png/',
-    '/icon_skill_postman.png/',
-    '/icon_skill_sb.png/',
-    '/icon_skill_sqlite.png/',
-    '/icon_skill_wp.png/',
-    'icon_skill_vue.png'
+    ['./icon_js.png',
+    './icon_html.png',
+    './icon_java.png',
+    './icon_php.png',
+    './icon_css.png',
+    './icon_skill_android.png',
+    './icon_skill_gsap.png',
+    './icon_skill_mtsql.png',
+    './icon_skill_njs.png',
+    './icon_skill_postman.png',
+    './icon_skill_sb.png',
+    './icon_skill_sqlite.png',
+    './icon_skill_wp.png',
+    './icon_skill_vue.png'
     ]
     )
 function updateSkills() {
