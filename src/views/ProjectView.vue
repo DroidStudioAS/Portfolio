@@ -28,11 +28,13 @@ onMounted(()=>{
     </h1>
     <div class="main_container">
         <div v-for="project in projects" :key="project.name" >
-        <div v-if="project.even===true">
+        <div v-if="project.even===true"
+        class="project_image_containet">
             <img src="/icon_folder_even.png">
         </div>
-        <div v-else>
-            <img src="/icon_folder_uneven.png">
+        <div v-else
+        class="project_image_containet">           
+         <img src="/icon_folder_uneven.png">
         </div>
         <div class="project_label">
         {{ project.name }}
@@ -78,18 +80,48 @@ onMounted(()=>{
     transition: color 1s ease-in-out;
     color: black;
 }
+.project_image_container{
+height: 20vh;
+width: 20vw;
+}
 .project_label{
     position: relative;
-    top: -30%;
-    
-
+    width:5vw ;
+    height: 5vh;
+    bottom: 12vh;
+    left:5vw ;
+   
+   
     font-weight: 500;
     font-size: 2cap;
     display: flex;
-    justify-content: center;
-    align-items: start;
+    justify-content: start;
+    align-items: center;
 
     color: white;
-
+}
+@media (min-width:767px) and (max-width:991px){
+    .main_container{
+        width: 85vw;
+    }
+    .page_header{
+        width:85vw ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 6cap;
+    }
+}
+@media (max-width:766px){
+    .page_header{
+        width:80vw ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 6cap;
+    }
+    .main_container{
+        width: 80vw;
+    }
 }
 </style>
