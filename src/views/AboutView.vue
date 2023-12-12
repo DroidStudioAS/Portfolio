@@ -174,6 +174,9 @@ function pushTo(name){
     <div class="image_container">
       <img class="comp_image" src="/back_computer.png">
     </div>
+    <div class="mobile_frame">
+      <img src="/icon_mobile_frame.png">
+    </div>
     
 
     
@@ -290,6 +293,26 @@ gap: 3vw;
 
 
 }
+.mobile_frame{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 80vw;
+  
+  position: absolute;
+  top: 0vh;
+
+
+  left: 5vw;
+
+
+  visibility: hidden;
+}
+
+.mobile_frame img {
+  width: 100vw;
+}
 .page_header{
   position: absolute;
   top: 3vh;
@@ -307,11 +330,12 @@ gap: 3vw;
 .education_container{
   position: absolute;
   top: 74vh ;
-  width: 90vw;
+  width: 80vw;
 
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
+  
 }
 /****************End Of Styles important for core page layout***************/
 /****************Language Table Styles**************/
@@ -507,6 +531,8 @@ align-items: center;
   .education_container{
     flex-flow: column nowrap;
     gap: 2vh;
+    align-items: center;
+    width: 80vw;
   }
   .school_name{
     font-size: 2cap;
@@ -518,8 +544,7 @@ align-items: center;
     font-size: 1.2cap;
   }
   .content_container{
-    font-size: 0.9cap;
-    bottom: 40vh;
+   visibility: hidden;
   }
   .education_container{
     text-align: center;
@@ -546,6 +571,13 @@ align-items: center;
 }
 .service_description{
   width: 60vw;
+}
+/*********Toggle Frames************/
+.image_container{
+  visibility: hidden;
+}
+.mobile_frame{
+  visibility: visible;
 }
 
 
@@ -618,7 +650,7 @@ width: 15vw;
     font-size: 1.5cap;
   }
   .content_container{
-    font-size: 1cap;
+   visibility: hidden;
   }
   .education_container{
     text-align: center;
@@ -670,6 +702,12 @@ width: 15vw;
 
 
 
+}
+.image_container{
+  visibility: hidden;
+}
+.mobile_frame{
+  visibility: visible;
 }
 }
 
