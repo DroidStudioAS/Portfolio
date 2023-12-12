@@ -168,7 +168,6 @@ onMounted(()=>{
 .slide-leave-active {
   transition: transform 0.3s ease-in-out;
 }
-
 .slide-enter-from,
 .slide-leave-to {
   transform: translateX(100%);
@@ -178,4 +177,19 @@ onMounted(()=>{
   transition: width 0.3s ease-in-out;
 }
 /**************Navigation Transitions End*****************/
+/*********************@media start***********************/
+@media (min-width:450px) and (max-width:767px){
+  .menu_but_container{
+    width: 20vw;    
+  }
+  .menu_but{
+    width: 18vw;
+  }
+  .item_container{
+    width: 40vw;
+  }
+  .menu_item{
+    width: 30vw;
+  }
+}
 </style>
