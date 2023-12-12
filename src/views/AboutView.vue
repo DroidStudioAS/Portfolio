@@ -176,6 +176,10 @@ function pushTo(name){
     </div>
     <div class="mobile_frame">
       <img src="/icon_mobile_frame.png">
+      <div class="mobile_button_container">
+        <div @click="pushTo('skills')" class="menu_item">Skills</div>
+        <div @click="pushTo('projects')" class="menu_item">Projects</div>
+      </div>
     </div>
     
 
@@ -281,7 +285,7 @@ gap: 3vw;
   top: 200vh;
   bottom: 0vh;
  background: #89B4BE;
-  height: 100vh;
+  height: 130vh;
   width: 90vw;
   padding-top: 5%;
  padding-bottom: -10%;
@@ -295,6 +299,7 @@ gap: 3vw;
 }
 .mobile_frame{
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 
@@ -308,6 +313,12 @@ gap: 3vw;
 
 
   visibility: hidden;
+}
+.mobile_button_container{
+  display: flex;
+  flex-flow:row nowrap ;
+  position: absolute;
+  bottom: 5vh;
 }
 
 .mobile_frame img {
@@ -464,7 +475,7 @@ align-items: center;
   width: 50vw;
   position: absolute;
   
-  bottom: 50vh;
+  bottom: 60vh;
   left: 23vw;
   z-index: 2;
   display: flex;
@@ -479,7 +490,7 @@ align-items: center;
   justify-content: space-around;
   align-items: end;
   position: absolute;
-  bottom: -20vh;
+  bottom: -13vh;
   width: 40vw;
 }
 .menu_item{
@@ -500,8 +511,12 @@ align-items: center;
 }
 /****************End Of Second Page Item Styles***************/
 
-/**************Media Querys Start*****************/
 
+
+
+
+
+/**************Media Querys Start*****************/
 @media (max-width: 453px){
   .main_container{
     width: 80vw;
@@ -605,15 +620,23 @@ width: 15vw;
 
  display: flex;
 }
+/*******table end***** */
 .button_container{
   width: 60vw;
   bottom: -10vh;
   justify-content: space-around;
 }
+.mobile_button_container{
+  width: 40vw;
+  justify-content: space-evenly;
+}
 .menu_item{
-  width: 20vw;
+  width: 15vw;
+  height: 8vh;
+  font-size: 1.2cap;
 }
 }
+
 
 /* Small Devices (Phones and Small Tablets) */
 @media (min-width:454px) and  (max-width: 767px) {
@@ -673,6 +696,15 @@ width: 15vw;
 }
 .service_description{
   width: 60vw;
+}
+.mobile_button_container{
+  width: 40vw;
+  bottom: 7vh;
+  justify-content: space-evenly;
+}
+.menu_item{
+  width: 20vw;
+  font-size: 2cap;
 }
 
 
@@ -735,6 +767,11 @@ width: 15vw;
     text-align: center;
     flex-flow: column nowrap;
   }
+  .mobile_frame{
+    visibility: hidden;
+    position: absolute;
+    top: -110%;
+  }
  
   /**********Table***********/
 .table_title{
@@ -774,6 +811,11 @@ width: 15vw;
   .second_page_container{
     top: 270vh;
   }
+  .mobile_frame{
+    visibility: hidden;
+    position: absolute;
+    top: -110%;
+  }
    /**********Table***********/
 
 .table_title{
@@ -802,6 +844,11 @@ width: 15vw;
 /* Extra Large Devices (Large Desktops and TVs) */
 @media (min-width: 1200px) {
   /* CSS for extra large devices */
+  .mobile_frame{
+    visibility: hidden;
+    position: absolute;
+    top: -110%;
+  }
   
 
 }

@@ -175,6 +175,7 @@ gap: 5%;
   .home_image{
     height: 55vh;
     width:  80vw;
+    visibility: visible;
    
   }
   .header_container{
@@ -233,6 +234,7 @@ gap: 5%;
   .home_image{
     height: 65vh;
     width:  80vw;
+    visibility: visible;
   }
   .header_container{
     z-index: 1;
