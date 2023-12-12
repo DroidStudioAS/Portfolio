@@ -99,8 +99,7 @@ onMounted(()=>{
 <style scoped>
 /***************Navigation Styles Start******************/
 .navigation_container{
-  z-index: 100;
-    background-color: #4E7896;
+    background-color: #89B4BE;
 
     position: fixed;
     top: 0%;
@@ -113,6 +112,9 @@ onMounted(()=>{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+
+    border: none;
+    border-style: none;
   }
   .menu_but_container{
     width:10vw;
@@ -176,8 +178,8 @@ align-items: center;
 justify-content: center;
 
 position: absolute;
-top: 1vh;
-right: 0vw;
+top: 2vh;
+right: 1vw;
 z-index: -1;
 
 visibility: hidden;
@@ -221,6 +223,10 @@ visibility: hidden;
   }
 }
 @media(max-width:450px){
+
+  .navigation_container{
+    z-index: 10;
+  }
   .menu_item{
     width: 30vw;
   }

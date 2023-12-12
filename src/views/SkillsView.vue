@@ -77,7 +77,7 @@ function refreshList(int){
     width: 90vw;
 
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
 }
@@ -97,11 +97,14 @@ function refreshList(int){
 }
 .skills_container{
     position: absolute;
-    top: 20vh;
+    top: 20
+    vh;
     left:10vw;
     width: 90vw;
     display: flex;
     flex-flow: row nowrap;
+
+    
 
     justify-content: start;
     align-items: start;
@@ -110,13 +113,11 @@ function refreshList(int){
 .skills_list_container{
     display: flex;
     flex-flow: column wrap;
-    
-
-
+    justify-content: start;
+    align-items: start;
     width: 20vw;
-
     position: absolute;
-   
+    
     left: 40vw;
 
 
