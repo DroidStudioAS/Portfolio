@@ -204,6 +204,7 @@ template{
   position: absolute;
   left: 0vw;
   top: 0vh;
+
 }
 .what_i_do_container{
   display: flex;
@@ -213,11 +214,11 @@ template{
   position: absolute;
   top:20vh;
   height:80vh;
-  width: 90vw;
+  width: 100vw;
 
 }
 .wid_header{
-  width: 90vw;
+  width: 100vw;
   height: 10vh;
 
   display: flex;
@@ -243,7 +244,7 @@ flex-flow: row nowrap;
 justify-content: center;
 align-items: center;
 text-align: center;
-width: 90vw;
+width: 100vw;
 height: 70vh;
 position: absolute;
 top: 10vh;
@@ -269,9 +270,9 @@ gap: 3vw;
 .first_page_container{
   position: absolute;
  
-  top: 110vh;
+  top: 100vh;
   height: 100vh;
-  width: 90vw;
+  width: 100vw;
 
   display: flex;
   flex-flow: column nowrap;
@@ -282,11 +283,11 @@ gap: 3vw;
 }
 .second_page_container{
   position: absolute;
-  top: 200vh;
+  top: 190vh;
   bottom: 0vh;
  background: #89B4BE;
   height: 130vh;
-  width: 90vw;
+  width: 100vw;
   padding-top: 5%;
  padding-bottom: -10%;
 
@@ -303,13 +304,11 @@ gap: 3vw;
   justify-content: center;
   align-items: center;
 
-  width: 80vw;
+  width: 100vw;
   
   position: absolute;
   top: 0vh;
-
-
-  left: 5vw;
+  left: 0vw;
 
 
   visibility: hidden;
@@ -327,7 +326,7 @@ gap: 3vw;
 .page_header{
   position: absolute;
   top: 3vh;
-  width: 90vw;
+  width: 100vw;
   height: 10vh;
   display: flex;
   justify-content: center;
@@ -351,14 +350,16 @@ gap: 3vw;
 /****************End Of Styles important for core page layout***************/
 /****************Language Table Styles**************/
 .table_container{
+  height: 60vh;
+  widows: 100vw;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  align-items: center;
   gap: 1vh;
 
   position: absolute;
   top: 10vh;
-  height: 60vh;
 
 }
 .table_row{
@@ -456,9 +457,8 @@ align-items: center;
 /****************End of Education Styles****************/
 /****************Begining Of Second Page Item Styles***************/
 .image_container{
-  width: 60vw;
+  width: 100vw;
   height: 100vh;
-  left: 18vw ;
   position: absolute;
   margin-top: -5%;
   display: flex;
@@ -526,7 +526,7 @@ align-items: center;
    height: 160vh;
   }
   .first_page_container{
-    top: 205vh;
+    top: 200vh;
   }
   .second_page_container{
     top: 330vh;
@@ -537,8 +537,7 @@ align-items: center;
     flex-flow: row wrap;
   }
   .table_container{
-    top: 9vh;
-    left: 4vw;
+  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -593,6 +592,7 @@ align-items: center;
 }
 .mobile_frame{
   visibility: visible;
+  width: 100vw;
 }
 
 
@@ -639,7 +639,7 @@ width: 15vw;
 
 
 /* Small Devices (Phones and Small Tablets) */
-@media (min-width:454px) and  (max-width: 767px) {
+@media (min-width:454px) and  (max-width: 592px) {
   .main_container{
     width: 100vw;
     height: 470vh;
@@ -648,8 +648,7 @@ width: 15vw;
    height: 160vh;
   }
   .first_page_container{
-    
-    top: 205vh;
+    top: 200vh;
   }
   .second_page_container{
     top: 335vh;
@@ -659,8 +658,7 @@ width: 15vw;
     flex-flow: row wrap;
   }
   .table_container{
-    top: 5vh;
-    left: 4vw;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -743,6 +741,112 @@ width: 15vw;
 }
 .mobile_frame{
   visibility: visible;
+  width: 100vw;
+}
+}
+@media (min-width:593px) and  (max-width: 767px) {
+  .main_container{
+    width: 100vw;
+    height: 470vh;
+  }
+  .what_i_do_container{
+   height: 160vh;
+  }
+  .first_page_container{
+    top: 190vh;
+  }
+  .second_page_container{
+    top: 335vh;
+    width: 80vw;
+  }
+  .service_container{
+    flex-flow: row wrap;
+  }
+  .table_container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .education_container{
+    flex-flow: column nowrap;
+    gap: 2vh;
+  }
+  .school_department{
+    font-size: 1.5cap;
+  }
+  .content_container{
+   visibility: hidden;
+  }
+  .education_container{
+    text-align: center;
+    top: 60vh;
+  }
+
+  .page_header{
+    font-size: 5cap;
+  }
+.service_image_container{
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+}
+.service_container img{
+  width: 60vw;
+}
+.service_name{
+  width: 60vw;
+}
+.service_description{
+  width: 60vw;
+}
+.mobile_button_container{
+  width: 40vw;
+  bottom: 7vh;
+  justify-content: space-evenly;
+}
+.menu_item{
+  width: 20vw;
+  font-size: 2cap;
+}
+
+
+  /**********Table***********/
+  .table_container{
+    left: 3vw;
+  }
+.table_title{
+width: 15vw;
+font-size: 2cap;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.table_subtitle{
+width: 15vw;
+font-size: 1.5cap;
+}
+.table_row_entry{
+font-size: 1cap;
+width: 15vw;
+}
+.table_row_language{
+  width: 15vw;
+ font-size: 1.5cap;
+
+ display: flex;
+
+
+
+}
+.image_container{
+  visibility: hidden;
+}
+.mobile_frame{
+  visibility: visible;
+  width: 100vw;
 }
 }
 
@@ -756,7 +860,7 @@ width: 15vw;
    height: 160vh;
   }
   .first_page_container{
-    top: 150vh;
+    top: 170vh;
    
   }
   .second_page_container{
@@ -781,6 +885,10 @@ width: 15vw;
  
   /**********Table***********/
   .table_container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     left: 3vw;
   }
 .table_title{
@@ -807,7 +915,7 @@ width: 15vw;
 }
 
 /* Large Devices (Desktops and Laptops) */
-@media (min-width: 992px) and (max-width: 1166px) {
+@media (min-width: 992px) and (max-width: 1043px) {
   .what_i_do_container{
    height: 160vh;
   }
@@ -824,6 +932,9 @@ width: 15vw;
     visibility: hidden;
     position: absolute;
     top: -110%;
+  }
+  .education_container{
+    width: 100vw;
   }
    /**********Table***********/
 
