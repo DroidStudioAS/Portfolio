@@ -709,6 +709,9 @@ width: 15vw;
 
 
   /**********Table***********/
+  .table_container{
+    left: 3vw;
+  }
 .table_title{
 width: 15vw;
 font-size: 2cap;
@@ -753,6 +756,7 @@ width: 15vw;
   }
   .first_page_container{
     top: 170vh;
+   
   }
   .second_page_container{
     top: 312vh;
@@ -774,6 +778,9 @@ width: 15vw;
   }
  
   /**********Table***********/
+  .table_container{
+    left: 3vw;
+  }
 .table_title{
 width: 20vw;
 font-size: 4cap;
