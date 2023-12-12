@@ -205,6 +205,8 @@ template{
   left: 0vw;
   top: 0vh;
 
+  overflow-x:hidden ;
+
 }
 .what_i_do_container{
   display: flex;
