@@ -129,6 +129,7 @@ width: 20vw;
     }
     .project_label{
         left: 10vw;
+        width: 20vw;
     }
 }
 </style>
