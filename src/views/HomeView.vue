@@ -222,20 +222,7 @@ gap: 5%;
 .main_container{
   width: 80vw;
 }
-   .item_container{
-    width: 30vw;
-   }
-   .menu_item{
-    width: 20vw;
-
-   }
-  .menu_but{
-    width: 15vw;
-  }
-  
-  .menu_but_container{
-    width: 15vw;
-  }
+ 
   .image_container{
     z-index: 0;
     height: 65vh;
@@ -290,16 +277,7 @@ gap: 5%;
 /* Medium Devices (Tablets) OK */
 @media (min-width: 768px) and (max-width: 991px) {
  
-  .menu_but{
-    width: 15vw;
-  }
-  .navigation_container{
-    width: 15vw;
-    z-index: 2;
-  }
-  .menu_but_container{
-    width: 15vw;
-  }
+  
   .image_container{
     z-index: 0;
     height: 50vh;
@@ -352,10 +330,7 @@ gap: 5%;
 @media (min-width: 1200px) {
   
   /* CSS for extra large devices */
-  .menu_but{
-    position: relative;
-    left: 5%;
-  }
+ 
   .home_image{
     height: 80vh;
     width:  60vw;
