@@ -31,14 +31,18 @@ onMounted(()=>{
         <div v-if="project.even===true"
         class="project_image_containet">
             <img src="/icon_folder_even.png">
+            <div class="project_label">
+             {{ project.name }}
+             </div>
         </div>
         <div v-else
         class="project_image_containet">           
          <img src="/icon_folder_uneven.png">
-        </div>
-        <div class="project_label">
+         <div class="project_label">
         {{ project.name }}
         </div>
+        </div>
+       
 
     </div>
 </div>
@@ -86,7 +90,7 @@ width: 20vw;
 }
 .project_label{
     position: relative;
-    width:5vw ;
+    width:8vw ;
     height: 5vh;
     bottom: 12vh;
     left:5vw ;
@@ -122,6 +126,9 @@ width: 20vw;
     }
     .main_container{
         width: 80vw;
+    }
+    .project_label{
+        left: 10vw;
     }
 }
 </style>
