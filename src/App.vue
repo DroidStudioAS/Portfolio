@@ -73,7 +73,7 @@ function changeColor(){
 
 function pushTo(name){
  store.setActivePage(name);
-  menuHeight=store.getMh();
+  menuHeight='100vh'
  console.log('active page', store.getActivePage());
   console.log('Routing to:', name);
   console.log('Router:', router); // Check if router is defined

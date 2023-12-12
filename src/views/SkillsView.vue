@@ -14,11 +14,10 @@
             </div>
         </div>
         </div>
-    </div>
-
     <div class="icon_container">
         <img v-for="(icon, index) in icons" :key="index" class="icon" :src="icon">
     </div>
+</div>
 </template>
 <script setup>
 import { ref } from "vue";
@@ -68,11 +67,14 @@ function refreshList(int){
 </script>
 <style scoped>
 /**************** Begining of Styles Crucial For Layout*****************/
-
+template{
+    width: 100vw;
+}
 .main_container{
     background: #89B4BE;
     position: absolute;
     top: 0vh;
+    left: 0vw;
     height: 180vh;
     width: 100vw;
 
@@ -80,6 +82,7 @@ function refreshList(int){
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .skills_header{
     font-size: 15vh;
@@ -99,7 +102,7 @@ function refreshList(int){
     position: absolute;
     top: 20vh;
     left: 20vw;
-    width: 100vw;
+    width: 80vw;
     display: flex;
     flex-flow: row nowrap;
 
@@ -109,7 +112,7 @@ function refreshList(int){
     flex-flow: column wrap;
     justify-content: start;
     align-items: start;
-    width: 25vw;
+    width: 20vw;
     position: absolute;
     top: -2vh;
     left: 40vw;
@@ -182,9 +185,11 @@ else 10vw */
 @media (max-width: 450px){
     .main_container{
     height: 395vh;
+    width: 100vw;
+    background: pink;
  }
  .icon_container{
-    width: 80vw;
+    width: 100vw;
  }
  .icon{
     width:min-content ;
@@ -192,6 +197,7 @@ else 10vw */
  
  .skills_header{
     font-size: 6cap;
+    
  }
  .skills_button{
     font-size: 0.8cap;
@@ -201,13 +207,14 @@ else 10vw */
     font-size:1.5cap ;
  }
  
- 
+
 }
 
 /* Small Devices (Phones and Small Tablets) */
 @media (min-width:450px) and  (max-width: 767px) {
     .main_container{
     height: 322vh;
+    width: 100vw;
     
  }
 
@@ -236,6 +243,7 @@ else 10vw */
 @media (min-width: 992px) and (max-width: 1199px) {
  .main_container{
     height: 260vh;
+    width: 100vw;
  }
 }
 
