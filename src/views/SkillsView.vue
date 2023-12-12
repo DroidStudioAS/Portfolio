@@ -1,18 +1,18 @@
 <template>
     <div class="main_container">
+        <h1 class="skills_header">Skills</h1>
         <div class="skills_container">
-            <h1 class="skills_header">Skills</h1>
             <div class="skills_buttons">
             <div @click="refreshList(1)" class="skills_button">FrontEnd Web Development</div>
             <div @click="refreshList(2)" class="skills_button">BackEnd Web Development</div>
             <div @click="refreshList(3)" class="skills_button">Mobile App Development</div>
-        </div>
         </div>
         <div class="skills_list_container">
             <div v-for="(skill, index) in skills" :key="index"
             class="skill">
             {{ skill }}
             </div>
+        </div>
         </div>
     </div>
 
@@ -81,23 +81,43 @@ function refreshList(int){
     justify-content: center;
     align-items: center;
 }
+.skills_header{
+    font-size: 15vh;
+    height: 15vh;
+    width: 90vw;
+    font-weight: 700;
+    margin-bottom: 5vh;
+    position: absolute;
+    top: 1vh;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
 .skills_container{
     position: absolute;
-    top: 0vh;
+    top: 20vh;
     left:10vw;
-    width: 30vw;
+    width: 90vw;
+    display: flex;
+    flex-flow: row nowrap;
+
+    justify-content: start;
+    align-items: start;
+
 }
 .skills_list_container{
     display: flex;
     flex-flow: column wrap;
+    
 
-    height: 80vh;
-    width: 30vw;
+
+    width: 20vw;
 
     position: absolute;
-    top: 25vh;
-    left: 55vw;
-    bottom: 0vh;
+   
+    left: 40vw;
 
 
 }
@@ -129,11 +149,7 @@ function refreshList(int){
     gap: 5vh;
     font-size: 3cap;
 }
-.skills_header{
-    font-size: 10cap;
-    font-weight: 700;
-    margin-bottom: 5vh;
-}
+
 .skills_button{
     background: #777BB3;
     width: 35vw;
@@ -178,15 +194,14 @@ else 10vw */
  .icon{
     width:min-content ;
  }
+ 
  .skills_header{
     font-size: 6cap;
  }
  .skills_button{
     font-size: 0.8cap;
  }
- .skills_list_container{
-    top: 20vh;
- }
+
  .skill{
     font-size:1.5cap ;
  }
@@ -210,9 +225,7 @@ else 10vw */
     font-size: 1.1cap;
  }
 
- .skills_list_container{
-    top: 20vh;
- }
+
 }
 
 
