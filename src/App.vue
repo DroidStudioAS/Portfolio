@@ -7,6 +7,12 @@
   class="menu_but"
   :style="{backgroundColor: showMenu ? '#000' : '#FAEFE6'}">{{ menu }}</div>
   </div>
+  <div :style="{width: showMenu ? '30vw' : '20vw'}"
+   class="mobile_icon_container">
+    <img  @click="toggleMenu()"
+     class="nav_icon" 
+     :src="showMenu ? '/nav_drawer_1.png' : '/nav_drawer_0.png' " />
+  </div>
   <transition name="slide">
     <div class="item_container" v-if="showMenu">
     <div @click="pushTo('home')" class="menu_item">Home</div>
@@ -128,7 +134,7 @@ onMounted(()=>{
     font-size: 200%;    
     height: 7vh;
     width: 9vw;
-
+    z-index: 3;
     padding: 25% 40% 30% 40%;
   }
   .menu_but black{
@@ -162,6 +168,26 @@ onMounted(()=>{
   align-items: center;
   text-align: center;
 }
+
+.mobile_icon_container{
+width: 20vw;
+align-items: center;
+justify-content: center;
+
+position: absolute;
+top: 0vh;
+right: 0vw;
+z-index: -1;
+
+visibility: hidden;
+
+}
+.nav_icon{
+  width: 20vw;
+  height: 20vw;
+
+}
+
 /***************Navigation Styles End******************/
 /**************Navigation Transitions Start*****************/
   .slide-enter-active,
@@ -190,6 +216,17 @@ onMounted(()=>{
   }
   .menu_item{
     width: 30vw;
+  }
+}
+@media(max-width:450px){
+  .menu_item{
+    width: 30vw;
+  }
+  .menu_but_container{
+    visibility: hidden;
+  }
+  .mobile_icon_container{
+    visibility: visible;
   }
 }
 </style>
