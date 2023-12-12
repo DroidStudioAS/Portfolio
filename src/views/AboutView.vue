@@ -47,7 +47,6 @@ function pushTo(name){
       </div>
     </div>
     <div class="first_page_container">
-     
       <div class="table_container">
         <div class="table_row">
             <div class="table_title">
@@ -198,7 +197,7 @@ template{
   overflow-y: auto;
 }
 .main_container{
-  height: 300vh;
+  height: 400vh;
   width: 100vw;
   background: #89B4BE;
 
@@ -270,14 +269,15 @@ gap: 3vw;
 .first_page_container{
   position: absolute;
  
-  bottom: 100vh;
-
+  top: 110vh;
   height: 100vh;
   width: 90vw;
 
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+
+  z-index: 2;
  
 }
 .second_page_container{
@@ -520,18 +520,18 @@ align-items: center;
 @media (max-width: 453px){
   .main_container{
     width: 100vw;
-    height: 350vh;
+    height: 400vh;
   }
   .what_i_do_container{
    height: 160vh;
   }
   .first_page_container{
-    
-    top: 200vh;
+    top: 205vh;
   }
   .second_page_container{
     top: 330vh;
     width: 80vw;
+    height: 20vh;
   }
   .service_container{
     flex-flow: row wrap;
@@ -642,14 +642,14 @@ width: 15vw;
 @media (min-width:454px) and  (max-width: 767px) {
   .main_container{
     width: 100vw;
-    height: 350vh;
+    height: 470vh;
   }
   .what_i_do_container{
    height: 160vh;
   }
   .first_page_container{
     
-    top: 200vh;
+    top: 205vh;
   }
   .second_page_container{
     top: 335vh;
@@ -749,17 +749,19 @@ width: 15vw;
 /* Medium Devices (Tablets) OK */
 @media (min-width: 768px) and (max-width: 992px) {
   .main_container{
-    height: 315vh;
+    height: 450vh;
+    width: 100vw;
   }
   .what_i_do_container{
    height: 160vh;
   }
   .first_page_container{
-    top: 170vh;
+    top: 150vh;
    
   }
   .second_page_container{
-    top: 312vh;
+    top: 315vh;
+
   }
   .service_container{
     flex-flow: row wrap;
@@ -854,8 +856,8 @@ width: 15vw;
   .mobile_frame{
     visibility: hidden;
     position: absolute;
-    top: -110%;
   }
+ 
   
 
 }

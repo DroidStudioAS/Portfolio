@@ -109,7 +109,7 @@ width: 20vw;
         width: 100vw;
     }
     .page_header{
-        width:85vw ;
+        width:100vw ;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -118,7 +118,7 @@ width: 20vw;
 }
 @media (max-width:766px){
     .page_header{
-        width:80vw ;
+        width:100vw ;
         display: flex;
         justify-content: center;
         align-items: center;

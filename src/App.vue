@@ -260,7 +260,7 @@ visibility: hidden;
   }
   .menu_item{
     width: 20vw;
-    font-size: 2cap;
+    font-size: 1.5cap;
   }
   .menu_but_container{
     visibility: hidden;

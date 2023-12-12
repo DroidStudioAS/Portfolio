@@ -73,7 +73,7 @@ function refreshList(int){
     background: #89B4BE;
     position: absolute;
     top: 0vh;
-    height: 220vh;
+    height: 230vh;
     width: 100vw;
 
     display: flex;
@@ -97,8 +97,7 @@ function refreshList(int){
 }
 .skills_container{
     position: absolute;
-    top: 20
-    vh;
+    top: 20vh;
     left:10vw;
     width: 90vw;
     display: flex;
