@@ -68,8 +68,7 @@ function refreshList(int){
 </script>
 <style scoped>
 /**************** Begining of Styles Crucial For Layout*****************/
-*{
-}
+
 .main_container{
     background: #89B4BE;
     position: absolute;

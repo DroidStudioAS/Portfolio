@@ -17,14 +17,14 @@
     </div>
     <div class="contact_container">
         <div class="e_mail_container">
-            <input class="email" placeholder="E-Mail" type="email">
+            <input class="email" placeholder="Subject" type="email">
         </div>
         <div class="name_container"> 
             <input class="name" placeholder="Name" type="name">
         </div>
     </div>
     <div class="subject_container">
-        <input class="subject" placeholder="Subject" type="text">
+        <input class="subject" placeholder="E-mail" type="text">
     </div>
 
 </form>
@@ -77,7 +77,8 @@
 .subject_container{
     position: absolute;
     top: 56vh;
-    width: 20vw;
+    left: 30vw;
+    width: 40vw;
     height: 5vh;
 }
 .socials_container{
@@ -122,7 +123,7 @@
     position: absolute;
     top: 5vh;
 
-    width: 40vw;
+    width: 50vw;
     height: 40vh;
 
     border-radius:30px 30px 0px 0px;
@@ -134,7 +135,7 @@
 }
 .subject_container input{
     height: 6vh;
-    width: 20vw;
+    width: 40vw;
     border-radius: 0px 0px 15px 15px;
 
    text-align: center;
@@ -143,7 +144,7 @@
 }
 .name{
     height: 6vh;
-    width: 20vw;
+    width: 25vw;
     border-radius: 0px 0px 15px 0px;
 
     text-align: center;
@@ -152,7 +153,7 @@
 }
 .email{
     height: 6vh;
-    width: 20vw;
+    width: 25vw;
     border-radius: 0px 0px 0px 15px;
 
     text-align: center;
@@ -166,7 +167,7 @@
 }
 @media (min-width:767px) and (max-width:991px){
     .main_container{
-        width: 85vw;
+        width: 100vw;
     }
     .page_header{
         display: flex;
@@ -182,7 +183,7 @@
 @media (max-width:766px){
 
     .main_container{
-        width: 80vw;
+        width: 100vw;
     }
     .page_header{
         display: flex;
@@ -199,6 +200,12 @@
     margin-top: 2%;
     height:10vh;
     width: 15vw;
+}
+.icon_container{
+    width: 30vw;
+}
+.icon_container img{
+    width: 25vw;
 }
 .email{
     font-size: 1.2cap;
