@@ -106,6 +106,7 @@ onMounted(()=>{
 .navigation_container{
     background-color: #89B4BE;
     position: fixed;
+
     top: 0%;
     right: 0%;
     bottom: 0%;
@@ -119,7 +120,7 @@ onMounted(()=>{
     border: none;
     border-style: none;
     padding-top: 20vh;
-  }
+     }
 
   .menu_but_container{
     width:20vw;
@@ -235,6 +236,10 @@ visibility: hidden;
 @media (min-width:450px) and (max-width:767px){
   .navigation_container{
     padding-top: 15vh;
+  
+  }
+  .mobile_icon_container{
+    right: 50vw;
   }
   .menu_but_container{
     width: 20vw;    

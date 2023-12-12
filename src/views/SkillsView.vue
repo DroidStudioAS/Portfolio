@@ -68,12 +68,13 @@ function refreshList(int){
 </script>
 <style scoped>
 /**************** Begining of Styles Crucial For Layout*****************/
-
+*{
+}
 .main_container{
     background: #89B4BE;
     position: absolute;
     top: 0vh;
-    height: 230vh;
+    height: 180vh;
     width: 100vw;
 
     display: flex;
@@ -84,7 +85,7 @@ function refreshList(int){
 .skills_header{
     font-size: 15vh;
     height: 15vh;
-    width: 90vw;
+    width: 100vw;
     font-weight: 700;
     margin-bottom: 5vh;
     position: absolute;
@@ -98,15 +99,10 @@ function refreshList(int){
 .skills_container{
     position: absolute;
     top: 20vh;
-    left:10vw;
-    width: 90vw;
+    left: 20vw;
+    width: 100vw;
     display: flex;
     flex-flow: row nowrap;
-
-    
-
-    justify-content: start;
-    align-items: start;
 
 }
 .skills_list_container{
@@ -114,19 +110,19 @@ function refreshList(int){
     flex-flow: column wrap;
     justify-content: start;
     align-items: start;
-    width: 20vw;
+    width: 25vw;
     position: absolute;
-    
+    top: -2vh;
     left: 40vw;
 
 
 }
 .icon_container{
     position: absolute;
-    height: 90vh;
-    width: 88vw;
-    top: 100vh;
-    left: 0vw;
+    height: 80vh;
+    width: 95vw;
+    top: 80vh;
+    left: 2.5vw;
 
     display: flex;
     flex-flow: row wrap;
@@ -163,7 +159,7 @@ function refreshList(int){
 /*************End OF Skills container item styles*************/
 /*************End OF Skills List Container item styles*************/
 .skill{
-    width: 20vw;
+    width: 25vw;
     height: 10vh;
 
     display: flex;
@@ -213,10 +209,9 @@ else 10vw */
 @media (min-width:450px) and  (max-width: 767px) {
     .main_container{
     height: 322vh;
+    
  }
- .icon_container{
-    width: 80vw;
- }
+
 
  .skills_header{
     font-size: 6cap;
@@ -234,9 +229,7 @@ else 10vw */
     .main_container{
     height: 260vh;
  }
- .icon_container{
-    width: 85vw;
- }
+
  
 }
 

@@ -520,16 +520,16 @@ align-items: center;
 @media (max-width: 453px){
   .main_container{
     width: 100vw;
-    height: 400vh;
+    height: 371vh;
   }
   .what_i_do_container{
    height: 160vh;
   }
   .first_page_container{
-    top: 200vh;
+    top: 190vh;
   }
   .second_page_container{
-    top: 330vh;
+    top: 310vh;
     width: 80vw;
     height: 20vh;
   }
@@ -642,16 +642,17 @@ width: 15vw;
 @media (min-width:454px) and  (max-width: 592px) {
   .main_container{
     width: 100vw;
-    height: 470vh;
+    height: 400vh;
   }
   .what_i_do_container{
    height: 160vh;
   }
   .first_page_container{
-    top: 200vh;
+    top: 190vh;
   }
   .second_page_container{
-    top: 335vh;
+    top: 315vh;
+    height: 50vh;
     width: 80vw;
   }
   .service_container{
@@ -747,17 +748,18 @@ width: 15vw;
 @media (min-width:593px) and  (max-width: 767px) {
   .main_container{
     width: 100vw;
-    height: 470vh;
+    height: 410vh;
   }
   .what_i_do_container{
    height: 160vh;
   }
   .first_page_container{
-    top: 190vh;
+    top: 172vh;
   }
   .second_page_container{
-    top: 335vh;
+    top: 300vh;
     width: 80vw;
+    height: 50vh;
   }
   .service_container{
     flex-flow: row wrap;
@@ -853,18 +855,18 @@ width: 15vw;
 /* Medium Devices (Tablets) OK */
 @media (min-width: 768px) and (max-width: 992px) {
   .main_container{
-    height: 450vh;
+    height: 430vh;
     width: 100vw;
   }
   .what_i_do_container{
    height: 160vh;
   }
   .first_page_container{
-    top: 170vh;
+    top: 160vh;
    
   }
   .second_page_container{
-    top: 315vh;
+    top: 290vh;
 
   }
   .service_container{
@@ -889,7 +891,7 @@ width: 15vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 3vw;
+   
   }
 .table_title{
 width: 20vw;
@@ -916,6 +918,9 @@ width: 15vw;
 
 /* Large Devices (Desktops and Laptops) */
 @media (min-width: 992px) and (max-width: 1043px) {
+  .main_container{
+    height: 370vh;
+  }
   .what_i_do_container{
    height: 160vh;
   }
@@ -926,7 +931,12 @@ width: 15vw;
     top: 170vh;
   }
   .second_page_container{
-    top: 270vh;
+    top: 300vh;
+    height: 80vh;
+    padding-bottom: 20vh;
+  }
+  .content_container{
+    bottom: 50vh;
   }
   .mobile_frame{
     visibility: hidden;
@@ -963,10 +973,16 @@ width: 15vw;
 
 /* Extra Large Devices (Large Desktops and TVs) */
 @media (min-width: 1200px) {
+  .main_container{
+    height: 320vh;
+  }
   /* CSS for extra large devices */
   .mobile_frame{
     visibility: hidden;
     position: absolute;
+    height: 0vh;
+    width: 0vw;
+    top: 0%;
   }
  
   
