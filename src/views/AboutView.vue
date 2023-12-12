@@ -199,7 +199,7 @@ template{
 }
 .main_container{
   height: 300vh;
-  width: 90vw;
+  width: 100vw;
   background: #89B4BE;
 
   position: absolute;
@@ -519,7 +519,7 @@ align-items: center;
 /**************Media Querys Start*****************/
 @media (max-width: 453px){
   .main_container{
-    width: 80vw;
+    width: 100vw;
     height: 350vh;
   }
   .what_i_do_container{
@@ -641,7 +641,7 @@ width: 15vw;
 /* Small Devices (Phones and Small Tablets) */
 @media (min-width:454px) and  (max-width: 767px) {
   .main_container{
-    width: 80vw;
+    width: 100vw;
     height: 350vh;
   }
   .what_i_do_container{

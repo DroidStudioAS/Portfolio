@@ -52,7 +52,7 @@ onMounted(()=>{
 
 .main_container{
     height: 80vh;
-    width: 90vw;
+    width: 100vw;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -67,7 +67,7 @@ onMounted(()=>{
     top: 0%;
     left: 0%;
 
-    width: 90vw;
+    width: 100vw;
     height: 25vh;
     font-size: 10cap;
     font-weight: 700;
@@ -106,7 +106,7 @@ width: 20vw;
 }
 @media (min-width:767px) and (max-width:991px){
     .main_container{
-        width: 85vw;
+        width: 100vw;
     }
     .page_header{
         width:85vw ;
@@ -125,7 +125,7 @@ width: 20vw;
         font-size: 6cap;
     }
     .main_container{
-        width: 80vw;
+        width: 100vw;
     }
     .project_label{
         left: 10vw;

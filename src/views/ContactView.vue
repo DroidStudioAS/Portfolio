@@ -46,7 +46,7 @@
     left: 0vw;
     bottom: 0vh;
     height: 100vh;
-    width: 90vw;
+    width: 100vw;
     background: #89B4BE;
     display: flex;
     flex-flow: column nowrap;
@@ -173,7 +173,7 @@
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
-        width: 85vw;
+        width: 100vw;
         left: 0;
     }
  
@@ -189,7 +189,7 @@
         flex-flow: row nowrap;
         justify-content: center;
         align-items: center;
-        width: 80vw;
+        width: 100vw;
         left: 0;
     }
     .socials_container{

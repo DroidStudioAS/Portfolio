@@ -1,29 +1,32 @@
 <template>
-  
+  <div :style="{ width: showMenu ? '40vw' : '20vw' }" class="mobile_icon_container">
+    <img @click="toggleMenu()" class="nav_icon" :src="showMenu ? '/nav_drawer_1.png' : '/nav_drawer_0.png' " />
+  </div>
+  <div class="menu_but_container"
+  :class="{ 'menu_but_container': true, 
+              'expanded': showMenu }" 
+        @click="toggleMenu()">
+        <div ref="menu_but" class="menu_but" 
+        :style="{ backgroundColor: showMenu ? '#000' : '#FAEFE6' }">{{ menu }}</div>
+  </div>
   <transition name="menu-slide">
-<div class="navigation_container" :style="{width:menuWidth ,height:store.getMh()}">
-  <div :class="{ 'menu_but_container': true, 'expanded': showMenu }" @click="toggleMenu()">
-  <div ref="menu_but" 
-  class="menu_but"
-  :style="{backgroundColor: showMenu ? '#000' : '#FAEFE6'}">{{ menu }}</div>
-  </div>
-  <div :style="{width: showMenu ? '40vw' : '20vw'}"
-   class="mobile_icon_container">
-    <img  @click="toggleMenu()"
-     class="nav_icon" 
-     :src="showMenu ? '/nav_drawer_1.png' : '/nav_drawer_0.png' " />
-  </div>
-  <transition name="slide">
-    <div class="item_container" v-if="showMenu">
-    <div @click="pushTo('home')" class="menu_item">Home</div>
-    <div @click="pushTo('about')" class="menu_item">About Me</div>
-    <div @click="pushTo('skills')" class="menu_item">Skills</div>
-    <div @click="pushTo('projects')" class="menu_item">Projects</div>
-    <div @click="pushTo('contact')" class="menu_item">Contact</div>
+    <div
+      class="navigation_container"
+      :style="{ width: menuWidth, height: store.getMh(), zIndex: showMenu ? 100 : -100 }"
+      :class="{ nav_bg_color: showMenu, 'slide-enter-from': !showMenu }"
+    >
+     
+      <transition name="slide">
+        <div class="item_container" v-if="showMenu">
+          <div @click="pushTo('home')" class="menu_item">Home</div>
+          <div @click="pushTo('about')" class="menu_item">About Me</div>
+          <div @click="pushTo('skills')" class="menu_item">Skills</div>
+          <div @click="pushTo('projects')" class="menu_item">Projects</div>
+          <div @click="pushTo('contact')" class="menu_item">Contact</div>
+        </div>
+      </transition>
     </div>
   </transition>
-</div>
-</transition>
   <RouterView/>
 </template>
 <script setup>
@@ -51,11 +54,13 @@ let menu_but = ref(null)
 function toggleMenu(){
   showMenu.value=!showMenu.value;
   if(width>991){
-  menuWidth.value = showMenu.value ? '20vw' : '10vw';
+  menuWidth.value = showMenu.value ? '22vw' : '0vw';
   }else if(width<991 && width>767){
-    menuWidth.value = showMenu.value ? '20vw' : '15vw';
-  }else if(width<767){
-    menuWidth.value = showMenu.value ? '40vw' : '20vw';
+    menuWidth.value = showMenu.value ? '22vw' : '0vw';
+  }else if(width>450 && width<767){
+    menuWidth.value = showMenu.value ? '22vw' : '0vw';
+  }else if(width<=450){
+    menuWidth.value = showMenu.value ? '42vw' : '0vw';
   }
   changeColor();
  
@@ -84,7 +89,7 @@ onBeforeMount(()=>{
 })
 onMounted(()=>{
   menuHeight=store.getMh();
-  if(width>767 && width<991){
+  /*if(width>767 && width<991){
     menuWidth.value='15vw'
   }
   if(width > 425 && width<767){
@@ -92,7 +97,7 @@ onMounted(()=>{
   }
   if (width<425){
     menuWidth.value='20vw'
-  } 
+  } */
   
 })
 </script>
@@ -100,12 +105,10 @@ onMounted(()=>{
 /***************Navigation Styles Start******************/
 .navigation_container{
     background-color: #89B4BE;
-
     position: fixed;
     top: 0%;
     right: 0%;
-    
-
+    bottom: 0%;
     height: 100vh;
     width: 10vw;
 
@@ -115,10 +118,21 @@ onMounted(()=>{
 
     border: none;
     border-style: none;
+    padding-top: 20vh;
   }
+
   .menu_but_container{
-    width:10vw;
+    width:20vw;
     height:20vh;
+
+    position: fixed;
+    top: 1vh;
+    right: 2vh;
+    visibility: visible;
+    z-index: 102;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .menu_but{
     display: flex;
@@ -135,9 +149,9 @@ onMounted(()=>{
     color:#87A1B0;
     font-size: 200%;    
     height: 7vh;
-    width: 9vw;
-    z-index: 3;
-    padding: 25% 40% 30% 40%;
+    width: 15vw;
+    z-index: 102;
+    padding: 10% 5% 10% 5%;
   }
   .menu_but black{
     background-color: #000;
@@ -177,10 +191,10 @@ display: flex;
 align-items: center;
 justify-content: center;
 
-position: absolute;
+position: fixed;
 top: 2vh;
-right: 1vw;
-z-index: -1;
+right: 0vw;
+z-index: 101;
 
 visibility: hidden;
 
@@ -194,41 +208,59 @@ visibility: hidden;
 
 /***************Navigation Styles End******************/
 /**************Navigation Transitions Start*****************/
-  .slide-enter-active,
+.slide-enter-active,
 .slide-leave-active {
   transition: transform 0.3s ease-in-out;
 }
-.slide-enter-from,
+.slide-enter-from {
+  transform: translateX(100%);
+}
 .slide-leave-to {
   transform: translateX(100%);
 }
+
 .menu_slide-enter-active,
 .menu_slide-leave-active {
-  transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.menu_slide-enter-from {
+  width: 0;
+  background-color: transparent;
+}
+.nav_bg_color {
+  background-color: #4e7896;
 }
 /**************Navigation Transitions End*****************/
 /*********************@media start***********************/
 @media (min-width:450px) and (max-width:767px){
+  .navigation_container{
+    padding-top: 15vh;
+  }
   .menu_but_container{
     width: 20vw;    
+    right: 1vw;
   }
   .menu_but{
     width: 18vw;
+    visibility: visible;
+    padding: 10% 20% 10% 20%;
   }
   .item_container{
     width: 40vw;
   }
   .menu_item{
-    width: 30vw;
+    width: 20vw;
+   
   }
 }
 @media(max-width:450px){
-
   .navigation_container{
     z-index: 10;
+    padding-top: 8vh;
   }
   .menu_item{
-    width: 30vw;
+    width: 20vw;
+    font-size: 2cap;
   }
   .menu_but_container{
     visibility: hidden;

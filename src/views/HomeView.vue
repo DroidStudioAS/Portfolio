@@ -147,10 +147,9 @@ gap: 5%;
 
   position: absolute;
   top: 0%;
-  left: 0%;
-  bottom: 0%;
+ 
   height: 100vh;
-  width: 90vw;
+  width: 100vw;
 }
 
 
@@ -158,14 +157,14 @@ gap: 5%;
 
 @media (max-width: 450px){
   .main_container{
-  width: 80vw;
+  width: 100vw;
 }
   .image_container{
     z-index: 0;
     height: 55vh;
     width: 80vw;
     
-    left: 9vw;
+    left: 10vw;
 
     display: flex;
     justify-content: center;
@@ -221,7 +220,7 @@ gap: 5%;
 /* Small Devices (Phones and Small Tablets) */
 @media (min-width:450px) and  (max-width: 767px) {
 .main_container{
-  width: 80vw;
+  width: 100vw;
 }
  
   .image_container{

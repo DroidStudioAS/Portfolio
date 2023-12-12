@@ -74,7 +74,7 @@ function refreshList(int){
     position: absolute;
     top: 0vh;
     height: 220vh;
-    width: 90vw;
+    width: 100vw;
 
     display: flex;
     flex-flow: column wrap;
