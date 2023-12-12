@@ -531,7 +531,7 @@ align-items: center;
     top: 190vh;
   }
   .second_page_container{
-    top: 310vh;
+    top: 320vh;
     width: 80vw;
     height: 20vh;
   }
@@ -633,7 +633,7 @@ width: 15vw;
   justify-content: space-evenly;
 }
 .menu_item{
-  width: 15vw;
+  width: 20vw;
   height: 8vh;
   font-size: 1.2cap;
 }

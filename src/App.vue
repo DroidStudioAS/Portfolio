@@ -177,7 +177,6 @@ onMounted(()=>{
 
   background: #000;
   border-radius:30px 20px 30px 20px;
-  box-shadow: 15px 20px 15px 2px #000;
   
   display: flex;
   flex-flow: column nowrap;
@@ -265,7 +264,7 @@ visibility: hidden;
   }
   .menu_item{
     width: 20vw;
-    font-size: 1.5cap;
+    font-size: 1.3cap;
   }
   .menu_but_container{
     visibility: hidden;
