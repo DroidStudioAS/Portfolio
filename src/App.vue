@@ -7,7 +7,7 @@
   class="menu_but"
   :style="{backgroundColor: showMenu ? '#000' : '#FAEFE6'}">{{ menu }}</div>
   </div>
-  <div :style="{width: showMenu ? '30vw' : '20vw'}"
+  <div :style="{width: showMenu ? '40vw' : '20vw'}"
    class="mobile_icon_container">
     <img  @click="toggleMenu()"
      class="nav_icon" 
@@ -171,11 +171,12 @@ onMounted(()=>{
 
 .mobile_icon_container{
 width: 20vw;
+display: flex;
 align-items: center;
 justify-content: center;
 
 position: absolute;
-top: 0vh;
+top: 1vh;
 right: 0vw;
 z-index: -1;
 
@@ -183,8 +184,9 @@ visibility: hidden;
 
 }
 .nav_icon{
-  width: 20vw;
-  height: 20vw;
+  width: 10vw;
+  height: 10vw;
+
 
 }
 
