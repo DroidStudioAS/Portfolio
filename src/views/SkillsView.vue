@@ -186,7 +186,6 @@ else 10vw */
     .main_container{
     height: 395vh;
     width: 100vw;
-    background: pink;
  }
  .icon_container{
     width: 100vw;
