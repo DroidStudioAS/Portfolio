@@ -1,30 +1,43 @@
 <script setup>
-import { onMounted, ref } from 'vue';
+import { onBeforeMount, onMounted, ref } from 'vue';
 import project from '../models/project';
 
 let headerColor = ref("#000");
 let close_pc_button = ref(null);
 let pc = ref(null);
 
-function closePcContainer(){
+function closePc(){
     pc.value.style.visibility = 'hidden';
 }
 function showPc(){
     pc.value.style.visibility = 'visible';
 }
 const projects = [
-    new project("Fit Tracker",false),
-    new project('Running Tracker',true),
-    new project('Infinite Swipe',false),
-    new project('Flying Donut',true),
-    new project('Tic Tac Toe',false),
-    new project('Running Tracker',true),
-    new project('Running Tracker',false),
-    new project('Running Tracker',true),
-    new project('Running Tracker',false),
-    new project('Running Tracker',true)
+    new project("Fit Tracker"),
+    new project('Running Tracker'),
+    new project('Infinite Swipe'),
+    new project('Flying Donut'),
+    new project('Tic Tac Toe'),
+    new project('Running Tracker'),
+    new project('Running Tracker'),
+    new project('Running Tracker'),
+    new project('Running Tracker'),
+    new project('Running Tracker')
 ];
 
+function evenSetter(){
+    for(let i = 0; i <projects.length; i++){
+        if (i%2===0){
+            console.log(projects[i].even)
+            projects[i].setEven(true)
+            console.log(projects[i].even)
+
+        }
+    }
+}
+onBeforeMount(()=>{
+    evenSetter()
+})
 onMounted(()=>{
 
 })
@@ -38,7 +51,7 @@ onMounted(()=>{
     <div class="main_container">
         <div v-for="project in projects" 
         :key="project.name" >
-        <div v-if="project.even===true"
+        <div v-if="project.even===false"
         class="project_image_containet"
         @click="showPc()">
             <img src="/icon_folder_even.png">
@@ -60,7 +73,7 @@ onMounted(()=>{
         <div ref="pc" class="project_component">
             <div  ref="close_pc_button" 
             class="close_pc_container"
-            @click="closePcContainer()" >
+            @click="closePc()" >
 
             </div>
             <div  class="project_name_container">
