@@ -121,7 +121,7 @@ onMounted(()=>{
             <div  ref="close_pc_button" 
             class="close_pc_container"
             @click="closePc()" >
-
+                <img src="/button_close_cp.png">
             </div>
             <div class="project_name_container">
                 <h1 ref="project_name">
@@ -134,8 +134,8 @@ onMounted(()=>{
                 </h2>
             </div>
             <div  class="project_logo_container">
-                <!--img 
-                :src="project_logo" ref="project_logo"-->
+                <img 
+                :src="project_logo" ref="project_logo">
             </div>
             <div class="project_description_container">
                 <p>
@@ -240,13 +240,15 @@ onMounted(()=>{
 .close_pc_container{
     width: 5vw;
     height: 8vh;
-    background: paleturquoise;
 
     position: absolute;
     right: 0;
 
     border-radius: 15px;
-    
+}
+.close_pc_container img {
+    width: 5vw;
+    height: 8vh;
 }
 .project_name_container{
     width: 45vw;
@@ -268,15 +270,14 @@ onMounted(()=>{
 .project_logo_container{
 height: 10vh;
 width: 45vw;
-background: palevioletred;
-
+padding-top: 2%;
+display: flex;
 justify-content: center;
 align-items: center;
 }
-.project_logo img{
-height: 9vh;
-width: 9vw;
-background: palevioletred;
+.project_logo_container img{
+height: 100px;
+width: 100px;
 
 justify-content: center;
 align-items: center;
