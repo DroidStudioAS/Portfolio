@@ -13,21 +13,35 @@ let project_type_str = ref(null);
 let project_logo = ref(null);
 let project_desc = ref(null);
 let project_stack = ref(null);
+let wwwImage =ref(null);
+let ghImage =ref(null);
+let playStoreImage =ref(null);
 
 
 
 function closePc(){
     pc.value.style.visibility = 'hidden';
+    playStoreImage.value.style.display = 'none'
+    wwwImage.value.style.display = 'none'
+
+}
+function showLinks(project){
+if(project.type===0){
+    project_type_str.value='Mobile App'
+    wwwImage.value.style.display='none'
+    playStoreImage.value.style.display='block'
+}else{
+    project_type_str.value='Website'
+    wwwImage.value.style.display='block'
+    playStoreImage.value.style.display='none'
+}
 }
 function showPc(project){
     //set project name
     project_name_in_focus.value=project.name;
     //set project type
-    if(project.type ===0){
-        project_type_str.value='Mobile App'
-    }else{
-        project_type_str.value='Website'
-    }
+    showLinks(project);
+    
     //set image
     project_logo=project.logo;
     //set description
@@ -144,9 +158,9 @@ onMounted(()=>{
                 </p>
             </div>
             <div class="project_links_container">
-                <img  ref="wwwImage">
-                <img  ref="ghImage">
-                <img  ref="playStoreImage">
+                    <img src="/icon_www.png" ref="wwwImage">
+                    <img src="/github-mark.png" ref="ghImage">
+                    <img src="/icon_playstore.png"  ref="playStoreImage">
             </div> 
         </div>
 </div>
@@ -295,7 +309,7 @@ align-items: center;
     font-size: 2cap;
 }
 .project_links_container{
-    height: 8vh;
+    height: 7vh;
     width: 45vw;
 
     display: flex;
@@ -304,6 +318,9 @@ align-items: center;
     align-items: center;
 
     border-radius: 0 0 15px 15px;
+}
+.project_links_container img{
+    height: 7vh;
 }
   /********project_component end*********/
 
