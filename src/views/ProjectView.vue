@@ -13,16 +13,14 @@ function showPc(){
     pc.value.style.visibility = 'visible';
 }
 const projects = [
-    new project("Fit Tracker"),
-    new project('Running Tracker'),
-    new project('Infinite Swipe'),
-    new project('Flying Donut'),
-    new project('Tic Tac Toe'),
-    new project('Running Tracker'),
-    new project('Running Tracker'),
-    new project('Running Tracker'),
-    new project('Running Tracker'),
-    new project('Running Tracker')
+    new project("Fit Tracker",null,0),
+    new project('Infinite Swipe',null,1),
+    new project('Calculator',null,0),
+    new project('My Portfolio',null,1),
+    new project('Quote Stop',null,0),
+    new project('Compass',null,0),
+    new project('Flying Donut',null,0),
+    new project('Quiz',null,0),
 ];
 
 function evenSetter(){
@@ -39,6 +37,7 @@ onBeforeMount(()=>{
     evenSetter()
 })
 onMounted(()=>{
+    evenSetter()
 
 })
 
@@ -52,7 +51,7 @@ onMounted(()=>{
         <div v-for="project in projects" 
         :key="project.name" >
         <div v-if="project.even===false"
-        class="project_image_containet"
+        class="project_image_container"
         @click="showPc()">
             <img src="/icon_folder_even.png">
             <div class="project_label">
@@ -60,7 +59,7 @@ onMounted(()=>{
              </div>
         </div>
         <div v-else
-        class="project_image_containet"
+        class="project_image_container"
         @click="showPc()">           
          <img src="/icon_folder_uneven.png">
          <div class="project_label">
@@ -145,15 +144,18 @@ onMounted(()=>{
     color: black;
 }
 .project_image_container{
-height: 20vh;
-width: 20vw;
+    display: flex;
+    flex-flow: column nowrap;
+
+    justify-content: center;
+    align-items: center;
+    
 }
-.project_label{
-    position: relative;
-    width:8vw ;
-    height: 5vh;
-    bottom: 12vh;
-    left:5vw ;
+.project_label{ 
+    position:relative;
+    bottom: 10vh;
+    
+ 
    
    
     font-weight: 500;
@@ -263,9 +265,13 @@ width: 20vw;
     .main_container{
         width: 100vw;
     }
-    .project_label{
-        left: 10vw;
-        width: 20vw;
+ 
+}
+@media (min-width:1200px){
+    .main_container{
+        padding-left: 15vw;
+        padding-right: 15vw;
+
     }
 }
 /*******************Media Queries End********************/
