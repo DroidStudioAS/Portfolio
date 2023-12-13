@@ -1,8 +1,6 @@
-
 <script setup>
 import { ref } from 'vue';
 import {  useRouter } from 'vue-router'
-import {gsap} from"gsap";
 import { onMounted } from 'vue';
 
 const router = useRouter();
