@@ -5,26 +5,73 @@ import project from '../models/project';
 let headerColor = ref("#000");
 let close_pc_button = ref(null);
 let pc = ref(null);
+let project_name = ref(null)
+
+let project_name_in_focus = ref(null)
+
+let project_type_str = ref(null);
+let project_logo = ref(null);
+let project_desc = ref(null);
+let project_stack = ref(null);
+
+
 
 function closePc(){
     pc.value.style.visibility = 'hidden';
 }
-function showPc(){
+function showPc(project){
+    //set project name
+    project_name_in_focus.value=project.name;
+    //set project type
+    if(project.type ===0){
+        project_type_str.value='Mobile App'
+    }else{
+        project_type_str.value='Website'
+    }
+    //set image
+    project_logo=project.logo;
+    //set description
+    project_desc.value=project.desc;
+    project_stack.value=project.techstack;
+
+
+
+    //toggle visibility
     pc.value.style.visibility = 'visible';
+
 }
+
 const projects = [
-    new project("Fit Tracker",null,0),
-    new project('Infinite Swipe',null,1),
-    new project('Calculator',null,0),
-    new project('My Portfolio',null,1),
-    new project('Quote Stop',null,0),
-    new project('Compass',null,0),
-    new project('Flying Donut',null,0),
-    new project('Quiz',null,0),
+    new project("Fit Tracker",null,0,'./icon_app_fittrack.png' 
+    ,  'This App Will Help You Keep Track Of Your Training, Eating and Weight schedule, Giving You An Overview Of Your Daily, Weekly And Monthly Habits!'
+    , 'Frontend: XML, Java,Android Studio; Backend: Node.Js, MySQL;'
+    ),
+    new project('Infinite Swipe',null,1,'./icon_app_infiniteswipe.png'
+    ,  'An Online Arcade Game Where You Can Spend Hours Avoiding Bombs And Trying To Keep Your Character Alive!'
+    , 'Frontend: Vue.JS; Backend: Mars Engine (JavaScript), MySQL'),
+    new project('Calculator',null,0,'./icon_app_calc.png'
+    , 'A Simple Calculator App That Supports All Basic Arythmetic Operations'
+    , 'Frontend: XML, Java,Android Studio; Backend: Backendless;'),
+    new project('My Portfolio',null,1,'./icon_app_me.png'
+    , 'The Website You Are Browsing Right Now Was Also Developed By Me From Scratch.'
+    , 'Frontend: Vue.JS; Backend: Node.JS, MySQL;'),
+    new project('Quote Stop',null,0,'./icon_app_qs.png'
+    , 'Get Free, Unlimited Access To Thousands Of Inspiring Quotes With QuoteStop. Built With Quotable API'
+    , 'Frontend: XML, Java, Android Studio; Backend: SQLite;'),
+    new project('Compass',null,0,'./icon_app_compass.png'
+    , 'In Case You Ever Get Lost, This Compass App Can Help You Find Your Way To Safety!'
+    , 'Frontend: XML, Java, Android Studio; Backend: Backendless;'),
+    new project('Flying Donut',null,0,'./icon_app_donut.png'
+    , 'Try And Take The Donut To The Moon In This Infectious Mobile Game!'
+    , 'Frontend: XML, Java, Android Studio; Backend: SQLite;'),
+    new project('QuizMe',null,0,'./icon_app_quiz.png'
+    , 'Test Your Knowledge Of 10 Diffrent Subjects With My App QuizMe'
+    , 'Frontend: XML, Java, Android Studio; Backend: SQLite;'),
 ];
 
 function evenSetter(){
     for(let i = 0; i <projects.length; i++){
+        console.log(projects[i])
         if (i%2===0){
             console.log(projects[i].even)
             projects[i].setEven(true)
@@ -52,7 +99,7 @@ onMounted(()=>{
         :key="project.name" >
         <div v-if="project.even===false"
         class="project_image_container"
-        @click="showPc()">
+        @click="showPc(project)">
             <img src="/icon_folder_even.png">
             <div class="project_label">
              {{ project.name }}
@@ -60,10 +107,11 @@ onMounted(()=>{
         </div>
         <div v-else
         class="project_image_container"
-        @click="showPc()">           
+        @click="showPc(project)">           
          <img src="/icon_folder_uneven.png">
          <div class="project_label">
         {{ project.name }}
+       
         </div>
         </div>
        
@@ -75,30 +123,30 @@ onMounted(()=>{
             @click="closePc()" >
 
             </div>
-            <div  class="project_name_container">
-                <h1>
-                    Lorem Ipsum
+            <div class="project_name_container">
+                <h1 ref="project_name">
+                   {{project_name_in_focus}}
                 </h1>
             </div>
             <div class="project_type_container">
                 <h2>
-                     Ipsum Lorem
+                     {{ project_type_str }}
                 </h2>
             </div>
-            <div class="project_logo_container">
-
+            <div  class="project_logo_container">
+                <!--img 
+                :src="project_logo" ref="project_logo"-->
             </div>
             <div class="project_description_container">
                 <p>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.""
-
+                    {{ project_desc }}
+                    {{ project_stack }}
                 </p>
             </div>
             <div class="project_links_container">
-                <div>image</div>
-                <div>image</div>
-                <div>image</div>
+                <img  ref="wwwImage">
+                <img  ref="ghImage">
+                <img  ref="playStoreImage">
             </div> 
         </div>
 </div>
@@ -170,7 +218,7 @@ onMounted(()=>{
 .project_component{
     background: #4E7896;
     width: 45vw;
-    height: 50vh;
+    height: 56vh;
     position: fixed;
     left: 30vw;
 
@@ -178,6 +226,8 @@ onMounted(()=>{
     flex-flow: column nowrap;
 
     border-radius: 15px;
+
+    visibility: hidden;
 
 }
 /********pc_layout_items*******/
@@ -215,6 +265,22 @@ onMounted(()=>{
     font-size: 130%;
 
 }
+.project_logo_container{
+height: 10vh;
+width: 45vw;
+background: palevioletred;
+
+justify-content: center;
+align-items: center;
+}
+.project_logo img{
+height: 9vh;
+width: 9vw;
+background: palevioletred;
+
+justify-content: center;
+align-items: center;
+}
 .project_description_container{
     width: 40vw;
     height: 20vh;
@@ -223,16 +289,20 @@ onMounted(()=>{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    text-align: center;
+    font-size: 2cap;
 }
 .project_links_container{
-    height: 12vh;
-    background: pink;
+    height: 8vh;
     width: 45vw;
 
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     align-items: center;
+
+    border-radius: 0 0 15px 15px;
 }
   /********project_component end*********/
 
