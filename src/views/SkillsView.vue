@@ -10,6 +10,7 @@
         <div class="skills_list_container">
             <div v-for="(skill, index) in skills" :key="index"
             class="skill">
+            <img src="/icon_bullet.png">
             {{ skill }}
             </div>
         </div>
