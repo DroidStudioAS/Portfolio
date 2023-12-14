@@ -237,7 +237,12 @@ h1{
  color: black;
 }
 .header_link_container img{
- height: 15vh;
+ height: 13vh;
+ width: 13vh;
+
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 .page_title{
  width: 40vw;
@@ -423,12 +428,8 @@ align-items: center;
     .main_container{
         width: 100vw;
     }
-    .page_header{
-        width:100vw ;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 6cap;
+    .page_title{
+      font-size: 5vw;
     }
     .project_description_container{
         font-size: 1.9vw;
@@ -436,13 +437,9 @@ align-items: center;
   
 }
 @media (max-width:767px){
-    .page_header{
-        width:100vw ;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 6cap;
-    }
+   .page_title{
+     font-size: 5vw;
+   }
     .main_container{
         width: 100vw;
     }
@@ -476,7 +473,11 @@ align-items: center;
        .project_links_container{
         width: 80vw;
        }
+       .page_title{
+        font-size: 5.2vw;
+       }
     }
+
  
  
 }
