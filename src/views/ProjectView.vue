@@ -309,7 +309,10 @@ align-items: center;
     align-items: center;
 
     text-align: center;
-    padding: 15%;
+    padding-bottom: 8vh;
+    padding-left: 8vh;
+    padding-right: 8vh;
+
 
 
     font-size: 1.5vw
@@ -352,6 +355,9 @@ align-items: center;
         align-items: center;
         font-size: 6cap;
     }
+    .project_description_container{
+        font-size: 1.9vw;
+    }
   
 }
 @media (max-width:767px){
@@ -364,6 +370,37 @@ align-items: center;
     }
     .main_container{
         width: 100vw;
+    }
+    .project_description_container{
+        font-size: 2vw;
+    }
+    @media (max-width:500px) {
+        .close_pc_container img{
+            height: 30px;
+            width: 30px;
+        }
+       .project_component{
+        width: 80vw;
+        left: 10vw;
+       }
+       .project_name_container{
+        width: 80vw;
+        font-size: 5vw;
+       }
+       .project_type_container{
+        width: 80vw;
+        font-size:5vw;
+    }
+       .project_logo_container{
+        width: 80vw;
+       }
+       .project_description_container{
+        width: 80vw;
+        font-size: 3.5vw;
+       }
+       .project_links_container{
+        width: 80vw;
+       }
     }
  
  
