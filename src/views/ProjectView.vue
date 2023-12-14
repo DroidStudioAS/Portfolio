@@ -16,29 +16,47 @@ let project_stack = ref(null);
 let wwwImage =ref(null);
 let ghImage =ref(null);
 let playStoreImage =ref(null);
+let project_gh_link = ref(null);
+let www_link = ref(null);
 
+
+let www_cont = ref(null);
+let gh_cont = ref(null);
+let ps_cont= ref(null);
 
 
 function closePc(){
     pc.value.style.visibility = 'hidden';
     playStoreImage.value.style.display = 'none'
     wwwImage.value.style.display = 'none'
+    gh_cont.value.style.display='none'
 
 }
 function showLinks(project){
+
+gh_cont.value.style.display='block'
 if(project.type===0){
     project_type_str.value='Mobile App'
     wwwImage.value.style.display='none'
+    www_cont.value.style.display='none'
+
+    ps_cont.value.style.display = 'block'
     playStoreImage.value.style.display='block'
 }else{
     project_type_str.value='Website'
     wwwImage.value.style.display='block'
+    www_cont.value.style.display='block'
+
     playStoreImage.value.style.display='none'
+    ps_cont.value.style.display='none'
 }
 }
 function showPc(project){
     //set project name
     project_name_in_focus.value=project.name;
+    project_gh_link.value=project.gitLink;
+    www_link.value=project.webLink;
+
     //set project type
     showLinks(project);
     
@@ -56,31 +74,47 @@ function showPc(project){
 }
 
 const projects = [
-    new project("Fit Tracker",null,0,'./icon_app_fittrack.png' 
+    new project(
+        "Fit Tracker",null,0,'./icon_app_fittrack.png' 
     ,  'This App Will Help You Keep Track Of Your Training, Eating and Weight schedule, Giving You An Overview Of Your Daily, Weekly And Monthly Habits!'
     , 'Frontend: XML, Java,Android Studio; Backend: Node.Js, MySQL;'
+    , 'https://github.com/DroidStudioAS/FitTrack'
     ),
-    new project('Infinite Swipe',null,1,'./icon_app_infiniteswipe.png'
+    new project(
+        'Infinite Swipe',null,1,'./icon_app_infiniteswipe.png'
     ,  'An Online Arcade Game Where You Can Spend Hours Avoiding Bombs And Trying To Keep Your Character Alive!'
-    , 'Frontend: Vue.JS; Backend: Mars Engine (JavaScript), MySQL'),
+    , 'Frontend: Vue.JS; Backend: Mars Engine (JavaScript), MySQL',
+    'https://github.com/DroidStudioAS/Infinite-Swipe',
+    'https://181g123.e2.mars-hosting.com/'
+    ),
     new project('Calculator',null,0,'./icon_app_calc.png'
-    , 'A Simple Calculator App That Supports All Basic Arythmetic Operations'
-    , 'Frontend: XML, Java,Android Studio; Backend: Backendless;'),
+    ,   'A Simple Calculator App That Supports All Basic Arythmetic Operations'
+    ,   'Frontend: XML, Java,Android Studio; Backend: Backendless;'
+    ,   'https://github.com/DroidStudioAS/Calculator'
+    ),
     new project('My Portfolio',null,1,'./icon_app_me.png'
-    , 'The Website You Are Browsing Right Now Was Also Developed By Me From Scratch.'
-    , 'Frontend: Vue.JS; Backend: Node.JS, MySQL;'),
+    ,   'The Website You Are Browsing Right Now Was Also Developed By Me From Scratch.'
+    ,   'Frontend: Vue.JS; Backend: Node.JS, MySQL;'
+    ,   'https://github.com/DroidStudioAS/Portfolio'
+    ),
     new project('Quote Stop',null,0,'./icon_app_qs.png'
     , 'Get Free, Unlimited Access To Thousands Of Inspiring Quotes With QuoteStop. Built With Quotable API'
-    , 'Frontend: XML, Java, Android Studio; Backend: SQLite;'),
-    new project('Compass',null,0,'./icon_app_compass.png'
-    , 'In Case You Ever Get Lost, This Compass App Can Help You Find Your Way To Safety!'
-    , 'Frontend: XML, Java, Android Studio; Backend: Backendless;'),
+    , 'Frontend: XML, Java, Android Studio; Backend: SQLite;'
+    , 'https://github.com/DroidStudioAS/QuoteStop'
+    ),
+    new project('RunTrack',null,0,'./icon_app_compass.png'
+    , 'Track The Time You Spent, Distance You Passed And The Route You Took On Your Run With RunTrack'
+    , 'Frontend: XML, Java, Android Studio, Google Maps API; Backend: Backendless;'),
     new project('Flying Donut',null,0,'./icon_app_donut.png'
     , 'Try And Take The Donut To The Moon In This Infectious Mobile Game!'
-    , 'Frontend: XML, Java, Android Studio; Backend: SQLite;'),
+    , 'Frontend: XML, Java, Android Studio; Backend: SQLite;'
+    ,'https://github.com/DroidStudioAS/Running-Tracker'
+    ),
     new project('QuizMe',null,0,'./icon_app_quiz.png'
     , 'Test Your Knowledge Of 10 Diffrent Subjects With My App QuizMe'
-    , 'Frontend: XML, Java, Android Studio; Backend: SQLite;'),
+    , 'Frontend: XML, Java, Android Studio; Backend: SQLite;'
+    ,'https://github.com/DroidStudioAS/QuizMe'
+    ),
 ];
 
 function evenSetter(){
@@ -158,9 +192,9 @@ onMounted(()=>{
                 </p>
             </div>
             <div class="project_links_container">
-                    <img src="/icon_www.png" ref="wwwImage">
-                    <img src="/github-mark.png" ref="ghImage">
-                    <img src="/icon_playstore.png"  ref="playStoreImage">
+                 <a :href="www_link" target="_blank" ref="www_cont"> <img src="/icon_www.png" ref="wwwImage"></a>   
+                 <a :href="project_gh_link" target="_blank" ref="gh_cont"> <img src="/github-mark.png" ref="ghImage"></a>  
+                 <a ref="ps_cont"> <img src="/icon_playstore.png"  ref="playStoreImage"></a>  
             </div> 
         </div>
 </div>
