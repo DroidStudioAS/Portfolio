@@ -55,7 +55,7 @@ function dismissFeedback(){
  <div ref="feedback" class="feedback_container">
     <div>
        <p>
-        Your Message Has Been Sent! I Will Get Back To You At This <span class="mail">{{ mail }}</span>  Adress, As Soon As Possible. <br> Thank You For Your Intrest
+        Your Message Has Been Sent! <br> I Will Get Back To You At This <span class="mail">{{ mail }}</span>  Adress, As Soon As Possible. <br> Thank You For Your Intrest!
        </p> 
     </div>
     <div @click="dismissFeedback()" class="dismiss_button">
@@ -133,6 +133,7 @@ p{
 .feedback_container{
     width: 40vw;
     height: 40vh;
+    padding: 2vh;
     background: #4E7896;
     position: absolute;
     top: 30vh;
@@ -142,7 +143,7 @@ p{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
 
     font-size: 2vw;
@@ -254,6 +255,9 @@ p{
         width: 100vw;
         left: 0;
     }
+    .feedback_container{
+        font-size: 2.5vw;
+    }
  
 
 }
@@ -293,6 +297,15 @@ p{
 .subject_container input{
     font-size: 1.1cap;
 }
+.feedback_container{
+        font-size: 2.8vw;
+    }
 
+}
+@media (max-width:500px){
+    .feedback_container{
+        width: 50vw;
+        font-size: 3.5vw;
+    }
 }
 </style>
