@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import networkHelper from '../helpers/networkHelper';
 
 let sendBtn = ref(null);
+let feedback = ref(null);
 
 let message = ref('');
 let subject = ref('');
@@ -15,8 +16,12 @@ if(message.value.trim()==="" || subject.value.trim()==="" || name.value.trim()==
     console.log(message,subject,name,mail)
     return;
 }
-
 networkHelper.sendMsg(message.value,subject.value,name.value,mail.value);
+feedback.value.style.visibility = 'visible'
+}
+function dismissFeedback(){
+    feedback.value.style.visibility = 'hidden'
+
 }
 
 </script>
@@ -47,6 +52,17 @@ networkHelper.sendMsg(message.value,subject.value,name.value,mail.value);
     </div>
 
 </form>
+ <div ref="feedback" class="feedback_container">
+    <div>
+       <p>
+        Your Message Has Been Sent! I Will Get Back To You At This <span class="mail">{{ mail }}</span>  Adress, As Soon As Possible. <br> Thank You For Your Intrest
+       </p> 
+    </div>
+    <div @click="dismissFeedback()" class="dismiss_button">
+        Ok
+    </div>
+
+ </div>
 
   <div class="socials_container">
     <img src="/icon_social_linkedin.png"/>
@@ -57,7 +73,9 @@ networkHelper.sendMsg(message.value,subject.value,name.value,mail.value);
 </template>
 <style scoped>
 /***********Styles crucial for page layout Start***********/
-
+p{
+    color: white;
+}
 
 .page_container{
     position: absolute;
@@ -112,11 +130,51 @@ networkHelper.sendMsg(message.value,subject.value,name.value,mail.value);
 
   
 }
+.feedback_container{
+    width: 40vw;
+    height: 40vh;
+    background: #4E7896;
+    position: absolute;
+    top: 30vh;
+
+    visibility: hidden;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    font-size: 2vw;
+
+    z-index: 6;
+    border-radius: 15px;
+
+}
+.dismiss_button{
+  height: 10vh;
+  width: 13vw;
+
+  font-size: x-large;
+  color: #89B4BE;
+
+  background: #000;
+  border-radius:30px 20px 30px 20px;
+  
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 
 
 /***********Styles crucial for page layout End***********/
-
+.mail{
+    color: white;
+    text-decoration: underline;
+}
 .icon_container{
     width: 12vw;
     height: 20vh;
