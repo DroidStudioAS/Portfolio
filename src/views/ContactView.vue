@@ -1,4 +1,23 @@
 <script setup>
+import { ref } from 'vue';
+import networkHelper from '../helpers/networkHelper';
+
+let sendBtn = ref(null);
+
+let message = ref('');
+let subject = ref('');
+let name = ref('');
+let mail = ref('');
+
+function sendRes(){
+if(message.value.trim()==="" || subject.value.trim()==="" || name.value.trim()==="" || mail.value.trim()===""){
+    console.log('SENDING STOPPED')
+    console.log(message,subject,name,mail)
+    return;
+}
+
+networkHelper.sendMsg(message.value,subject.value,name.value,mail.value);
+}
 
 </script>
 <template>
@@ -9,22 +28,22 @@
 
   <form class="main_container">
     
-    <div class="icon_container">
+    <div @click="sendRes()" ref="sendBtn" class="icon_container">
         <img src="/icon_mail.png">
     </div>
     <div class="message_field">
-        <textarea placeholder="Feel Free To Message Us About Any Questions You Have" class="message_field" type="text_field"/>
+        <textarea v-model="message" placeholder="Feel Free To Message Us About Any Questions You Have" class="message_field" type="text_field"/>
     </div>
     <div class="contact_container">
         <div class="e_mail_container">
-            <input class="email" placeholder="Subject" type="email">
+            <input v-model="subject" class="email" placeholder="Subject" type="email">
         </div>
         <div class="name_container"> 
-            <input class="name" placeholder="Name" type="name">
+            <input v-model="name" class="name" placeholder="Name" type="name">
         </div>
     </div>
     <div class="subject_container">
-        <input class="subject" placeholder="E-mail" type="text">
+        <input v-model="mail" class="subject" placeholder="E-mail" type="text">
     </div>
 
 </form>
