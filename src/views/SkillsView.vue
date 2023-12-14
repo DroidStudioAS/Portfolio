@@ -159,6 +159,10 @@ template{
     align-items: center;
     padding: 50px 0px 50px 0px;
 }
+.skills_list_container img{
+    width: 20px;
+    height: 20px;
+}
 /*************End OF Skills container item styles*************/
 /*************End OF Skills List Container item styles*************/
 .skill{
@@ -170,7 +174,7 @@ template{
     align-items: center;
     justify-content: start;
 
-    font-size:160% ;
+    font-size:2vw ;
 }
 .icon{
     height: fit-content;
@@ -225,6 +229,9 @@ else 10vw */
  .skills_button{
     font-size: 1.1cap;
  }
+ .skill{
+    font-size: 3.5vw;
+ }
 
 
 }
@@ -235,6 +242,9 @@ else 10vw */
     .main_container{
     height: 260vh;
  }
+ .skill{
+    font-size: 3vw;
+ }
 
  
 }
@@ -244,6 +254,9 @@ else 10vw */
  .main_container{
     height: 260vh;
     width: 100vw;
+ }
+ .skill{
+    font-size: 2.5vw;
  }
 }
 

@@ -632,9 +632,9 @@ width: 15vw;
   justify-content: space-evenly;
 }
 .menu_item{
-  width: 20vw;
+  width: 18vw;
   height: 8vh;
-  font-size: 1.2cap;
+  font-size: 3vw;
 }
 }
 

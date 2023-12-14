@@ -172,7 +172,7 @@ onMounted(()=>{
   height: 10vh;
   width: 13vw;
 
-  font-size: x-large;
+  font-size: 2vw;
   color: #89B4BE;
 
   background: #000;
@@ -254,7 +254,7 @@ visibility: hidden;
   }
   .menu_item{
     width: 20vw;
-   
+   font-size: 2.5vw;
   }
 }
 @media(max-width:450px){
@@ -264,7 +264,7 @@ visibility: hidden;
   }
   .menu_item{
     width: 20vw;
-    font-size: 1.3cap;
+    font-size: 3vw;
   }
   .menu_but_container{
     visibility: hidden;
