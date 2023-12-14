@@ -39,9 +39,9 @@ if(project.type===0){
     project_type_str.value='Mobile App'
     wwwImage.value.style.display='none'
     www_cont.value.style.display='none'
-
-    ps_cont.value.style.display = 'block'
-    playStoreImage.value.style.display='block'
+    //should be block but no play store acount active yet
+    ps_cont.value.style.display = 'none'
+    playStoreImage.value.style.display='none'
 }else{
     project_type_str.value='Website'
     wwwImage.value.style.display='block'
@@ -102,7 +102,7 @@ const projects = [
     , 'Frontend: XML, Java, Android Studio; Backend: SQLite;'
     , 'https://github.com/DroidStudioAS/QuoteStop'
     ),
-    new project('RunTrack',null,0,'./icon_app_compass.png'
+    new project('RunTrack',null,0,'./icon_app_rt.png'
     , 'Track The Time You Spent, Distance You Passed And The Route You Took On Your Run With RunTrack'
     , 'Frontend: XML, Java, Android Studio, Google Maps API; Backend: Backendless;'),
     new project('Flying Donut',null,0,'./icon_app_donut.png'
@@ -139,9 +139,15 @@ onMounted(()=>{
 
 </script>
 <template>
-    <h1 class="page_header" :style="{color:headerColor}">
-        Projects
-    </h1>
+    <div class="header_container">
+        <div class="header_link_container">
+            <a target="_blank" href="https://github.com/DroidStudioAS"><img src="/github-mark.png"></a>
+            <span class="page_title">
+            <h1>Projects</h1>
+            </span>
+        </div>
+        
+    </div> 
     <div class="main_container">
         <div v-for="project in projects" 
         :key="project.name" >
@@ -165,21 +171,22 @@ onMounted(()=>{
        
 
         </div>
-        <div ref="pc" class="project_component">
+        <div ref="pc"
+         class="project_component">
             <div  ref="close_pc_button" 
             class="close_pc_container"
             @click="closePc()" >
                 <img src="/button_close_cp.png">
             </div>
             <div class="project_name_container">
-                <h1 ref="project_name">
+                <h2 ref="project_name">
                    {{project_name_in_focus}}
-                </h1>
+                </h2>
             </div>
             <div class="project_type_container">
-                <h2>
+                <h3>
                      {{ project_type_str }}
-                </h2>
+                </h3>
             </div>
             <div  class="project_logo_container">
                 <img 
@@ -188,6 +195,7 @@ onMounted(()=>{
             <div class="project_description_container">
                 <p>
                     {{ project_desc }}
+                    <br>
                     {{ project_stack }}
                 </p>
             </div>
@@ -201,10 +209,50 @@ onMounted(()=>{
 
 </template>
 <style scoped>
+
+/************CRUCIAL START*************/
 *{
     color: white;
 }
-/************CRUCIAL START*************/
+h1{
+    color: black;
+}
+
+.header_link_container{
+ width: 100vw;
+ height: 25vh;
+
+ padding-bottom: 5vh;
+
+ display: flex;
+ justify-content: center;
+ align-items: center;
+
+ background: #89B4BE;
+
+ position: absolute;
+ left: 0vw;
+ top: 0vh;
+
+ color: black;
+}
+.header_link_container img{
+ height: 15vh;
+}
+.page_title{
+ width: 40vw;
+ height: 25vh;
+
+ display: flex;
+ justify-content: start;
+ align-items: center;
+
+ font-size: 5vw;
+ font-weight: 700;
+ color: black;
+ background: #89B4BE;
+ transition: color 1s ease-in-out;
+}
 .main_container{
     height: 80vh;
     width: 100vw;
@@ -218,22 +266,13 @@ onMounted(()=>{
     overflow-y: auto;
 }
 .page_header{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-
-    width: 100vw;
-    height: 25vh;
+    height: 20vh;
     font-size: 10cap;
     font-weight: 700;
     
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
+
 
     color: black;
-    z-index: 4;
     background: #89B4BE;
 
     transition: color 1s ease-in-out;
@@ -277,6 +316,8 @@ onMounted(()=>{
 
     visibility: hidden;
 
+    color: white;
+
 }
 /********pc_layout_items*******/
 /***50vh and 45vw is the space the children are working with***/
@@ -307,7 +348,7 @@ onMounted(()=>{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.5vw
+    font-size: 2.5vw;
 }
 .project_type_container{
     height: 10vh;
