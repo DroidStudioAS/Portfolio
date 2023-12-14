@@ -231,10 +231,10 @@ onMounted(()=>{
  /********project_component start*********/
 .project_component{
     background: #4E7896;
-    width: 45vw;
-    height: 56vh;
+    width: 50vw;
+    height: 70vh;
     position: fixed;
-    left: 30vw;
+    left: 25vw;
 
     display: flex;
     flex-flow: column nowrap;
@@ -250,6 +250,7 @@ onMounted(()=>{
 -10vh projectname (40 leftt)
 -8vh projecttype (32 left)
 -20vh description (12 left)
+-8-8-10-8-10-8-10-20-7
 */
 .close_pc_container{
     width: 5vw;
@@ -261,33 +262,36 @@ onMounted(()=>{
     border-radius: 15px;
 }
 .close_pc_container img {
-    width: 5vw;
-    height: 8vh;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 0;
 }
 .project_name_container{
-    width: 45vw;
+    width: 50vw;
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 130%;
+    font-size: 2.5vw
 }
 .project_type_container{
-    height: 8vh;
-    width: 45vw;
+    height: 10vh;
+    width: 50vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 130%;
+    font-size: 2vw
+
 
 }
 .project_logo_container{
-height: 10vh;
-width: 45vw;
-padding-top: 2%;
+height: 15vh;
+width: 50vw;
 display: flex;
 justify-content: center;
 align-items: center;
+
 }
 .project_logo_container img{
 height: 100px;
@@ -297,20 +301,23 @@ justify-content: center;
 align-items: center;
 }
 .project_description_container{
-    width: 40vw;
-    height: 20vh;
-    position: relative;
-    left: 2.5vw;
+    width: 50vw;
+    height: 30vh;
+    
     display: flex;
     justify-content: center;
     align-items: center;
 
     text-align: center;
-    font-size: 2cap;
+    padding: 15%;
+
+
+    font-size: 1.5vw
+
 }
 .project_links_container{
-    height: 7vh;
-    width: 45vw;
+    height: 10vh;
+    width: 50vw;
 
     display: flex;
     flex-flow: row wrap;
@@ -318,6 +325,10 @@ align-items: center;
     align-items: center;
 
     border-radius: 0 0 15px 15px;
+
+
+    position: absolute;
+    bottom: 0%;
 }
 .project_links_container img{
     height: 7vh;
@@ -341,8 +352,9 @@ align-items: center;
         align-items: center;
         font-size: 6cap;
     }
+  
 }
-@media (max-width:766px){
+@media (max-width:767px){
     .page_header{
         width:100vw ;
         display: flex;
@@ -353,6 +365,7 @@ align-items: center;
     .main_container{
         width: 100vw;
     }
+ 
  
 }
 @media (min-width:1200px){
