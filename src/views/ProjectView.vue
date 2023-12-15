@@ -148,7 +148,7 @@ onMounted(()=>{
         </div>
         
     </div> 
-    <div class="main_container">
+    <div class="projects_main_container">
         <div v-for="project in projects" 
         :key="project.name" >
         <div v-if="project.even===false"
@@ -258,9 +258,10 @@ h1{
  background: #89B4BE;
  transition: color 1s ease-in-out;
 }
-.main_container{
+.projects_main_container{
     height: 80vh;
     width: 100vw;
+
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -268,7 +269,9 @@ h1{
 
     position: absolute;
     top: 25vh;
+    left: 0%;
     overflow-y: auto;
+    background: #89B4BE;
 }
 .page_header{
     height: 20vh;
@@ -482,7 +485,7 @@ align-items: center;
  
 }
 @media (min-width:1200px){
-    .main_container{
+    .projects_main_container{
         padding-left: 15vw;
         padding-right: 15vw;
 

@@ -145,6 +145,7 @@ gap: 5%;
 
   position: absolute;
   top: 0%;
+  left: 0%;
  
   height: 100vh;
   width: 100vw;

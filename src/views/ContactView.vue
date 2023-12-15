@@ -114,7 +114,7 @@ p{
 .subject_container{
     position: absolute;
     top: 56vh;
-    left: 30vw;
+    left: 0w;
     width: 40vw;
     height: 5vh;
 }

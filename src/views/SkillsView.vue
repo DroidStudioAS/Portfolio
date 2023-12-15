@@ -68,9 +68,10 @@ function refreshList(int){
 </script>
 <style scoped>
 /**************** Begining of Styles Crucial For Layout*****************/
-template{
-    width: 100vw;
+*{
+    color: black;
 }
+
 .main_container{
     background: #89B4BE;
     position: absolute;
@@ -83,7 +84,10 @@ template{
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    color: black;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 .skills_header{
     font-size: 15vh;
@@ -125,7 +129,7 @@ template{
     height: 80vh;
     width: 95vw;
     top: 80vh;
-    left: 2.5vw;
+    
 
     display: flex;
     flex-flow: row wrap;
