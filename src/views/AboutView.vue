@@ -341,8 +341,7 @@ gap: 3vw;
   font-weight: 700;
 }
 .education_container{
-  position: absolute;
-  top: 74vh ;
+  
   width: 80vw;
 
   display: flex;
@@ -360,9 +359,10 @@ gap: 3vw;
   justify-content: center;
   align-items: center;
   gap: 1vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 
-  position: absolute;
-  top: 10vh;
+  
 
 }
 .table_row{
@@ -982,9 +982,4 @@ width: 15vw;
 
 }
 /**************Media Querys End*****************/
-
-
-
-
-
 </style>
