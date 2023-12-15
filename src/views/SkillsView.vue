@@ -146,7 +146,7 @@ template{
     justify-content: center;
     text-align: center;
     gap: 5vh;
-    font-size: 3cap;
+    font-size: 2.3vw;
 }
 
 .skills_button{
@@ -174,7 +174,7 @@ template{
     align-items: center;
     justify-content: start;
 
-    font-size:2vw ;
+    font-size:1.5vw ;
 }
 .icon{
     height: fit-content;
@@ -204,11 +204,11 @@ else 10vw */
     
  }
  .skills_button{
-    font-size: 0.8cap;
+    font-size: 4.5vw;
  }
 
  .skill{
-    font-size:1.5cap ;
+    font-size:3vw ;
  }
  
 
@@ -227,7 +227,7 @@ else 10vw */
     font-size: 6cap;
  }
  .skills_button{
-    font-size: 1.1cap;
+    font-size: 4vw;
  }
  .skill{
     font-size: 3.5vw;
@@ -242,6 +242,9 @@ else 10vw */
     .main_container{
     height: 260vh;
  }
+ .skills_button{
+    font-size: 3.5vw;
+ }
  .skill{
     font-size: 3vw;
  }
@@ -255,6 +258,10 @@ else 10vw */
     height: 260vh;
     width: 100vw;
  }
+ .skills_button{
+    font-size: 3vw;
+ }
+
  .skill{
     font-size: 2.5vw;
  }
