@@ -154,6 +154,9 @@ function pushTo(name){
       </div>
     </div>
     <div class="second_page_container">
+     
+    <div class="image_container">
+      <img class="comp_image" src="/back_computer.png">
       <div class="content_container">
       <h1>
         Welcome! I'm a 24-year-old Software Developer specializing in top-tier mobile and web applications. 
@@ -170,8 +173,6 @@ function pushTo(name){
       </div>
 
     </div>
-    <div class="image_container">
-      <img class="comp_image" src="/back_computer.png">
     </div>
     <div class="mobile_frame">
       <img src="/icon_mobile_frame.png">
@@ -476,9 +477,8 @@ align-items: center;
 .content_container{
   width: 50vw;
   position: absolute;
-  
-  bottom: 60vh;
-  left: 23vw;
+  bottom: 50%;
+  left: 25vw;
   z-index: 2;
   display: flex;
   flex-flow: column nowrap;
@@ -492,7 +492,7 @@ align-items: center;
   justify-content: space-around;
   align-items: end;
   position: absolute;
-  bottom: -13vh;
+  bottom: -20vh;
   width: 40vw;
 }
 .menu_item{
@@ -512,11 +512,6 @@ align-items: center;
   text-align: center;
 }
 /****************End Of Second Page Item Styles***************/
-
-
-
-
-
 
 /**************Media Querys Start*****************/
 @media (max-width: 453px){
@@ -637,8 +632,6 @@ width: 15vw;
   font-size: 3vw;
 }
 }
-
-
 /* Small Devices (Phones and Small Tablets) */
 @media (min-width:454px) and  (max-width: 592px) {
   .main_container{
@@ -852,7 +845,6 @@ width: 15vw;
   width: 100vw;
 }
 }
-
 /* Medium Devices (Tablets) OK */
 @media (min-width: 768px) and (max-width: 992px) {
   .main_container{
@@ -916,7 +908,6 @@ width: 15vw;
  font-size: 2cap;
 }
 }
-
 /* Large Devices (Desktops and Laptops) */
 @media (min-width: 992px) and (max-width: 1043px) {
   .main_container{
@@ -971,7 +962,6 @@ width: 15vw;
  font-size: 2cap;
 }
 }
-
 /* Extra Large Devices (Large Desktops and TVs) */
 @media (min-width: 1200px) {
   .main_container{
@@ -985,6 +975,8 @@ width: 15vw;
     width: 0vw;
     top: 0%;
   }
+
+
  
   
 
