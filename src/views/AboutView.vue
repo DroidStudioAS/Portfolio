@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue"
+import { onBeforeMount, onMounted, ref } from "vue"
 
 
 let language_table = ref(null);
@@ -12,6 +12,13 @@ function toggleVisibility(){
     language_table.value.style.display='none'
   }
 }
+
+onMounted(()=>{
+  toggleVisibility();
+})
+
+/***********LifeCycle Hooks**********/
+
 </script>
 <template>
   <div class="about_container">
@@ -78,48 +85,52 @@ function toggleVisibility(){
         </div>
         <!--Language Table-->
         <div  
-        ref="language_table"
-        class="language_table_container">
-        <div @click="toggleVisibility()"
-        ref="close_language_button" 
-        class="close_language_button">
-            <img src="/button_close_cp.png">
-        </div>
-          <div class="table_row"> 
-            <div class="table_header"></div>
-            <div class="table_header"></div>
-            <div class="table_header"></div>
-            <div class="table_header"></div>
-          </div>
-          <div class="table_row">
-            <div class="table_language"></div>
-            <div class="table_entrie"></div>
-            <div class="table_entrie"></div>
-            <div class="table_entrie"></div>
-          </div> 
-          <div class="table_row">
-            <div class="table_entrie"></div>
-            <div class="table_entrie"></div>
-            <div class="table_entrie"></div>
-            <div class="table_entrie"></div>
-          </div> 
-          <div class="table_row">
-            <div class="table_entrie"></div>
-            <div class="table_entrie"></div>
-            <div class="table_entrie"></div>
-            <div class="table_entrie"></div>
-          </div>
-          <div class="table_row">
-            <div class="table_entrie"></div>
-            <div class="table_entrie"></div>
-            <div class="table_entrie"></div>
-            <div class="table_entrie"></div>
-          </div>
-        </div>
+    ref="language_table"
+    class="language_table_container">
+    <div @click="toggleVisibility()"
+    ref="close_language_button" 
+    class="close_language_button">
+        <img src="/button_close_cp.png">
+    </div>
+    <table>
+        <tr class="table_row"> 
+            <th class="table_main_header">Languages</th>
+            <th class="table_header">Speaking</th>
+            <th class="table_header">Reading</th>
+            <th class="table_header">Writing</th>
+        </tr>
+        <tr class="table_row">
+            <td class="table_language">Serbian</td>
+            <td class="table_entrie">Fluent</td>
+            <td class="table_entrie">Fluent</td>
+            <td class="table_entrie">Fluent</td>
+        </tr> 
+        <tr class="table_row">
+            <td class="table_language">English</td>
+            <td class="table_entrie">Fluent</td>
+            <td class="table_entrie">Fluent</td>
+            <td class="table_entrie">Fluent</td>
+        </tr> 
+        <tr class="table_row">
+            <td class="table_language">Greek</td>
+            <td class="table_entrie">Fluent</td>
+            <td class="table_entrie">Advanced</td>
+            <td class="table_entrie">Advanced</td>
+        </tr>
+        <tr class="table_row">
+            <td class="table_language">German</td>
+            <td class="table_entrie">Basic</td>
+            <td class="table_entrie">Advanced</td>
+            <td class="table_entrie">Advanced</td>
+        </tr>
+    </table>
+</div>
+
 
     </div>
     <div class="image_frame_container">
-      <img src="/back_computer.png"/>
+      <img class="comp_image" src="/back_computer_frame.png"/>
+      <img class="mobile_image" src="/back_mobile_frame.png"/>
     </div>
   </div>
   <!--div class="page_three_container"></div-->
@@ -250,14 +261,14 @@ background: #89B4BE;
 /********Language Table**********/
 .language_table_container{
   display: flex;
-
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  gap: 5vh;
 
-  width: 60vw;
+  width: 80vw;
   height: 70vh;
-  background: maroon;
+  background: #89B4BE;
 
   position: absolute;
 
@@ -268,8 +279,55 @@ background: #89B4BE;
   top: 1vh;
   right: 1vw;
 }
-/********End Of Language Table**********/
 
+.table_row{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+
+
+  
+}
+.table_main_header{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  width: 20vw;
+
+  font-size: 3vw;
+}
+.table_header{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20vw;
+
+  font-size: 3vw;
+}
+.table_language{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20vw;
+  font-size: 3vw;
+
+}
+.table_entrie{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20vw;
+  font-size: 3vw;  
+}
+/********End Of Language Table**********/
+/********Start Of Frames********/
 .image_frame_container{
   display: flex;
   justify-content: center;
@@ -277,6 +335,15 @@ background: #89B4BE;
   width: 100vw;
 
 }
+.comp_image{
+  visibility: visible;
+}
+.mobile_image{
+  position: absolute;
+  visibility:hidden;
+}
+/********end Of Frames Of Frames********/
+
 /***************End Of Page 2 Items****************/
 
 /***************Start Of Page 3 Items****************/
@@ -308,7 +375,43 @@ background: #89B4BE;
 .education_container{
 flex-flow: column nowrap;
 }
+.language_button{
+  width: 20vw;
+  height: 10h;
+  padding: 2vh;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  color: white;
+  font-size: 3.8vw;
+
+  background: #89B4BE;
+  border-radius: 15px;
+
+  z-index: 2;
+
+  margin-top: 2vw;
+}
+.language_table_container{
+  padding-left: 5vw;
+  width: 100vw;
+  height: 80vh;
+
+  align-items: right;
+}
+
+
+
+.comp_image{
+  visibility: hidden;
+}
+.mobile_image{
+  visibility: visible;
+}
 }
 /***************End Of Media Queries ****************/
 
