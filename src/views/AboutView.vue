@@ -1,5 +1,10 @@
 <script setup>
 import { onBeforeMount, onMounted, ref } from "vue"
+import {  useRouter } from 'vue-router'
+import { useStore } from "../stores/counter";
+
+const store = useStore();
+const router = useRouter();
 
 
 let language_table = ref(null);
@@ -13,6 +18,15 @@ function toggleVisibility(){
   }
 }
 
+function pushTo(name){
+ store.setActivePage(name);
+ console.log('active page', store.getActivePage());
+  console.log('Routing to:', name);
+  console.log('Router:', router); // Check if router is defined
+  router.push({ name: name });
+  console.log("push activated");
+}
+
 onMounted(()=>{
   toggleVisibility();
 })
@@ -22,11 +36,11 @@ onMounted(()=>{
 </script>
 <template>
   <div class="about_container">
-    <h1>What I Do</h1>
+    <h1 class="head">What I Do</h1>
   <div class="page_one_container">
     <div class="service_container">
       <div class="service_card">
-        <img src="/icon_web_dev_exp.png"/>
+        <img src="/icon_web_dev.png"/>
         <h2 class="service_title">Web Development</h2>
         <p class="service_description">
               "Bring your vision to life with a stunning website, meticulously crafted <br>
@@ -50,7 +64,7 @@ onMounted(()=>{
     <div class="education_container">
         <div class="education">
           <div class="education_header">
-            ITAcademy
+            ITAcademy Belgrade
           </div>
           <div class="education_department">
             Mobile Development Department
@@ -125,15 +139,22 @@ onMounted(()=>{
         </tr>
     </table>
 </div>
-
-
-    </div>
-    <div class="image_frame_container">
-      <img class="comp_image" src="/back_computer_frame.png"/>
-      <img class="mobile_image" src="/back_mobile_frame.png"/>
-    </div>
+ </div>
+ <div class="frame_container">
+  <p>
+Welcome! <br> 
+I'm a 24-year-old Software Developer specializing in top-tier mobile and web applications.<br> <br>
+Curious To Explore Further?<br> <br>
+Explore my skills or projects below and see for yourself.<br> 
+</p>
+  <div class="button_container">
+    <div @click="pushTo('projects')" class="button">Projects</div>
+    <div @click="pushTo('skills')" class="button">Skills</div>
   </div>
-  <!--div class="page_three_container"></div-->
+
+ </div>
+  
+  </div>
 
 </div>
 </template>
@@ -141,22 +162,24 @@ onMounted(()=>{
 /***************START Crucial For Entire Page Layout****************/
 .about_container{
 position: absolute;
-left: 0%;
 top: 0%;
+left: 0%;
+right: 0%;
 
 display: flex;
 flex-flow: column nowrap;
 justify-content: start;
 align-items: start;
+height: 270vh;
 width: 100vw;
-overflow-x: hidden;
 
 background: #89B4BE;
+
+overflow: hidden;
 }
 .page_one_container{
   height: 80vh;
   width: 100vw;
-  background: orange;
 
   display: flex;
   justify-content: center;
@@ -165,16 +188,18 @@ background: #89B4BE;
 .page_two_container{
   height: 100vh;
   width: 100vw;
-  background: pink;
 }
-/*.page_three_container{
-  height: 100vh;
-  width: 100vw;
-  background: purple;
-}*/
 /***************End Crucial For Entire Page Layout****************/
 
 /***************Start Of Page 1 Items****************/
+.head{
+ width: 100vw;
+
+ font-size: 7vw;
+ color: black;
+ text-align: center;
+}
+/*********Service*******/
 .service_container{
   display: flex; 
   flex-flow:row nowrap;
@@ -185,10 +210,6 @@ background: #89B4BE;
   margin-top: 10vh;
   height: 70vh;
   width: 100vw;
-
-  background: green;
-
-
 }
 .service_card{
   display: flex;
@@ -196,17 +217,21 @@ background: #89B4BE;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: yellow;
 
   width: 40vw;
-  height: 60vh;
+  height: 63vh;
 
-  color:black
-  
+  color:white;
+  background: #4E7896;
+  border-radius: 15px;
 }
-
+.service_title{
+  font-size: 3vw;
+}
+.service_description{
+  font-size: 1.3;
+}
 /***************End Of Page 1 Items****************/
-
 /***************Start Of Page 2 Items****************/
 .education_container{
   display: flex;
@@ -216,6 +241,7 @@ background: #89B4BE;
 
   width: 90vw;
   margin-left: 5vw;
+
 }
 .education{
   height: 40vh;
@@ -226,17 +252,35 @@ background: #89B4BE;
   justify-content: center;
   align-items: center;
 
-  background: orange;
   color: black;
 
   text-align: center;
 }
+/*******Start Of Education Typography Items******/
+.education_header{
+  font-size: 3vw;
+  font-style: bold;
+}
+.education_department{
+  font-size: 2vw;
+  font-style: bold;
+}
+.education_deegre{
+  font-size: 1.5vw;
+  font-weight: 600;
+}
+.education_years{
+  font-size: 1.5vw;
+  font-weight: 600;
+}
+/*******End Of Education Typography Items******/
 .education_img{
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
+/******End Of Education**** */
 .language_button{
   width: 12vw;
   height: 10h;
@@ -251,7 +295,7 @@ background: #89B4BE;
   color: white;
   font-size: 2vw;
 
-  background: #89B4BE;
+  background: #4E7896;
   border-radius: 15px;
 
   z-index: 2;
@@ -268,7 +312,9 @@ background: #89B4BE;
 
   width: 80vw;
   height: 70vh;
-  background: #89B4BE;
+  background: #4E7896;
+
+  border-radius: 15px;
 
   position: absolute;
 
@@ -297,7 +343,8 @@ background: #89B4BE;
 
   width: 20vw;
 
-  font-size: 3vw;
+  font-size: 4vw;
+  color: white;
 }
 .table_header{
 
@@ -307,7 +354,9 @@ background: #89B4BE;
 
   width: 20vw;
 
-  font-size: 3vw;
+  font-size: 3.5vw;
+  font-weight: 600;
+  color: white;
 }
 .table_language{
   display: flex;
@@ -315,7 +364,10 @@ background: #89B4BE;
   align-items: center;
 
   width: 20vw;
-  font-size: 3vw;
+
+  font-size: 3.5vw;
+  font-weight: 600;
+  color: white;
 
 }
 .table_entrie{
@@ -324,41 +376,105 @@ background: #89B4BE;
   align-items: center;
 
   width: 20vw;
-  font-size: 3vw;  
+
+  font-size: 3vw; 
+  font-style: italic; 
+  color: white;
+
 }
 /********End Of Language Table**********/
 /********Start Of Frames********/
-.image_frame_container{
+.frame_container{
+  width: 100vw;
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  width: 100vw;
 
+  text-align: center;
+}
+.frame_container p{
+  font-size: 4vw;
+  padding: 2.5vh;
+
+  color:#fff
 }
 .comp_image{
   visibility: visible;
+  width: 70vw;
+  position: absolute;
+  left: 15vw;
 }
 .mobile_image{
   position: absolute;
   visibility:hidden;
+
+  width: 100vw;
 }
+
+.button_container{
+display: flex;
+flex-flow: row nowrap;
+gap: 10vw;
+}
+.button_container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 10vh;
+  width: 20vw;
+
+  background: #4E7896;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 3vw;
+  color: white;
+}
+
 /********end Of Frames Of Frames********/
 
 /***************End Of Page 2 Items****************/
-
-/***************Start Of Page 3 Items****************/
-
-/***************End Of Page 3 Items****************/
-
 /***************Start Of Media Queries ***************
+/***************Phones*************/
+@media(max-width:450px){
+  .table_entrie{
+    font-size: 6vw;
+  }
+
+  .head{
+    font-size: 20vw;
+  }
+
+ 
+  .service_card{
+    height: 30vh;
+   background: none;
+   color: black;
+  }
+  .service_title{
+    font-size: 10vw;
+  }
+  .service_description{
+    font-size: 4vw;
+  }
+
+
+ 
+  
+
+}
 /* Small Devices (Phones and Small Tablets) */
 @media (max-width: 800px) {
+  .about_container{
+    height: 410vh;
+ 
+    width: 100vw;
+  }
 .page_one_container{
   height: 160vh;
   }
-.education{
-  width: 50vw;
-}
+
 .service_container{
   height: 150vh;
   position: absolute;
@@ -367,14 +483,33 @@ background: #89B4BE;
   top: 0%;
 
   flex-flow: column nowrap;
+  gap: 4vh;
 }
 .service_card{
   height: 75vh;
-  width: 100vw;
+  width: 60vw;
 }
+/*************education************/
 .education_container{
 flex-flow: column nowrap;
+margin-top: 0vh;
+gap: 5vh;
 }
+.education_header{
+  font-size:5vw;
+}
+.education_department{
+  font-size: 4vw;
+}
+.education_deegre{
+  font-weight: 600;
+  font-size: 3vw;
+}
+.education_years{
+  font-weight: 600;
+  font-size: 3vw;
+}
+
 .language_button{
   width: 20vw;
   height: 10h;
@@ -389,7 +524,6 @@ flex-flow: column nowrap;
   color: white;
   font-size: 3.8vw;
 
-  background: #89B4BE;
   border-radius: 15px;
 
   z-index: 2;
@@ -398,19 +532,40 @@ flex-flow: column nowrap;
 }
 .language_table_container{
   padding-left: 5vw;
-  width: 100vw;
-  height: 80vh;
 
-  align-items: right;
+  gap: 50vh;
+  width: 90vw;
+  height: 40vh;
+
 }
-
-
+.table_main_header{
+  font-size: 4vw;
+}
+.table_header{
+  font-size: 3.5vw;
+}
+.table_language{
+  font-size: 3.5vw;
+}
+.table_entrie{
+  font-size: 3vw;
+}
 
 .comp_image{
   visibility: hidden;
 }
 .mobile_image{
   visibility: visible;
+  margin-top: 28vh;
+}
+.image_frame_container{
+  top: 205vh;
+}
+.content_container{
+  width: 30vw;
+  font-size: 2.5vw;
+  left: 35vw;
+  bottom: 20vh;
 }
 }
 /***************End Of Media Queries ****************/
