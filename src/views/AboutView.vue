@@ -67,6 +67,7 @@ function setFrame(){
 onMounted(()=>{
   setFrame();
   window.addEventListener('resize',setFrame);
+  changeLocalNavAlpha();
 })
 </script>
 
@@ -233,7 +234,6 @@ top: 0%;
 left: 0%;
 padding-top: 10vh;
 
-height: 202vh;
 width: 100vw;
 
 display:flex;
@@ -317,6 +317,8 @@ gap: 10vh;
   align-items: center;
 
   font-size: 6vw;
+  font-weight: 600;
+
   color: black;
 }
 .education_container{
@@ -451,7 +453,7 @@ gap: 10vh;
   border-radius: 15px;
 
   position: fixed;
-  top: 15vh;
+  top: 20vh;
 
   z-index: 3;
 }
@@ -459,6 +461,10 @@ gap: 10vh;
   position: absolute;
   top: 1vh;
   right: 1vw;
+}
+.close_language_button img {
+  height: 50px;
+  width: 50px;
 }
 
 .table_row{
@@ -563,6 +569,14 @@ gap: 10vh;
 
 /*********Start Of Media Queries**********/
 @media(max-width:450px){
+  .second_container{
+  }
+  .title{
+    font-size: 13vw;
+  }
+  .education_container{
+    margin-top: 10vh;
+  }
   .service_title{
     color: #000;
   }
@@ -581,7 +595,6 @@ gap: 10vh;
     height: 190vh;
   }
   .second_container{
-    height: 280vh;
   }
   /***********Start Service***********/
   .service_container{
@@ -604,6 +617,13 @@ gap: 10vh;
   }
     /***********End Service***********/
 
+    .language_table_container{
+      height: 35vh;
+    }
+    .close_language_button img {
+  height: 40px;
+  width: 40px;
+}
   .dot_container{
     gap: 5vw;
   }
@@ -614,9 +634,7 @@ gap: 10vh;
     align-items: center;
     gap: 5vh;
   }
-  .frame_container img{
-    
-  }
+
   .content_container {
   position: absolute;
   top: 51%;
