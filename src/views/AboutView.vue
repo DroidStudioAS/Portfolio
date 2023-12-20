@@ -1,8 +1,18 @@
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import {  useRouter } from 'vue-router'
+import { useStore } from "../stores/counter";
+
+const store = useStore();
+const router = useRouter();
 
 
 let active_page = ref(1);
+
+let language_table = ref(null);
+let close_language_button = ref(null);
+
+let imageSource = ref(null);
 
 function changePage(index){
 if(index===1){
@@ -11,6 +21,38 @@ if(index===1){
   active_page.value=2;
 }
 }
+
+
+function toggleVisibility(){
+  if (language_table.value.style.display==='none'){
+    language_table.value.style.display='flex'
+  }else if(language_table.value.style.display='flex'){
+    language_table.value.style.display='none'
+  }
+}
+function pushTo(name){
+ store.setActivePage(name);
+ console.log('active page', store.getActivePage());
+  console.log('Routing to:', name);
+  console.log('Router:', router); // Check if router is defined
+  router.push({ name: name });
+  console.log("push activated");
+}
+
+function setFrame(){
+  let width = window.innerWidth;
+  if(width>800){
+    imageSource.value='/back_computer.png';
+  }else{
+    imageSource.value='/back_mobile_frame.png'
+  }
+}
+
+/************Lifecycle  Hooks************/
+onMounted(()=>{
+  setFrame();
+  window.addEventListener('resize',setFrame);
+})
 </script>
 
 <template>
@@ -46,6 +88,48 @@ if(index===1){
   </div>
   </div>
   <div v-if="active_page===2" class="second_container">
+    <h1 class="title">About Me</h1>
+    <div  
+    ref="language_table"
+    class="language_table_container">
+    <div @click="toggleVisibility()"
+    ref="close_language_button" 
+    class="close_language_button">
+        <img src="/button_close_cp.png">
+    </div>
+    <table>
+        <tr class="table_row"> 
+            <th class="table_main_header">Languages</th>
+            <th class="table_header">Speaking</th>
+            <th class="table_header">Reading</th>
+            <th class="table_header">Writing</th>
+        </tr>
+        <tr class="table_row">
+            <td class="table_language">Serbian</td>
+            <td class="table_entrie">Fluent</td>
+            <td class="table_entrie">Fluent</td>
+            <td class="table_entrie">Fluent</td>
+        </tr> 
+        <tr class="table_row">
+            <td class="table_language">English</td>
+            <td class="table_entrie">Fluent</td>
+            <td class="table_entrie">Fluent</td>
+            <td class="table_entrie">Fluent</td>
+        </tr> 
+        <tr class="table_row">
+            <td class="table_language">Greek</td>
+            <td class="table_entrie">Fluent</td>
+            <td class="table_entrie">Advanced</td>
+            <td class="table_entrie">Advanced</td>
+        </tr>
+        <tr class="table_row">
+            <td class="table_language">German</td>
+            <td class="table_entrie">Basic</td>
+            <td class="table_entrie">Advanced</td>
+            <td class="table_entrie">Advanced</td>
+        </tr>
+    </table>
+</div>
     <div class="education_container">
         <div class="education">
           <div class="education_header">
@@ -84,16 +168,21 @@ if(index===1){
         </div>
       </div>
       <div class="frame_container">
-  <p>
+    <div class="content_container">
+      <p>
 Welcome! <br> 
 I'm a 24-year-old Software Developer specializing in top-tier mobile and web applications.<br> <br>
 Curious To Explore Further?<br> <br>
 Explore my skills or projects below and see for yourself.<br> 
 </p>
-  <div class="button_container">
-    <div @click="pushTo('projects')" class="button">Projects</div>
-    <div @click="pushTo('skills')" class="button">Skills</div>
-  </div>
+      <div class="button_container">
+        <div @click="pushTo('projects')" class="button">Projects</div>
+        <div @click="pushTo('skills')" class="button">Skills</div>
+     </div>
+
+    </div>
+    <img :src="imageSource"/>
+
 
  </div>
     <div class="dot_container">
@@ -133,15 +222,18 @@ overflow: hidden;
 position: absolute;
 top: 0%;
 left: 0%;
+padding-top: 10vh;
 
-height: 150vh;
+height: 202vh;
 width: 100vw;
 
 display:flex;
 flex-flow: column nowrap;
-justify-content: space-evenly;
+justify-content: start;
 align-items: center;
+
 background: #89B4BE;
+gap: 10vh;
 
 }
 /***********End Of Page Containers*********/
@@ -167,7 +259,7 @@ background: #89B4BE;
   flex-flow: row wrap;
   height: 100vh;
 
-  gap: 10vw ;
+  gap: 10vw;
 
   justify-content: center;
   align-items: center;
@@ -201,6 +293,23 @@ background: #89B4BE;
 /************End Of Page 1 items**********/
 
 /*************Start Of Page 2 Items********/
+
+/************Start Of Education Styling************/
+.title{
+  position: absolute;
+  top: 0%;
+
+  height: 15vh;
+  width: 100vw;
+  
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 6vw;
+  color: black;
+}
 .education_container{
   display: flex;
   flex-flow: row;
@@ -208,7 +317,10 @@ background: #89B4BE;
   align-items: start;
   width: 100vw;
 
+  margin-top: 5%;
+
   color: black;
+  
 }
 .education{
   display: flex;
@@ -225,16 +337,179 @@ background: #89B4BE;
 }
 .education_header{
   font-size: xx-large;
+  font-weight: 600;
 }
 .education_department{
   font-size: large;
+  font-style: italic;
 }
 .education_deegre{
   font-size: large;
+  font-weight: 600;
 }
 .education_years{
   font-size: large;
+  font-weight: 600;
 }
+.language_button{
+  
+  padding: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  color: white;
+  font-size: large;
+
+  background: #4E7896;
+  border-radius: 15px;
+
+  z-index: 2;
+
+  margin-top: 2vw;
+}
+/************End Of Education Styling************/
+
+/************Start Of Frame Styling************/
+  .content_container {
+  position: absolute;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* existing styles */
+  font-size: 2.3vw;
+  color:#000;
+  text-align: center;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+
+.frame_container {
+  position: relative; /* Ensure the container is positioned relative */
+  width: 80vw; /* Adjust the width as needed */
+  height: auto; /* Adjust the height as needed */
+}
+
+.frame_container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Ensure the image takes up the full width of its container */
+}
+
+.button_container{
+  display: flex;
+  flex-flow: row nowrap;
+
+  margin-top: 2%;
+  gap: 5vw;
+}
+.button{
+  font-size: 2vw;
+  color: #89B4BE;
+
+  background: #000;
+  padding: 10px;
+  border-radius:30px 20px 30px 20px;
+  
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/************End Of Frame Styling************/
+/********Language Table**********/
+.language_table_container{
+  display: none;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5vh;
+
+  width: 80vw;
+  height: 70vh;
+  background: #4E7896;
+
+  border-radius: 15px;
+
+  position: fixed;
+  top: 15vh;
+
+  z-index: 3;
+}
+.close_language_button{
+  position: absolute;
+  top: 1vh;
+  right: 1vw;
+}
+
+.table_row{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+
+
+  
+}
+.table_main_header{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  width: 20vw;
+
+  font-size: 4vw;
+  color: white;
+}
+.table_header{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20vw;
+
+  font-size: 3.5vw;
+  font-weight: 600;
+  color: white;
+}
+.table_language{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20vw;
+
+  font-size: 3.5vw;
+  font-weight: 600;
+  color: white;
+
+}
+.table_entrie{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 20vw;
+
+  font-size: 3vw; 
+  font-style: italic; 
+  color: white;
+
+}
+/********End Of Language Table**********/
+
 /*************End Of Page 2 Items********/
 
 
@@ -290,6 +565,9 @@ background: #89B4BE;
   .first_container{
     height: 190vh;
   }
+  .second_container{
+    height: 280vh;
+  }
   /***********Start Service***********/
   .service_container{
     position: absolute;
@@ -321,6 +599,31 @@ background: #89B4BE;
     align-items: center;
     gap: 5vh;
   }
+  .frame_container img{
+    
+  }
+  .content_container {
+  position: absolute;
+  top: 51%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* existing styles */
+  font-size: 5vw;
+  color:#000;
+  text-align: center;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+.button{
+  font-size: 3vw;
+  padding: 20px ;
+}
+
+ 
 }
 /*********End Of Media Queries**********/
 
