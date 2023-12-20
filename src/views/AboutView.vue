@@ -14,13 +14,28 @@ let close_language_button = ref(null);
 
 let imageSource = ref(null);
 
+let first_button = ref(null);
+let second_button = ref(null);
+
+
+
 function changePage(index){
 if(index===1){
   active_page.value=1;
 }else if(index===2){
   active_page.value=2;
 }
+changeLocalNavAlpha();
+
 }
+function changeLocalNavAlpha(){
+  if(active_page.value===1){
+    first_button.value.style.opacity='1';
+    second_button.value.style.opacity='0.5';
+  }else if(active_page.value===2){
+    first_button.value.style.opacity='0.5';
+    second_button.value.style.opacity='1';
+}}
 
 
 function toggleVisibility(){
@@ -78,14 +93,7 @@ onMounted(()=>{
         </p>
       </div>
     </div>
-    <div class="dot_container">
-      <div
-        @click="changePage(1)"
-       class="dot_1"></div>
-      <div 
-      @click="changePage(2)"
-      class="dot_2"></div>
-  </div>
+
   </div>
   <div v-if="active_page===2" class="second_container">
     <h1 class="title">About Me</h1>
@@ -185,16 +193,17 @@ Explore my skills or projects below and see for yourself.<br>
 
 
  </div>
-    <div class="dot_container">
-      <div
-        @click="changePage(1)"
-       class="dot_1"></div>
-      <div 
-      @click="changePage(2)"
-      class="dot_2"></div>
-  </div> 
+   
 
 </div>
+<div class="dot_container">
+      <div ref="first_button"
+        @click="changePage(1)"
+       class="dot_1"></div>
+      <div ref="second_button"
+      @click="changePage(2)"
+      class="dot_2"></div>
+  </div>
 
 </template>
 
@@ -533,16 +542,22 @@ gap: 10vh;
 .dot_1{
   width: 50px;
   height: 50px;
-
-  background: orange;
-  border-radius: 50%
+  background: #4E7896;
+  border-color: #fff;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 50%;
 }
 .dot_2{
   width: 50px;
   height: 50px;
 
-  background: orange;
-  border-radius: 50%
+  background: #4E7896;
+  border-color: #fff;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 50%;
+  
 }
 /***********End Of Page Slider**************/
 
@@ -622,8 +637,6 @@ gap: 10vh;
   font-size: 3vw;
   padding: 20px ;
 }
-
- 
 }
 /*********End Of Media Queries**********/
 
