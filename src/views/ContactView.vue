@@ -27,7 +27,7 @@ function dismissFeedback(){
 </script>
 <template>
 <div class="page_container">
-    <h1 class="page_header">
+    <h1 class="header">
         Contact
     </h1>
 
@@ -82,7 +82,7 @@ p{
     top: 0vh;
     left: 0vw;
     bottom: 0vh;
-    height: 100vh;
+    height: 102vh;
     width: 100vw;
     background: #89B4BE;
     display: flex;
@@ -91,11 +91,14 @@ p{
 
     
 }
+.header{
+font-size: 7vw;
+}
 
 .main_container{
     height: 80vh;
     position: absolute;
-    top: 20vh;
+    top: 22vh;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -122,7 +125,7 @@ p{
     position: absolute;
     bottom: 0vh;
     width: 90vw;
-    height: 15vh;
+    height: 17vh;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
@@ -254,6 +257,8 @@ p{
         align-items: center;
         width: 100vw;
         left: 0;
+
+        font-size: 6vw;
     }
     .feedback_container{
         font-size: 2.5vw;
