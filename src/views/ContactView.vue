@@ -10,14 +10,35 @@ let subject = ref('');
 let name = ref('');
 let mail = ref('');
 
+let success = ref(false);
+let feedback_text = ref(null);
+
+const email = ref('aleksandar.smiljanic19@gmail.com');
+
+function copyEmailToClipboard() {
+  const textArea = document.createElement('textarea');
+  textArea.value = email.value;
+  document.body.appendChild(textArea);
+  textArea.select();
+  document.execCommand('copy');
+  document.body.removeChild(textArea);
+
+  // Optionally, provide user feedback
+  alert('aleksandar.smiljanic19@gmail.com copied to clipboard!');
+}
+
 function sendRes(){
 if(message.value.trim()==="" || subject.value.trim()==="" || name.value.trim()==="" || mail.value.trim()===""){
     console.log('SENDING STOPPED')
     console.log(message,subject,name,mail)
+    feedback_text.value="Please Fill Out All The Neccessary Information"
+    feedback.value.style.visibility = 'visible'
     return;
 }
 networkHelper.sendMsg(message.value,subject.value,name.value,mail.value);
+feedback_text.value='Your Message Has Been Sent! I Will Get Back To You At This Mail: ' +   mail.value  + ' Adress, As Soon As Possible. Thank You For Your Intrest!';
 feedback.value.style.visibility = 'visible'
+
 }
 function dismissFeedback(){
     feedback.value.style.visibility = 'hidden'
@@ -33,7 +54,7 @@ function dismissFeedback(){
 
   <form class="main_container">
     
-    <div @click="sendRes()" ref="sendBtn" class="icon_container">
+    <div class="icon_container">
         <img src="/icon_mail.png">
     </div>
     <div class="message_field">
@@ -50,12 +71,16 @@ function dismissFeedback(){
     <div class="subject_container">
         <input v-model="mail" class="subject" placeholder="E-mail" type="text">
     </div>
-
+    
 </form>
+    <div @click="sendRes()" ref="sendBtn" class="sendButton">
+        Send
+    </div>  
+
  <div ref="feedback" class="feedback_container">
     <div>
        <p>
-        Your Message Has Been Sent! <br> I Will Get Back To You At This <span class="mail">{{ mail }}</span>  Adress, As Soon As Possible. <br> Thank You For Your Intrest!
+        {{ feedback_text }}
        </p> 
     </div>
     <div @click="dismissFeedback()" class="dismiss_button">
@@ -65,8 +90,11 @@ function dismissFeedback(){
  </div>
 
   <div class="socials_container">
+   <a target="_blank" href="https://www.linkedin.com/in/aleksandar-smiljanic-335a8a23a/">
     <img src="/icon_social_linkedin.png"/>
-    <img src="/icon_social_mail.png"/>
+   </a>
+   
+    <img @click="copyEmailToClipboard()" src="/icon_social_mail.png"/>
   </div>
 
 </div>
@@ -92,7 +120,9 @@ p{
     
 }
 .header{
-font-size: 7vw;
+font-size: 6vw;
+font-weight: 600;
+color: black;
 }
 
 .main_container{
@@ -180,8 +210,8 @@ font-size: 7vw;
     text-decoration: underline;
 }
 .icon_container{
-    width: 12vw;
-    height: 20vh;
+    width: 120px;
+    height: 120px;
     z-index: 4;
     background: #fff;
 
@@ -190,14 +220,16 @@ font-size: 7vw;
     border-style: solid;
     border-color: #000;
 
+ 
+
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
 }
 .icon_container img{
-    width: 10vw;
-    height: 15vh;
+    width: 100px;
+    height: 100px;
 }
 .message_field{
     padding-top: 11vh;
@@ -243,74 +275,56 @@ font-size: 7vw;
 }
 .socials_container img{
     margin-top: 2%;
-    height:10vh;
-    width: 5vw;
+    height:50px;
+    width: 50px;
 }
-@media (min-width:767px) and (max-width:991px){
+.sendButton{
+    position: absolute;
+    top: 85vh;
+
+    width: 15vw;
+    height: 10vh;
+    background: white;
+    border-radius: 15px;
+
+    font-size: xx-large;
+    color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 105;
+
+
+}
+@media (max-width:991px){
     .main_container{
         width: 100vw;
     }
-    .page_header{
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        left: 0;
-
-        font-size: 6vw;
+    .header{
+        font-size: 10vw;
     }
+    
     .feedback_container{
         font-size: 2.5vw;
     }
+
+  
  
 
 }
-@media (max-width:766px){
 
-    .main_container{
-        width: 100vw;
-    }
-    .page_header{
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
-        width: 100vw;
-        left: 0;
-    }
-    .socials_container{
-        width: 80vw;
-    }
-    .socials_container img{
-    margin-top: 2%;
-    height:10vh;
-    width: 15vw;
-}
-.icon_container{
-    width: 30vw;
-}
-.icon_container img{
-    width: 25vw;
-}
-.email{
-    font-size: 1.2cap;
-}
-.name{
-    font-size: 1.2cap;
-}
-.subject_container input{
-    font-size: 1.1cap;
-}
-.feedback_container{
-        font-size: 2.8vw;
-    }
-
-}
 @media (max-width:500px){
     .feedback_container{
         width: 50vw;
         font-size: 3.5vw;
     }
+    .socials_container{
+        gap: 50vw;
+    }
+    .sendButton{
+        width: 25vw;
+    }
+  
 }
 </style>

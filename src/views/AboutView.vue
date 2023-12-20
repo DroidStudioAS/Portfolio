@@ -200,10 +200,10 @@ Explore my skills or projects below and see for yourself.<br>
 <div class="dot_container">
       <div ref="first_button"
         @click="changePage(1)"
-       class="dot_1"></div>
+       class="dot_1">1</div>
       <div ref="second_button"
       @click="changePage(2)"
-      class="dot_2"></div>
+      class="dot_2">2</div>
   </div>
 
 </template>
@@ -553,6 +553,14 @@ gap: 10vh;
   border-width: 3px;
   border-style: solid;
   border-radius: 50%;
+
+  color: white;
+  font-weight: 700;
+  font-size: large;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .dot_2{
   width: 50px;
@@ -563,14 +571,21 @@ gap: 10vh;
   border-width: 3px;
   border-style: solid;
   border-radius: 50%;
+
+  color: white;
+  font-weight: 700;
+  font-size: large;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   
 }
 /***********End Of Page Slider**************/
 
 /*********Start Of Media Queries**********/
 @media(max-width:450px){
-  .second_container{
-  }
+
   .title{
     font-size: 13vw;
   }
@@ -594,8 +609,7 @@ gap: 10vh;
   .first_container{
     height: 190vh;
   }
-  .second_container{
-  }
+
   /***********Start Service***********/
   .service_container{
     position: absolute;
