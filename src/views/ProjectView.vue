@@ -230,7 +230,6 @@ h1{
 
  width: 100vw;
  height: 25vh;
- padding-left: 10vw;
 
 
 
@@ -430,7 +429,7 @@ align-items: center;
         width: 100vw;
     }
     .page_title{
-      font-size: 5vw;
+      font-size: 9vw;
     }
     .project_description_container{
         font-size: 1.9vw;
@@ -439,7 +438,7 @@ align-items: center;
 }
 @media (max-width:767px){
    .page_title{
-     font-size: 5vw;
+     font-size: 9vw;
    }
     .main_container{
         width: 100vw;
@@ -475,7 +474,7 @@ align-items: center;
         width: 80vw;
        }
        .page_title{
-        font-size: 5.2vw;
+        font-size: 10vw;
        }
     }
 

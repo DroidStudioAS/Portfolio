@@ -94,7 +94,7 @@ function refreshList(int){
     font-size: 15vh;
     height: 15vh;
     width: 100vw;
-    
+
     margin-bottom: 5vh;
     position: absolute;
     top: 1vh;
@@ -203,11 +203,11 @@ else 10vw */
  .icon{
     width:min-content ;
  }
- 
  .skills_header{
-    font-size: 6cap;
-    
+    font-size: 10vw;
  }
+ 
+
  .skills_button{
     font-size: 4.5vw;
  }
@@ -229,7 +229,7 @@ else 10vw */
 
 
  .skills_header{
-    font-size: 6cap;
+    font-size: 10vw;
  }
  .skills_button{
     font-size: 4vw;

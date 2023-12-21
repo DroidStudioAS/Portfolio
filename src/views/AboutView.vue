@@ -611,6 +611,9 @@ gap: 10vh;
     justify-content: start;
     align-items: center;
   }
+  .wid_header{
+    font-size: 10vw;
+  }
 
   /***********Start Service***********/
   .service_container{
