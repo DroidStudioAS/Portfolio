@@ -120,6 +120,7 @@ p{
     
 }
 .header{
+font-family:header;
 font-size: 6vw;
 font-weight: 600;
 color: black;

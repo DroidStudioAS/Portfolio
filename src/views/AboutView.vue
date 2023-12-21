@@ -257,6 +257,7 @@ gap: 10vh;
   justify-content: center;
   align-items: center;
 
+  font-family: header;
   font-size: 6vw;
   font-weight: 600;
   color: black;
@@ -604,9 +605,7 @@ gap: 10vh;
   }
 }
 @media(max-width:800px){
-  .wid_header{
-   
-  }
+ 
   .first_container{
     display: flex;
     justify-content: start;

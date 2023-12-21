@@ -278,6 +278,7 @@ visibility: hidden;
 /*************Fonts************/
 @font-face {
   font-family: header;
-  src: url('/goldplay.ttf');
+  src: url('/Montserrat-ExtraBold.ttf');
 }
+
 </style>

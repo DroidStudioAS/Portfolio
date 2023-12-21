@@ -90,10 +90,11 @@ function refreshList(int){
     overflow-x: hidden;
 }
 .skills_header{
+    font-family: header;
     font-size: 15vh;
     height: 15vh;
     width: 100vw;
-    font-weight: 700;
+    
     margin-bottom: 5vh;
     position: absolute;
     top: 1vh;

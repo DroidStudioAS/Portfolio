@@ -118,12 +118,14 @@ justify-content: center;
 gap: 5%;
 }
 .title{
+  font-family: header;
   font-size: 90px;
   color: #000;
   font-weight: 900;
 
 }
 .title_end{
+  font-family: header;
   font-size: 90px;
   color: #000;
   font-weight: 900;

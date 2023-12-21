@@ -142,8 +142,8 @@ onMounted(()=>{
     <div class="header_container">
         <div class="header_link_container">
             <a target="_blank" href="https://github.com/DroidStudioAS"><img src="/github-mark.png"></a>
-            <span class="page_title">
-            <h1>Projects</h1>
+            <span>
+            <h1 class="page_title">Projects</h1>
             </span>
         </div>
         
@@ -217,12 +217,22 @@ onMounted(()=>{
 h1{
     color: black;
 }
+.header_container{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
 
 .header_link_container{
+ position: absolute;
+ left: 0vw;
+ top: 0vh;
+
  width: 100vw;
  height: 25vh;
+ padding-left: 10vw;
 
- padding-bottom: 5vh;
+
 
  display: flex;
  justify-content: center;
@@ -230,11 +240,9 @@ h1{
 
  background: #89B4BE;
 
- position: absolute;
- left: 0vw;
- top: 0vh;
-
  color: black;
+
+ z-index: 2;
 }
 .header_link_container img{
  height: 13vh;
@@ -252,40 +260,30 @@ h1{
  justify-content: start;
  align-items: center;
 
- font-size: 5vw;
- font-weight: 700;
+ font-family: header;
+ font-size: 6vw;
  color: black;
  background: #89B4BE;
- transition: color 1s ease-in-out;
 }
 .projects_main_container{
+    position: absolute;
+    top: 25vh;
+    left: 0%;
+
     height: 80vh;
     width: 100vw;
+    padding-top: 5vh;
 
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     gap: 1vw;
 
-    position: absolute;
-    top: 25vh;
-    left: 0%;
+   
     overflow-y: auto;
     background: #89B4BE;
 }
-.page_header{
-    height: 20vh;
-    font-size: 10cap;
-    font-weight: 700;
-    
 
-
-    color: black;
-    background: #89B4BE;
-
-    transition: color 1s ease-in-out;
-    color: black;
-}
 .project_image_container{
     display: flex;
     flex-flow: column nowrap;
