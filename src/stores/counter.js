@@ -13,15 +13,7 @@ export const useStore = defineStore('store', {
   actions: {
     setActivePage(name) {
       this.active_page = name
-      if (name === 'about') {
-        this.setMh('100vh');
-      } else if (name === 'skills') {
-        this.setMh('100vh');
-      }else if(name==='projects'){
-        this.setMh('100vh')
-      } else {
-        this.setMh('100vh');
-      }
+      this.setMh(100);
       console.log('page set: ' + this.getActivePage());
     },
     getActivePage() {

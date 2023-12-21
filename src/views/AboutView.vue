@@ -267,6 +267,7 @@ gap: 10vh;
   display: flex;
   flex-flow: row wrap;
   height: 100vh;
+  padding-bottom: 20vh;
 
   gap: 10vw;
 
@@ -415,6 +416,7 @@ gap: 10vh;
   position: relative; /* Ensure the container is positioned relative */
   width: 80vw; /* Adjust the width as needed */
   height: auto; /* Adjust the height as needed */
+  margin-bottom:20vh ;
 }
 
 .frame_container img {
