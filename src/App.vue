@@ -79,6 +79,18 @@ function toggleMenu(){
   }
   changeColor();
 };
+function menuResize(){
+  width=window.innerWidth;
+  if(width>991){
+  menuWidth.value = showMenu.value ? '22vw' : '0vw';
+  }else if(width<991 && width>767){
+    menuWidth.value = showMenu.value ? '22vw' : '0vw';
+  }else if(width>450 && width<767){
+    menuWidth.value = showMenu.value ? '22vw' : '0vw';
+  }else if(width<=450){
+    menuWidth.value = showMenu.value ? '42vw' : '0vw';
+  }
+}
 
 onBeforeMount(()=>{
   menuHeight=store.getMh();
@@ -86,7 +98,9 @@ onBeforeMount(()=>{
 
 onMounted(()=>{
   menuHeight=store.getMh();
+  window.addEventListener('resize',menuResize);
 });
+
 </script>
 <style scoped>
 /***************Navigation Styles Start******************/
