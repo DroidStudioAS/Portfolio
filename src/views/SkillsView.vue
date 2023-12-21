@@ -155,14 +155,19 @@ function refreshList(int){
 }
 
 .skills_button{
-    background: #777BB3;
     width: 35vw;
     height: 10vh;
-    border-radius:30px 20px 30px 20px;
+    padding: 50px 0px 50px 0px;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 0px 50px 0px;
+
+    background: #777BB3;
+    border-radius:30px 20px 30px 20px;
+
+    font-family: content_;
+
 }
 .skills_list_container img{
     width: 20px;
@@ -179,7 +184,8 @@ function refreshList(int){
     align-items: center;
     justify-content: start;
 
-    font-size:1.5vw ;
+    font-family: content_italic;
+    font-size:1.5vw;
 }
 .icon{
     height: fit-content;
