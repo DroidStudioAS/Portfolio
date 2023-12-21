@@ -288,13 +288,14 @@ gap: 10vh;
 }
 
 .service_title{
+  font-family: content_;
   font-size: xx-large;
   font-weight: 700;
   color: white;
 }
 .service_description{
+  font-family: content_italic;
   font-size: 1.5vw;
-  font-style: italic;
 
   color:white;
   translate: (50% 50%);
@@ -349,18 +350,22 @@ gap: 10vh;
   align-items: center;
 }
 .education_header{
+  font-family: content_;
   font-size: xx-large;
   font-weight: 600;
 }
 .education_department{
+  font-family: content_;
   font-size: large;
   font-style: italic;
 }
 .education_deegre{
+  font-family: content_;
   font-size: large;
   font-weight: 600;
 }
 .education_years{
+  font-family: content_;
   font-size: large;
   font-weight: 600;
 }
@@ -374,6 +379,7 @@ gap: 10vh;
 
   text-align: center;
 
+  font-family: content_;
   color: white;
   font-size: large;
 
@@ -393,6 +399,7 @@ gap: 10vh;
   left: 50%;
   transform: translate(-50%, -50%);
   /* existing styles */
+  font-family: content_;
   font-size: 2.3vw;
   color:#000;
   text-align: center;
@@ -457,6 +464,7 @@ gap: 10vh;
   position: fixed;
   top: 20vh;
 
+  font-family: content_;
   z-index: 3;
 }
 .close_language_button{
@@ -486,7 +494,7 @@ gap: 10vh;
 
   width: 20vw;
 
-  font-size: 4vw;
+  font-size: 3vw;
   color: white;
 }
 .table_header{

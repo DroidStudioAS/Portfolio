@@ -358,6 +358,8 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    font-family: content_;
     font-size: 2.5vw;
 }
 .project_type_container{
@@ -366,6 +368,7 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: content_;
     font-size: 2vw
 
 
@@ -398,8 +401,7 @@ align-items: center;
     padding-left: 8vh;
     padding-right: 8vh;
 
-
-
+    font-family: content_;
     font-size: 1.5vw
 
 }

@@ -137,7 +137,7 @@ gap: 5%;
   font-size: 60px;
   color: #000;
   font-weight: 300;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: content_;
 }
 
 /*********Header Styling End*********/
