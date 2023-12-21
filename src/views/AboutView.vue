@@ -216,7 +216,6 @@ position: absolute;
 top: 0%;
 left: 0%;
 
-height: 100vh;
 width: 100vw;
 
 display:flex;
@@ -295,6 +294,7 @@ gap: 10vh;
 .service_description{
   font-size: 1.5vw;
   font-style: italic;
+
   color:white;
   translate: (50% 50%);
 }
@@ -593,6 +593,9 @@ gap: 10vh;
   .education_container{
     margin-top: 10vh;
   }
+  .service_container img{
+    width: 77vw;
+  }
   .service_title{
     color: #000;
   }
@@ -602,23 +605,24 @@ gap: 10vh;
 }
 @media(max-width:800px){
   .wid_header{
-    position: absolute;
-    top: 0%;
-
-    font-size: 12vw;
+   
   }
   .first_container{
-    height: 190vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
   }
 
   /***********Start Service***********/
   .service_container{
     flex-flow: column nowrap;
+    height: auto;
+    gap: 3vw;
   }
   .service_card{
     margin: 0;
     background: none;
-    height: 80vh;
+    height: auto;
     width: 60vw;
   }
   .service_title{
