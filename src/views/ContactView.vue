@@ -119,12 +119,7 @@ p{
 
     
 }
-.header{
-font-family:header;
-font-size: 6vw;
-font-weight: 600;
-color: black;
-}
+
 
 .main_container{
     height: 80vh;
@@ -144,13 +139,20 @@ color: black;
     position: absolute;
     top: 50vh;
 }
+.header{
+font-size: 6vw ;
+font-family: header;
+color: black;
+
+}
 
 .subject_container{
     position: absolute;
     top: 56vh;
     left: 0w;
-    width: 40vw;
     height: 5vh;
+
+    font-family: content;
 }
 .socials_container{
     position: absolute;
@@ -246,6 +248,7 @@ color: black;
   text-align: center;
 
   font-size: large;
+  font-family: content_;
 }
 .subject_container input{
     height: 6vh;
@@ -254,7 +257,7 @@ color: black;
 
    text-align: center;
    font-size: large;
-
+    font-family: content_;
 }
 .name{
     height: 6vh;
@@ -263,6 +266,7 @@ color: black;
 
     text-align: center;
     font-size: large;
+    font-family: content_;
 
 }
 .email{
@@ -272,6 +276,7 @@ color: black;
 
     text-align: center;
     font-size: large;
+    font-family: content_;
 
 }
 .socials_container img{
@@ -288,8 +293,9 @@ color: black;
     background: white;
     border-radius: 15px;
 
-    font-size: xx-large;
+    font-size: 3vw;
     color: black;
+    font-family: content_;
 
     display: flex;
     justify-content: center;
@@ -301,6 +307,20 @@ color: black;
     .main_container{
         width: 100vw;
     }
+    .message_field{
+    width: 80vw;
+    }
+    .email{
+        width: 40vw;
+    }
+    .name{
+        width: 40vw;
+    }
+    .subject_container input{
+        left: 0vw;
+        width: 70vw;
+    }
+
     .header{
         font-size: 10vw;
     }
@@ -308,6 +328,10 @@ color: black;
     .feedback_container{
         font-size: 2.5vw;
     }
+    .sendButton{
+        font-size: 5vw;
+    }
+
 
   
  

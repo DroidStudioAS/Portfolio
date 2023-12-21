@@ -280,5 +280,13 @@ visibility: hidden;
   font-family: header;
   src: url('/Montserrat-ExtraBold.ttf');
 }
+@font-face {
+  font-family: content_;
+  src: url('/CodecPro-Regular.ttf');
+}
+@font-face {
+  font-family: content_italic;
+  src: url('/CodecPro-Italic');
+}
 
 </style>

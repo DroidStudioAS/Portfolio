@@ -230,6 +230,7 @@ h1{
 
  width: 100vw;
  height: 25vh;
+ padding-left: 13vw;
 
 
 
@@ -446,6 +447,8 @@ align-items: center;
     .project_description_container{
         font-size: 2vw;
     }
+}
+    
     @media (max-width:500px) {
         .close_pc_container img{
             height: 30px;
@@ -480,7 +483,7 @@ align-items: center;
 
  
  
-}
+
 @media (min-width:1200px){
     .projects_main_container{
         padding-left: 15vw;
