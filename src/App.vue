@@ -286,7 +286,7 @@ visibility: hidden;
 }
 @font-face {
   font-family: content_italic;
-  src: url('/CodecPro-Italic');
+  src: url('/CodecPro-Italic.ttf');
 }
 
 </style>

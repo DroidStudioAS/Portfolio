@@ -139,13 +139,12 @@ onMounted(()=>{
 
 </script>
 <template>
-    <div class="header_container">
         <div class="header_link_container">
             <a target="_blank" href="https://github.com/DroidStudioAS"><img src="/github-mark.png"></a>
             <span>
             <h1 class="page_title">Projects</h1>
             </span>
-        </div>
+        
         
     </div> 
     <div class="projects_main_container">
@@ -301,6 +300,7 @@ h1{
    
     font-weight: 500;
     font-size: 2cap;
+    font-family: content_italic;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -312,7 +312,9 @@ h1{
     background: #4E7896;
     width: 50vw;
     height: 70vh;
+
     position: fixed;
+    top: 15vh;
     left: 25vw;
 
     display: flex;
@@ -323,6 +325,8 @@ h1{
     visibility: hidden;
 
     color: white;
+
+    z-index: 10;
 
 }
 /********pc_layout_items*******/
@@ -430,7 +434,7 @@ align-items: center;
         width: 100vw;
     }
     .page_title{
-      font-size: 9vw;
+      font-size: 8vw;
     }
     .project_description_container{
         font-size: 1.9vw;
@@ -439,7 +443,7 @@ align-items: center;
 }
 @media (max-width:767px){
    .page_title{
-     font-size: 9vw;
+     font-size: 7vw;
    }
     .main_container{
         width: 100vw;
@@ -475,6 +479,12 @@ align-items: center;
        }
        .project_links_container{
         width: 80vw;
+       }
+       .header_link_container{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-left:15vw;
        }
        .page_title{
         font-size: 10vw;
