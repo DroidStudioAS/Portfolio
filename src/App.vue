@@ -58,6 +58,11 @@ function pushTo(name){
 
   console.log('set menu height to: ' + store.value)
   router.push({ name: name });
+
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  })
   console.log("push activated");
   toggleMenu();
 };
