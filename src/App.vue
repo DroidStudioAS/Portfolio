@@ -40,36 +40,13 @@ const router = useRouter();
 const store = useStore();
 
 
-let first_name=ref("Aleksandar ")
-let last_name=ref('Smiljanic');
-let title = ref("Software")
-let titleend=ref("Developer")
+
 let menu = ref("menu")
 let showMenu = ref(false);
 let menuWidth = ref('10vw');
 let menuHeight = store.getMh();
 let width = window.innerWidth;
 let menu_but = ref(null)
-
-function toggleMenu(){
-  showMenu.value=!showMenu.value;
-  if(width>991){
-  menuWidth.value = showMenu.value ? '22vw' : '0vw';
-  }else if(width<991 && width>767){
-    menuWidth.value = showMenu.value ? '22vw' : '0vw';
-  }else if(width>450 && width<767){
-    menuWidth.value = showMenu.value ? '22vw' : '0vw';
-  }else if(width<=450){
-    menuWidth.value = showMenu.value ? '42vw' : '0vw';
-  }
-  changeColor();
- 
-}
-function changeColor(){
-  menu_but.value.classList.toggle('black');
-}
-
-
 
 function pushTo(name){
  store.setActivePage(name);
@@ -83,23 +60,33 @@ function pushTo(name){
   router.push({ name: name });
   console.log("push activated");
   toggleMenu();
-}
+};
+
+function changeColor(){
+  menu_but.value.classList.toggle('black');
+};
+
+function toggleMenu(){
+  showMenu.value=!showMenu.value;
+  if(width>991){
+  menuWidth.value = showMenu.value ? '22vw' : '0vw';
+  }else if(width<991 && width>767){
+    menuWidth.value = showMenu.value ? '22vw' : '0vw';
+  }else if(width>450 && width<767){
+    menuWidth.value = showMenu.value ? '22vw' : '0vw';
+  }else if(width<=450){
+    menuWidth.value = showMenu.value ? '42vw' : '0vw';
+  }
+  changeColor();
+};
+
 onBeforeMount(()=>{
   menuHeight=store.getMh();
-})
+});
+
 onMounted(()=>{
   menuHeight=store.getMh();
-  /*if(width>767 && width<991){
-    menuWidth.value='15vw'
-  }
-  if(width > 425 && width<767){
-    menuWidth.value='20vw'
-  }
-  if (width<425){
-    menuWidth.value='20vw'
-  } */
-  
-})
+});
 </script>
 <style scoped>
 /***************Navigation Styles Start******************/
