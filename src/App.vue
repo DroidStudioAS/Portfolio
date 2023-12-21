@@ -126,6 +126,8 @@ onMounted(()=>{
     border: none;
     border-style: none;
     padding-top: 20vh;
+    overflow-y: auto;
+    overflow-x: hidden;
      }
 
   .menu_but_container{
@@ -154,6 +156,8 @@ onMounted(()=>{
     transition: background-color 0.3s ease-in-out;
 
     color:#87A1B0;
+
+    font-family: content_;
     font-size: 200%;    
     height: 7vh;
     width: 15vw;
@@ -169,7 +173,7 @@ onMounted(()=>{
   flex-flow: column nowrap;
   justify-content: space-evenly;
   align-items: center;
-  gap: 4vh;
+  gap: 3vh;
   width: 20vw;
   height: 100vh;
  
@@ -178,6 +182,7 @@ onMounted(()=>{
   height: 10vh;
   width: 13vw;
 
+  font-family: content_;
   font-size: 2vw;
   color: #89B4BE;
 
