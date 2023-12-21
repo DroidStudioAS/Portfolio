@@ -88,9 +88,9 @@ onMounted(()=>{
         <img src="/icon_mobile_dev.png"/>
         <h2 class="service_title">Mobile Development</h2>
         <p class="service_description">
-              "Embark on a journey to craft and code your distinct mobile app right <br>
-               from the start, transforming your vision into a vibrant reality. Let's <br>
-                shape your ideas into a functional masterpiece            
+              "Craft and code your mobile app<br>
+               from scratch, transforming your vision into a vibrant reality. Let's <br>
+              shape your ideas into a functional masterpiece"           
         </p>
       </div>
     </div>
@@ -293,9 +293,10 @@ gap: 10vh;
   color: white;
 }
 .service_description{
-  font-size: large;
+  font-size: 1.5vw;
   font-style: italic;
   color:white;
+  translate: (50% 50%);
 }
 /*******End Of Service Styles********/
 
@@ -612,7 +613,6 @@ gap: 10vh;
 
   /***********Start Service***********/
   .service_container{
-    position: absolute;
     flex-flow: column nowrap;
   }
   .service_card{

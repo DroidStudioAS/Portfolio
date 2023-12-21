@@ -274,4 +274,10 @@ visibility: hidden;
     visibility: visible;
   }
 }
+
+/*************Fonts************/
+@font-face {
+  font-family: header;
+  src: url('/goldplay.ttf');
+}
 </style>
