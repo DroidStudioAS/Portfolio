@@ -129,20 +129,51 @@ onMounted(()=>{
     overflow-y: auto;
     overflow-x: hidden;
      }
-
+    /*************Start Of Desktop And Mobile Nav Icons***************/
   .menu_but_container{
-    width:20vw;
-    height:20vh;
-
     position: fixed;
     top: 1vh;
     right: 2vh;
-    visibility: visible;
+
+    width:20vw;
+    height:20vh;
+
     z-index: 102;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    visibility: visible;
+
   }
+
+  .mobile_icon_container{
+    position: fixed;
+    top: 1vh;
+    right: 0vw;
+
+
+    width: 20vw;
+    height: 10vh;
+    padding-top: 3vh;
+
+    display: flex;
+    align-items: start;
+    justify-content: center;
+      
+  
+    z-index: 101;
+      
+    visibility: hidden;
+
+}
+.mobile_icon_container img {
+  height: 40px;
+  width: 40px;
+}
+    /*************End Of Desktop And Mobile Nav Icons***************/
+
   .menu_but{
     display: flex;
     justify-content: center;
@@ -196,20 +227,7 @@ onMounted(()=>{
   text-align: center;
 }
 
-.mobile_icon_container{
-width: 20vw;
-display: flex;
-align-items: center;
-justify-content: center;
 
-position: fixed;
-top: 2vh;
-right: 0vw;
-z-index: 101;
-
-visibility: hidden;
-
-}
 .nav_icon{
   width: 10vw;
   height: 10vw;
