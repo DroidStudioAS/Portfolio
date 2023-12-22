@@ -311,7 +311,7 @@ h1{
 .project_component{
     background: #4E7896;
     width: 50vw;
-    height: 70vh;
+    height: 76vh;
 
     position: fixed;
     top: 15vh;
@@ -397,6 +397,7 @@ align-items: center;
     align-items: center;
 
     text-align: center;
+    padding-top: 4vh;
     padding-bottom: 8vh;
     padding-left: 8vh;
     padding-right: 8vh;
@@ -462,6 +463,7 @@ align-items: center;
         }
        .project_component{
         width: 80vw;
+
         left: 10vw;
        }
        .project_name_container{
@@ -477,7 +479,8 @@ align-items: center;
        }
        .project_description_container{
         width: 80vw;
-        font-size: 3.5vw;
+        font-size: 3vw;
+    
        }
        .project_links_container{
         width: 80vw;
