@@ -763,10 +763,15 @@ gap: 10vh;
   }
 }
 @keyframes languageTableAnimationClose{
-  from{height: inherit;}
+  from{
+    height: auto;
+    width: 80vw;
+
+   
+  }
   to{
     height: 0vh;
-    height: 0vh;
+    width: 0vh;
   }
 }
 @keyframes toHeight0{
