@@ -87,8 +87,10 @@ onMounted(()=>{
   position: absolute;
   bottom: -1vh;
   right: 0vw;
+
   height: 80vh;
   width: 50vw;
+
   animation: homeImageAnimation;
   animation-duration: 2s
 }
@@ -101,17 +103,22 @@ onMounted(()=>{
 
 /*********Header Styling Start*********/
 .header_container{
-  
+  position: absolute;
+  top: 10vh;
+  left: 5vw;
+
   display: flex;
   flex-flow: column nowrap;
   gap: 5vh;
   align-content: center;
   justify-content: center;
+
   text-align: center;
 
-  position: absolute;
-  top: 10vh;
-  left: 5vw;
+  animation: headerAnimation;
+  animation-duration: 2s;
+
+
 }
 .name_container{
 width: 50vw;
@@ -179,9 +186,13 @@ gap: 5%;
     top: 0vh;
     left: 10vw;
     width: 80vw;
+
     gap: 0vh;
     justify-content: center;
     align-items: center;
+
+    animation: headerMobileAnimation;
+    animation-duration: 2s;
   }
   .name_container{
     width: 80vw;
@@ -233,14 +244,20 @@ gap: 5%;
     visibility: visible;
   }
   .header_container{
-    z-index: 1;
     top: 0vh;
     left: 10vw;
+
     width: 80vw;
-    gap: 0vh;
-    z-index: 0;
+
     justify-content: center;
     align-items: center;
+    gap: 0vh;
+
+    z-index: 0;
+
+    animation: headerMobileAnimation;
+    animation-duration: 2s;
+
   }
   .name_container{
     width: 50vw;
@@ -286,10 +303,15 @@ gap: 5%;
     height: 50vh;
   }
   .header_container{
-    z-index: 1;
-    left: 10vw;
     top: 0%;
+    left: 10vw;
+    
     gap: 0vh;
+
+    z-index: 1;
+   
+    animation: headerMobileAnimation;
+    animation-duration: 2s;
   }
   .name_container{
     width: 80vw;
@@ -347,5 +369,13 @@ gap: 5%;
 @keyframes homeImageAnimation {
   from{bottom: -100vh;}
   to{bottom: 0vh;}
+}
+@keyframes headerAnimation {
+  from{left: -50vw;}
+  to {left: 5vw;}
+}
+@keyframes headerMobileAnimation{
+  from{left: -50vw;}
+  to {left: 10vw;}
 }
 </style>
