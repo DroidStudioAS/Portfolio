@@ -193,9 +193,7 @@ function refreshList(int){
 20 vw (width<767)
 else 10vw */
 @media (max-width: 450px){
-    .skills_main_container{
-    
- }
+
  .icon_container{
     width: 100vw;
  }
@@ -220,12 +218,6 @@ else 10vw */
 
 /* Small Devices (Phones and Small Tablets) */
 @media (min-width:450px) and  (max-width: 767px) {
-    .skills_main_container{
-   
-    
- }
-
-
  .skills_header{
     font-size: 10vw;
  }
@@ -242,9 +234,6 @@ else 10vw */
 
 /* Medium Devices (Tablets) */
 @media (min-width: 768px) and (max-width: 991px) {
-    .skills_main_container{
-   
- }
  .skills_button{
     font-size: 3.5vw;
  }
@@ -257,9 +246,6 @@ else 10vw */
 
 /* Large Devices (Desktops and Laptops) */
 @media (min-width: 992px) and (max-width: 1199px) {
- .skills_main_container{
-  
- }
  .skills_button{
     font-size: 3vw;
  }
