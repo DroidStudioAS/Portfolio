@@ -3,9 +3,9 @@
         <h1 class="skills_header">Skills</h1>
         <div class="skills_container">
             <div class="skills_buttons">
-            <div @click="refreshList(1)" class="skills_button">FrontEnd Web Development</div>
-            <div @click="refreshList(2)" class="skills_button">BackEnd Web Development</div>
-            <div @click="refreshList(3)" class="skills_button">Mobile App Development</div>
+            <div ref="skills_button_1" @click="refreshList(1)" class="skills_button">FrontEnd Web Development</div>
+            <div ref="skills_button_2" @click="refreshList(2)" class="skills_button">BackEnd Web Development</div>
+            <div ref="skills_button_3" @click="refreshList(3)" class="skills_button">Mobile App Development</div>
         </div>
         <div class="skills_list_container">
             <div v-for="(skill, index) in skills" :key="index"
@@ -26,6 +26,34 @@ import { useStore } from "../stores/counter";
 
 const store = useStore();
 let skills = ref([]);
+
+let skills_button_1 = ref(null);
+let skills_button_2 = ref(null);
+let skills_button_3 = ref(null);
+
+let buttonArray = ref([skills_button_1,skills_button_2,skills_button_3]);
+
+function borderColorChanger(int){
+    switch(int){
+        case 1:
+            skills_button_1.value.style.borderColor = 'white'
+            skills_button_2.value.style.borderColor = 'black'
+            skills_button_3.value.style.borderColor = 'black'
+            break;
+        case 2:
+            skills_button_1.value.style.borderColor = 'black'
+            skills_button_2.value.style.borderColor = 'white'
+            skills_button_3.value.style.borderColor = 'black'
+            break;
+        case 3:
+            skills_button_1.value.style.borderColor = 'black'
+            skills_button_2.value.style.borderColor = 'black'
+            skills_button_3.value.style.borderColor = 'white'
+            break;
+    }
+}
+
+
 let icons = ref(
     ['./icon_js.png',
     './icon_html.png',
@@ -51,14 +79,17 @@ function refreshList(int){
         switch(int){
           case 1:
             store.setSkillsInFocus(1)
+            borderColorChanger(1)
             updateSkills()
            break;
           case 2:
              store.setSkillsInFocus(2)
+             borderColorChanger(2)
              updateSkills()
             break;
           case 3:
              store.setSkillsInFocus(3)
+             borderColorChanger(3)
              updateSkills()
            break
         }
@@ -151,7 +182,7 @@ function refreshList(int){
 .skills_button{
     width: 35vw;
     height: 10vh;
-    padding: 50px 0px 50px 0px;
+    padding: 60px 0px 60px 0px;
 
     display: flex;
     justify-content: center;
@@ -159,6 +190,8 @@ function refreshList(int){
 
     background: #777BB3;
     border-radius:30px 20px 30px 20px;
+    border-style: solid;
+    
 
     font-family: content_;
 
