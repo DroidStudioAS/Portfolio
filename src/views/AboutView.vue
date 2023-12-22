@@ -11,6 +11,8 @@ let active_page = ref(1);
 
 let language_table = ref(null);
 let close_language_button = ref(null);
+let table = ref(null);
+
 
 let imageSource = ref(null);
 
@@ -53,7 +55,17 @@ function toggleVisibility(){
   if (language_table.value.style.display==='none'){
     language_table.value.style.display='flex'
   }else if(language_table.value.style.display==='flex'){
-    language_table.value.style.display='none' 
+    language_table.value.classList.add('closeLanguageTable');
+    table.value.classList.add('collapseText')
+    
+    setTimeout(()=>{
+      language_table.value.style.display='none';
+      language_table.value.classList.remove('closeLanguageTable');
+      table.value.classList.remove('collapseText')
+
+
+    },1000)
+
   }
 }
 function pushTo(name){
@@ -121,32 +133,32 @@ onMounted(()=>{
     class="close_language_button">
         <img src="/button_close_cp.png">
     </div>
-    <table>
-        <tr class="table_row"> 
+    <table ref="table">
+        <tr ref="tbl_row" class="table_row"> 
             <th class="table_main_header">Languages</th>
             <th class="table_header">Speaking</th>
             <th class="table_header">Reading</th>
             <th class="table_header">Writing</th>
         </tr>
-        <tr class="table_row">
+        <tr ref="tbl_row" class="table_row">
             <td class="table_language">Serbian</td>
             <td class="table_entrie">Fluent</td>
             <td class="table_entrie">Fluent</td>
             <td class="table_entrie">Fluent</td>
         </tr> 
-        <tr class="table_row">
+        <tr ref="tbl_row1" class="table_row">
             <td class="table_language">English</td>
             <td class="table_entrie">Fluent</td>
             <td class="table_entrie">Fluent</td>
             <td class="table_entrie">Fluent</td>
         </tr> 
-        <tr class="table_row">
+        <tr ref="tbl_row" class="table_row">
             <td class="table_language">Greek</td>
             <td class="table_entrie">Fluent</td>
             <td class="table_entrie">Advanced</td>
             <td class="table_entrie">Advanced</td>
         </tr>
-        <tr class="table_row">
+        <tr ref="tbl_row" class="table_row">
             <td class="table_language">German</td>
             <td class="table_entrie">Basic</td>
             <td class="table_entrie">Advanced</td>
@@ -684,6 +696,7 @@ gap: 10vh;
   height: 40px;
   width: 40px;
 }
+
   .dot_container{
     gap: 5vw;
   }
@@ -723,6 +736,12 @@ gap: 10vh;
   from{opacity: 0;}
   to{opacity: 1;}
 }
+@keyframes fadeOut{
+  to{
+    opacity: 0;
+    width: 0vw;
+  }
+}
 @keyframes languageTableAnimation{
   from{
     width: 0;
@@ -743,6 +762,28 @@ gap: 10vh;
     height: 35vh;
   }
 }
+@keyframes languageTableAnimationClose{
+  from{height: inherit;}
+  to{
+    height: 0vh;
+    height: 0vh;
+  }
+}
+@keyframes toHeight0{
+  to{
+    height: 0vh;
+  }
+}
+/*********AnimationClasses*********/
+.closeLanguageTable{
+  animation:languageTableAnimationClose;
+  animation-duration: 1s;
+}
+.collapseText{
+animation: fadeOut;
+animation-duration: 1s;
+}
+
 
 
 </style>
