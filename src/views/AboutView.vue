@@ -433,6 +433,7 @@ gap: 10vh;
 .button_container{
   display: flex;
   flex-flow: row nowrap;
+  justify-content: center;
 
   margin-top: 2%;
   gap: 5vw;
@@ -671,7 +672,7 @@ gap: 10vh;
 
   .content_container {
   position: absolute;
-  top: 51%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   /* existing styles */
@@ -687,7 +688,7 @@ gap: 10vh;
 }
 .button{
   font-size: 3vw;
-  padding: 20px ;
+  padding: 10% ;
 }
 }
 /*********End Of Media Queries**********/

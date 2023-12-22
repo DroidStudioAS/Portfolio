@@ -1,7 +1,7 @@
 <template>
     <div class="skills_main_container">
         <h1 class="skills_header">Skills</h1>
-        <div class="skills_container">
+        <div ref="skills_container" class="skills_container">
             <div class="skills_buttons">
             <div ref="skills_button_1" @click="refreshList(1)" class="skills_button">FrontEnd Web Development</div>
             <div ref="skills_button_2" @click="refreshList(2)" class="skills_button">BackEnd Web Development</div>
@@ -24,14 +24,25 @@
 import { ref } from "vue";
 import { useStore } from "../stores/counter";
 
+let isGapActive = false;
+
 const store = useStore();
 let skills = ref([]);
+
+let skills_container = ref(null);
 
 let skills_button_1 = ref(null);
 let skills_button_2 = ref(null);
 let skills_button_3 = ref(null);
 
-let buttonArray = ref([skills_button_1,skills_button_2,skills_button_3]);
+
+function introduceGap(){
+    if(isGapActive){
+        return;
+    }
+    skills_container.value.style.gap='10vw';
+    isGapActive=true;
+}
 
 function borderColorChanger(int){
     switch(int){
@@ -76,6 +87,7 @@ function updateSkills() {
 }
 
 function refreshList(int){
+        introduceGap();
         switch(int){
           case 1:
             store.setSkillsInFocus(1)
@@ -140,7 +152,6 @@ function refreshList(int){
     display: flex;
     flex-flow: row nowrap;
 
-    gap: 10vw;
     padding-bottom: 10vh;
 }
 .skills_list_container{
