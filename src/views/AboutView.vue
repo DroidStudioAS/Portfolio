@@ -25,6 +25,10 @@ if(index===1){
 }else if(index===2){
   active_page.value=2;
 }
+window.scrollTo({
+  top:0,
+  behavior:"smooth"
+});
 changeLocalNavAlpha();
 
 }
