@@ -104,6 +104,12 @@ onBeforeMount(()=>{
 onMounted(()=>{
   menuHeight=store.getMh();
   window.addEventListener('resize',menuResize);
+
+  /******Security Against The Worst Browser In History*******/
+  if(navigator.userAgent.match(/samsung/i)){
+    alert('Samsung Internet Has Lots Of Issues And Will Not Display This Site Properly... Please Switch To A Better Browser');
+  }
+
 });
 
 </script>
