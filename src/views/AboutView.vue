@@ -17,6 +17,8 @@ let imageSource = ref(null);
 let first_button = ref(null);
 let second_button = ref(null);
 
+let clicked = false;
+
 
 
 function changePage(index){
@@ -43,10 +45,14 @@ function changeLocalNavAlpha(){
 
 
 function toggleVisibility(){
+  if(clicked===false){
+    language_table.value.style.display='none';
+    clicked=true;
+  }
   if (language_table.value.style.display==='none'){
     language_table.value.style.display='flex'
-  }else if(language_table.value.style.display='flex'){
-    language_table.value.style.display='none'
+  }else if(language_table.value.style.display==='flex'){
+    language_table.value.style.display='none' 
   }
 }
 function pushTo(name){
