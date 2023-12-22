@@ -282,6 +282,9 @@ gap: 10vh;
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  animation: cardAnimation;
+  animation-duration: 4s;
 }
 .service_card{
   display: flex;
@@ -697,5 +700,9 @@ gap: 10vh;
 }
 /*********End Of Media Queries**********/
 
-
+/********Keyframes*********/
+@keyframes cardAnimation{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
 </style>
