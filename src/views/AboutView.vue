@@ -290,7 +290,7 @@ gap: 10vh;
   align-items: center;
   text-align: center;
 
-  animation: cardAnimation;
+  animation: fadeIn;
   animation-duration: 4s;
 }
 .service_card{
@@ -470,6 +470,9 @@ gap: 10vh;
 /************End Of Frame Styling************/
 /********Language Table**********/
 .language_table_container{
+  position: fixed;
+  top: 20vh;
+
   display: none;
   flex-flow: column nowrap;
   justify-content: center;
@@ -482,11 +485,11 @@ gap: 10vh;
 
   border-radius: 15px;
 
-  position: fixed;
-  top: 20vh;
-
   font-family: content_;
   z-index: 3;
+
+  animation: languageTableAnimation;
+  animation-duration: 1s;
 }
 .close_language_button{
   position: absolute;
@@ -499,11 +502,17 @@ gap: 10vh;
 }
 
 .table_row{
+  width: 70vw;
+
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  width: 70vw;
+ 
+  animation: fadeIn;
+  animation-duration: 2.5s;
+  
+  animation-timing-function: ease-in;
 
 
   
@@ -666,9 +675,11 @@ gap: 10vh;
   }
     /***********End Service***********/
 
-    .language_table_container{
-      height: 35vh;
-    }
+  .language_table_container{
+    height: 35vh;
+    animation: languageTableAnimationMobile;
+    animation-duration: 1s;
+  }
     .close_language_button img {
   height: 40px;
   width: 40px;
@@ -708,8 +719,30 @@ gap: 10vh;
 /*********End Of Media Queries**********/
 
 /********Keyframes*********/
-@keyframes cardAnimation{
+@keyframes fadeIn{
   from{opacity: 0;}
   to{opacity: 1;}
 }
+@keyframes languageTableAnimation{
+  from{
+    width: 0;
+    height: 0vh;
+  }
+  to{
+    width: 80vw;
+    height: 70vh;
+  }
+}
+@keyframes languageTableAnimationMobile{
+  from{
+    width: 0;
+    height: 0vh;
+  }
+  to{
+    width: 80vw;
+    height: 35vh;
+  }
+}
+
+
 </style>
