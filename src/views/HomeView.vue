@@ -92,7 +92,8 @@ onMounted(()=>{
   width: 50vw;
 
   animation: homeImageAnimation;
-  animation-duration: 2s
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
 }
 .home_image{
   height: 80vh;
@@ -117,6 +118,7 @@ onMounted(()=>{
 
   animation: headerAnimation;
   animation-duration: 2s;
+  animation-timing-function: ease-in;
 
 
 }
@@ -193,6 +195,8 @@ gap: 5%;
 
     animation: headerMobileAnimation;
     animation-duration: 2s;
+    animation-timing-function: ease-in;
+
   }
   .name_container{
     width: 80vw;
@@ -257,6 +261,8 @@ gap: 5%;
 
     animation: headerMobileAnimation;
     animation-duration: 2s;
+    animation-timing-function: ease-in;
+
 
   }
   .name_container{
@@ -312,6 +318,8 @@ gap: 5%;
    
     animation: headerMobileAnimation;
     animation-duration: 2s;
+    animation-timing-function: ease-in;
+
   }
   .name_container{
     width: 80vw;
@@ -375,7 +383,7 @@ gap: 5%;
   to {left: 5vw;}
 }
 @keyframes headerMobileAnimation{
-  from{left: -50vw;}
+  from{left: -100vw;}
   to {left: 10vw;}
 }
 </style>
