@@ -1,5 +1,5 @@
 <template>
-    <div class="main_container">
+    <div class="skills_main_container">
         <h1 class="skills_header">Skills</h1>
         <div class="skills_container">
             <div class="skills_buttons">
@@ -72,13 +72,14 @@ function refreshList(int){
     color: black;
 }
 
-.main_container{
-    background: #89B4BE;
+
+.skills_main_container{
     position: absolute;
-    top: 0vh;
-    left: 0vw;
-    height: 180vh;
-    width: 100vw;
+    top: 0%;
+    left: 0%;
+
+    height: auto;
+    width: auto;
 
     display: flex;
     flex-flow: column wrap;
@@ -86,18 +87,19 @@ function refreshList(int){
     align-items: center;
     color: black;
 
-    overflow-y: hidden;
-    overflow-x: hidden;
+    background: #89B4BE;
+
+
+    
 }
 .skills_header{
     font-family: header;
     font-size: 15vh;
-    height: 15vh;
+    height: auto;
     width: 100vw;
 
     margin-bottom: 5vh;
-    position: absolute;
-    top: 1vh;
+  
 
     display: flex;
     flex-flow: row nowrap;
@@ -105,31 +107,23 @@ function refreshList(int){
     align-items: center;
 }
 .skills_container{
-    position: absolute;
-    top: 20vh;
-    left: 20vw;
-    width: 80vw;
     display: flex;
     flex-flow: row nowrap;
 
+    gap: 10vw;
+    padding-bottom: 10vh;
 }
 .skills_list_container{
     display: flex;
     flex-flow: column wrap;
     justify-content: start;
     align-items: start;
-    width: 20vw;
-    position: absolute;
-    top: -2vh;
-    left: 40vw;
 
-
-}
+   }
 .icon_container{
-    position: absolute;
-    height: 80vh;
-    width: 95vw;
-    top: 80vh;
+    height: auto;
+    width: auto;
+    
     
 
     display: flex;
@@ -199,9 +193,8 @@ function refreshList(int){
 20 vw (width<767)
 else 10vw */
 @media (max-width: 450px){
-    .main_container{
-    height: 395vh;
-    width: 100vw;
+    .skills_main_container{
+    
  }
  .icon_container{
     width: 100vw;
@@ -227,9 +220,8 @@ else 10vw */
 
 /* Small Devices (Phones and Small Tablets) */
 @media (min-width:450px) and  (max-width: 767px) {
-    .main_container{
-    height: 322vh;
-    width: 100vw;
+    .skills_main_container{
+   
     
  }
 
@@ -250,8 +242,8 @@ else 10vw */
 
 /* Medium Devices (Tablets) */
 @media (min-width: 768px) and (max-width: 991px) {
-    .main_container{
-    height: 260vh;
+    .skills_main_container{
+   
  }
  .skills_button{
     font-size: 3.5vw;
@@ -265,9 +257,8 @@ else 10vw */
 
 /* Large Devices (Desktops and Laptops) */
 @media (min-width: 992px) and (max-width: 1199px) {
- .main_container{
-    height: 260vh;
-    width: 100vw;
+ .skills_main_container{
+  
  }
  .skills_button{
     font-size: 3vw;

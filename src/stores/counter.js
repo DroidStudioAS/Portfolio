@@ -7,7 +7,7 @@ export const useStore = defineStore('store', {
     menu_height: '100vh',
     backend_skills: ["Node.JS", "Spring Boot", "PHP", "Java", "MySQL", "Postman"].sort(),
     frontend_skills: ["HTML5", "CSS", "JavaScript", "Vue.JS", "WordPress", "GSAP"].sort(),
-    mobile_skills: ["Android Studio", "Java", "SQLite", "MySQL", "XML"].sort(),
+    mobile_skills: ["Android Studio", "Java", "SQLite", "MySQL", "XML",'OkHTTP'].sort(),
     skills_in_focus: []
   }),
   actions: {
