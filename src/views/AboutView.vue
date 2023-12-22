@@ -51,6 +51,10 @@ function pushTo(name){
   console.log('Routing to:', name);
   console.log('Router:', router); // Check if router is defined
   router.push({ name: name });
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  })
   console.log("push activated");
 }
 
