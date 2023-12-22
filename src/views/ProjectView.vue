@@ -312,6 +312,7 @@ h1{
     background: #4E7896;
     width: 50vw;
     height: 76vh;
+    padding: 1%;
 
     position: fixed;
     top: 15vh;
@@ -340,6 +341,7 @@ h1{
 .close_pc_container{
     width: 5vw;
     height: 8vh;
+    margin-right: 1%;
 
     position: absolute;
     right: 0;
@@ -351,6 +353,7 @@ h1{
     height: 50px;
     position: absolute;
     right: 0;
+  
 }
 .project_name_container{
     width: 50vw;
