@@ -22,6 +22,7 @@ let clicked = false;
 
 
 function changePage(index){
+clicked=false;
 if(index===1){
   active_page.value=1;
 }else if(index===2){
