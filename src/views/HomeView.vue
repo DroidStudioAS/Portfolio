@@ -89,10 +89,13 @@ onMounted(()=>{
   right: 0vw;
   height: 80vh;
   width: 50vw;
+  animation: homeImageAnimation;
+  animation-duration: 2s
 }
 .home_image{
   height: 80vh;
   width: 50vw;
+;
 }
 /***********Image Styling End************/
 
@@ -340,4 +343,9 @@ gap: 5%;
 }
 /**************Media Querys End*****************/
 
+/******Start Of Keyframes*******/
+@keyframes homeImageAnimation {
+  from{bottom: -100vh;}
+  to{bottom: 0vh;}
+}
 </style>
