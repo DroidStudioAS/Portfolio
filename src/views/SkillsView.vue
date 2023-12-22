@@ -96,7 +96,6 @@ function refreshList(int){
     font-family: header;
     font-size: 15vh;
     height: auto;
-    width: 100vw;
 
     margin-bottom: 5vh;
   
@@ -123,6 +122,7 @@ function refreshList(int){
 .icon_container{
     height: auto;
     width: auto;
+    padding: 2% ;
     
     
 
