@@ -55,18 +55,15 @@ function toggleVisibility(){
   if (language_table.value.style.display==='none'){
     language_table.value.style.display='flex'
   }else if(language_table.value.style.display==='flex'){
-    language_table.value.classList.add('closeLanguageTable');
-    table.value.classList.add('collapseText')
+    language_table.value.classList.add('reverse');
     
     setTimeout(()=>{
-      language_table.value.style.display='none';
-      language_table.value.classList.remove('closeLanguageTable');
-      table.value.classList.remove('collapseText')
-
-
-    },1000)
-
-  }
+      language_table.value.style.display='none'
+      language_table.value.classList.remove('reverse');
+    },1000);
+    
+    
+   }
 }
 function pushTo(name){
  store.setActivePage(name);
@@ -133,7 +130,7 @@ onMounted(()=>{
     class="close_language_button">
         <img src="/button_close_cp.png">
     </div>
-    <table ref="table">
+    <table class="table" ref="table">
         <tr ref="tbl_row" class="table_row"> 
             <th class="table_main_header">Languages</th>
             <th class="table_header">Speaking</th>
@@ -503,6 +500,9 @@ gap: 10vh;
   animation: languageTableAnimation;
   animation-duration: 1s;
 }
+.table{
+  color: white;
+}
 .close_language_button{
   position: absolute;
   top: 1vh;
@@ -537,7 +537,7 @@ gap: 10vh;
   width: 20vw;
 
   font-size: 3vw;
-  color: white;
+  
 }
 .table_header{
 
@@ -549,7 +549,6 @@ gap: 10vh;
 
   font-size: 3.5vw;
   font-weight: 600;
-  color: white;
 }
 .table_language{
   display: flex;
@@ -560,7 +559,6 @@ gap: 10vh;
 
   font-size: 3.5vw;
   font-weight: 600;
-  color: white;
 
 }
 .table_entrie{
@@ -572,7 +570,6 @@ gap: 10vh;
 
   font-size: 3vw; 
   font-style: italic; 
-  color: white;
 
 }
 /********End Of Language Table**********/
@@ -736,12 +733,7 @@ gap: 10vh;
   from{opacity: 0;}
   to{opacity: 1;}
 }
-@keyframes fadeOut{
-  to{
-    opacity: 0;
-    width: 0vw;
-  }
-}
+
 @keyframes languageTableAnimation{
   from{
     width: 0;
@@ -772,23 +764,18 @@ gap: 10vh;
   to{
     height: 0vh;
     width: 0vh;
+    font-size: 0vh;
   }
 }
 @keyframes toHeight0{
-  to{
-    height: 0vh;
-  }
+  from{opacity: 1;}
+  to{opacity: 0;}
 }
 /*********AnimationClasses*********/
-.closeLanguageTable{
-  animation:languageTableAnimationClose;
+.reverse{
+  animation: toHeight0;
   animation-duration: 1s;
 }
-.collapseText{
-animation: fadeOut;
-animation-duration: 1s;
-}
-
 
 
 </style>
