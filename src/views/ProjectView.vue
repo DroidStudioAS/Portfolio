@@ -26,10 +26,17 @@ let ps_cont= ref(null);
 
 
 function closePc(){
+    pc.value.classList.remove('animate');
+
+
+    pc.value.classList.add('animate_reverse');
+
+    setTimeout(()=>{
     pc.value.style.visibility = 'hidden';
     playStoreImage.value.style.display = 'none'
     wwwImage.value.style.display = 'none'
     gh_cont.value.style.display='none'
+    },1000)
 
 }
 function showLinks(project){
@@ -52,6 +59,9 @@ if(project.type===0){
 }
 }
 function showPc(project){
+    pc.value.classList.remove('animate_reverse');
+
+
     //set project name
     project_name_in_focus.value=project.name;
     project_gh_link.value=project.gitLink;
@@ -70,6 +80,7 @@ function showPc(project){
 
     //toggle visibility
     pc.value.style.visibility = 'visible';
+    pc.value.classList.add('animate');
 
 }
 
@@ -329,6 +340,9 @@ h1{
 
     z-index: 10;
 
+    
+
+  ;
 }
 /********pc_layout_items*******/
 /***50vh and 45vw is the space the children are working with***/
@@ -511,4 +525,26 @@ align-items: center;
 }
 /*******************Media Queries End********************/
 
+@keyframes openClosePc{
+    from{
+     opacity: 0;
+    }to{
+    opacity: 1;
+    }
+}
+@keyframes closePc{
+    from{
+     opacity: 1;
+    }to{
+    opacity: 0;
+    }
+}
+.animate{
+    animation: openClosePc;
+    animation-duration: 1s;
+}
+.animate_reverse{
+    animation: closePc;
+    animation-duration: 1s;
+}
 </style>
