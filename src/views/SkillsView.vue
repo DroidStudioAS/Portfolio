@@ -21,7 +21,7 @@
 </div>
 </template>
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { useStore } from "../stores/counter";
 
 let isGapActive = false;
@@ -34,6 +34,13 @@ let skills_container = ref(null);
 let skills_button_1 = ref(null);
 let skills_button_2 = ref(null);
 let skills_button_3 = ref(null);
+
+// Intersection Observer options
+const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2 // Adjust this threshold as needed for when the animation triggers
+};
 
 
 function introduceGap(){
@@ -107,6 +114,31 @@ function refreshList(int){
         }
     
 }
+function handleIntersection(entries, observer) {
+    const icons = this; // Assuming 'this' context refers to the icons collection
+
+    entries.forEach(entry => {
+        const icon = entry.target;
+        if (entry.isIntersecting) {
+            icon.classList.add('animate_icon');
+            observer.unobserve(icon);
+            icon.style.opacity=1;
+        }else{
+            icon.style.opacity=0;
+        }
+    });
+}
+
+
+onMounted(()=>{
+    const icons = document.querySelectorAll('.icon');
+
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    icons.forEach(icon => {
+        observer.observe(icon);
+    });
+})
 
 </script>
 <style scoped>
@@ -304,6 +336,20 @@ else 10vw */
   /* Styles for devices wider than 1200px */
   /* ... */
 }
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.animate_icon{
+    animation: fadeIn;
+    animation-duration: 1.5s;
+}
+
 
 
 
