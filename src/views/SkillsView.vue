@@ -51,25 +51,27 @@ function introduceGap(){
     isGapActive=true;
 }
 
-function borderColorChanger(int){
-    switch(int){
-        case 1:
-            skills_button_1.value.style.borderColor = 'white'
-            skills_button_2.value.style.borderColor = 'black'
-            skills_button_3.value.style.borderColor = 'black'
-            break;
-        case 2:
-            skills_button_1.value.style.borderColor = 'black'
-            skills_button_2.value.style.borderColor = 'white'
-            skills_button_3.value.style.borderColor = 'black'
-            break;
-        case 3:
-            skills_button_1.value.style.borderColor = 'black'
-            skills_button_2.value.style.borderColor = 'black'
-            skills_button_3.value.style.borderColor = 'white'
-            break;
+function borderColorChanger(int) {
+    // Remove existing border color classes from all buttons
+    skills_button_1.value.classList.remove('border-white', 'border-black');
+    skills_button_2.value.classList.remove('border-white', 'border-black');
+    skills_button_3.value.classList.remove('border-white', 'border-black');
+
+    // Apply the appropriate border color class based on the input
+    switch (int) {
+      case 1:
+        skills_button_1.value.classList.add('border-white');
+        break;
+      case 2:
+        skills_button_2.value.classList.add('border-white');
+        break;
+      case 3:
+        skills_button_3.value.classList.add('border-white');
+        break;
+      default:
+        break;
     }
-}
+  }
 
 
 let icons = ref(
@@ -242,6 +244,13 @@ onMounted(()=>{
 }
 .skills_button:hover{
     border-color: white;
+}
+.border-white {
+  border-color: white;
+}
+
+.border-black {
+  border-color: black;
 }
 .skills_list_container img{
     width: 20px;
