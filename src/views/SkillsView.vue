@@ -234,10 +234,14 @@ onMounted(()=>{
     background: #777BB3;
     border-radius:30px 20px 30px 20px;
     border-style: solid;
+
+    border-color: black;
     
 
     font-family: content_;
-
+}
+.skills_button:hover{
+    border-color: white;
 }
 .skills_list_container img{
     width: 20px;
