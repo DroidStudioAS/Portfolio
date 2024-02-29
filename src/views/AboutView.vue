@@ -235,6 +235,9 @@ Explore my skills or projects below and see for yourself.<br>
 <style scoped>
 
 /***********Start Of Page Containers*********/
+template{
+  overflow: hidden;
+}
 .first_container{
 position: absolute;
 top: 0%;
