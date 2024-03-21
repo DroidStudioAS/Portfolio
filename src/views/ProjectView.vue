@@ -127,7 +127,7 @@ const projects = [
     ,'https://github.com/DroidStudioAS/QuizMe'
     ),
     new project("CloudCatcher",null,1
-    ,"./icon_app_quiz.png","A Maintainable Weather Web App Developed On Top Of OpenWeatherAPI"
+    ,"./icon_cloudcatcher.png","A Maintainable Weather Web App Developed On Top Of OpenWeatherAPI"
     ,"Frontend:Blade Templating Enginee; Backend: Laravel-PHP"
     ,"https://github.com/DroidStudioAS/CloudCatcher.git"
     ),
