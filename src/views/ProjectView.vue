@@ -126,6 +126,16 @@ const projects = [
     , 'Frontend: XML, Java, Android Studio; Backend: SQLite;'
     ,'https://github.com/DroidStudioAS/QuizMe'
     ),
+    new project("CloudCatcher",null,1
+    ,"./icon_app_quiz.png","A Maintainable Weather Web App Developed On Top Of OpenWeatherAPI"
+    ,"Frontend:Blade Templating Enginee; Backend: Laravel-PHP"
+    ,"https://github.com/DroidStudioAS/CloudCatcher.git"
+    ),
+    new project("SneakerPlug",null,1
+    ,"./icon_sneaker_plug.png","An Online Web Shop Developed So That Users Can Sell There/Buy Others Users Exclusive Sneakers"
+    ,"Frontend:Blade Templating Enginee; Backend: Laravel-PHP"
+    ,"https://github.com/DroidStudioAS/Web-Shop.git"
+    )
 ];
 
 function evenSetter(){
