@@ -5,8 +5,8 @@ export const useStore = defineStore('store', {
   state: () => ({
     active_page: '',
     menu_height: '100vh',
-    backend_skills: ["Node.JS", "Spring Boot", "PHP", "Java", "MySQL", "Postman"].sort(),
-    frontend_skills: ["HTML5", "CSS", "JavaScript", "Vue.JS", "WordPress", "GSAP"].sort(),
+    backend_skills: ["Node.JS", "Spring Boot","Laravel", "PHP", "Java", "MySQL", "Postman"].sort(),
+    frontend_skills: ["HTML5", "CSS", "JavaScript", "Vue.JS","JQuery", "WordPress", "GSAP"].sort(),
     mobile_skills: ["Android Studio", "Java", "SQLite", "MySQL", "XML",'OkHTTP'].sort(),
     skills_in_focus: []
   }),
